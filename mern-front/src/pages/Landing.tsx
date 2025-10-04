@@ -25,7 +25,7 @@ export default function Landing() {
                     <p className='text-base text-gray-600'>Loom & Lens features in-depth writing and personal essays that explore ideas, <br /> culture, and creativity. Join a community of curious minds.</p>
                     <div className='flex gap-2 mt-7'>
                         <button className='bg-indigo-500 text-white px-8 py-2 cursor-pointer rounded-4xl text-base '>Publish Your Story</button>
-                        <button className='px-8 font-medium py-2 cursor-pointer rounded-4xl text-base '>Join Now</button>
+                        <button className='flex justify-center items-center gap-3.5 px-8 font-medium py-2 cursor-pointer rounded-4xl text-base '>Join Now <img src="https://img.icons8.com/?size=100&id=39777&format=png&color=000000" alt="right-side-arrow" className='h-4 mt-0.5'/></button>
                     </div>
                 </div>
                 <div className='flex content-center items-center relative'>
