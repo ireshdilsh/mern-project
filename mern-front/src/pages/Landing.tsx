@@ -40,7 +40,7 @@ export default function Landing() {
                 </div>
             </div>
 
-            <section id='features' className='flex content-center items-center flex-col mt-6 pt-12 pb-12 pl-36 pr-36'>
+            <section id='features' className='bg-white flex content-center items-center flex-col mt-6 pt-12 pb-22 pl-36 pr-36'>
                 <h1 className='text-4xl font-bold mt-10'>Features that Empower Every Writer</h1>
                 <p className='text-center mt-2 text-gray-500'>Discover a suite of tools designed to enhance your writing experience, from intuitive editing to collaborative feedback.</p>
                 <div className='grid grid-cols-2 gap-8 mt-12'>
@@ -62,6 +62,13 @@ export default function Landing() {
                     </div>
                     <div id='right-side'></div>
                 </div>
+            </section>
+
+            <section id='topics' className='flex flex-col content-center items-start mt-6 pt-12 pb-12 pl-36 pr-36'>
+                <h1 className='text-4xl font-bold'>Explore Every Idea</h1>
+                <p className='text-gray-500 mt-2'>From tech and lifestyle to culture and personal growth, Currents brings together a world of stories. <br /> Find topics that spark your curiosity and dive into ideas that inspire.</p>
+           
+                
             </section>
         </div>
     )
