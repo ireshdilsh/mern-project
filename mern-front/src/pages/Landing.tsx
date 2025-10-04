@@ -30,13 +30,13 @@ export default function Landing() {
                 </div>
                 <div className='flex content-center items-center relative'>
                     <span className='text-9xl font-extrabold absolute text-gray-300 right-96 bottom-2'>C</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-60'>u</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-96 top-8'>r</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-40 top-20'>r</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-18 top-8'>e</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-0 bottom-2'>n</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-46 bottom-8'>t</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 top-8 right-66'>s</span>
+                    <span className='text-9xl font-extrabold absolute text-gray-300 right-60'>U</span>
+                    <span className='text-9xl font-extrabold absolute text-gray-300 right-96 top-8'>R</span>
+                    <span className='text-9xl font-extrabold absolute text-gray-300 right-40 top-20'>R</span>
+                    <span className='text-9xl font-extrabold absolute text-gray-300 right-18 top-8'>E</span>
+                    <span className='text-9xl font-extrabold absolute text-gray-300 right-0 bottom-2'>N</span>
+                    <span className='text-9xl font-extrabold absolute text-gray-300 right-46 bottom-8'>T</span>
+                    <span className='text-9xl font-extrabold absolute text-gray-300 top-8 right-66'>S</span>
                 </div>
             </div>
         </div>
