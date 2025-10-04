@@ -1,0 +1,132 @@
+nav #links {
+    position: relative;
+}
+
+#span-c {
+    animation: animate-c 10s linear infinite;
+    rotate: 5deg;
+}
+
+#span-e {
+    animation: animate-e 12s linear infinite;
+}
+
+#span-t {
+    animation: animate-t 14s linear infinite;
+}
+
+#span-n {
+    animation: animate-n 16s linear infinite;
+}
+
+#span-r1 {
+    animation: animate-r 16s linear infinite;
+}
+
+#span-u {
+    animation: animate-u 18s linear infinite;
+}
+
+#span-r2 {
+    animation: animate-r2 15s linear infinite;
+}
+
+#span-s {
+    animation: animate-s 13s linear infinite;
+}
+
+@keyframes animate-c{
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(220px) ;
+    }
+}
+
+@keyframes animate-t {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(210px);
+    }
+}
+
+@keyframes animate-e {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(200px);
+    }
+}
+
+@keyframes animate-n {
+
+    0%,
+    100% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(-400px);
+    }
+}
+
+@keyframes animate-r {
+
+    0%,
+    100% {
+        transform: translateX(-400px);
+    }
+
+    50% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes animate-u {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-180px) rotate(5deg);
+    }
+}
+
+@keyframes animate-r2 {
+
+    0%,
+    100% {
+        transform: translateX(0px) translateY(0px);
+    }
+
+    50% {
+        transform: translateX(150px) translateY(-100px);
+    }
+}
+
+@keyframes animate-s {
+
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-180px) scale(1.1);
+    }
+}

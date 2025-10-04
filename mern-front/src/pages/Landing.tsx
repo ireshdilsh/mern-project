@@ -9,7 +9,7 @@ export default function Landing() {
 
             <nav className='flex items-center justify-between pl-36 pr-36 pt-8 pb-4'>
                 <img src={logo} alt="" className='h-16' />
-                <div className='flex gap-6'>
+                <div id='links' className='flex gap-6'>
                     <a href="#features" className=''>Home</a>
                     <a href="#features" className=''>Features</a>
                     <a href="#features" className=''>About</a>
@@ -30,14 +30,14 @@ export default function Landing() {
                     </div>
                 </div>
                 <div className='flex content-center items-center relative'>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-96 bottom-2'>C</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-60'>U</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-96 top-8'>R</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-40 top-20'>R</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-18 top-8'>E</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-0 bottom-2'>N</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 right-46 bottom-8'>T</span>
-                    <span className='text-9xl font-extrabold absolute text-gray-300 top-8 right-66'>S</span>
+                    <span id='span-c' className='text-9xl font-extrabold absolute text-gray-300 right-96 bottom-2'>C</span>
+                    <span id='span-u' className='text-9xl font-extrabold absolute text-gray-300 right-60'>U</span>
+                    <span id='span-r1' className='text-9xl font-extrabold absolute text-gray-300 right-0 top-8'>R</span>
+                    <span id='span-r2' className='text-9xl font-extrabold absolute text-gray-300 right-40 top-20'>R</span>
+                    <span id='span-e' className='text-9xl font-extrabold absolute text-gray-300 right-18 bottom-5'>E</span>
+                    <span id='span-n' className='text-9xl font-extrabold absolute text-gray-300 right-0 bottom-2'>N</span>
+                    <span id='span-t' className='text-9xl font-extrabold absolute text-gray-300 right-46 bottom-8'>T</span>
+                    <span id='span-s' className='text-9xl font-extrabold absolute text-gray-300 top-8 right-66'>S</span>
                 </div>
             </div>
         </div>
