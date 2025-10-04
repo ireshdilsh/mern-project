@@ -103,7 +103,7 @@ nav #links {
     }
 
     50% {
-        transform: translateY(-180px) rotate(5deg);
+        transform: translateY(-170px) rotate(5deg);
     }
 }
 
