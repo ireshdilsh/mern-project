@@ -11,10 +11,10 @@ export default function Landing() {
                 <div id='links' className='flex gap-6'>
                     <a href="#home" className=''>Home</a>
                     <a href="#features" className=''>Features</a>
-                    <a href="#about" className=''>About</a>
                     <a href="#topics" className=''>Topics</a>
                     <a href="#pricing" className=''>Pricing</a>
                     <a href="#write" className=''>Write</a>
+                    <a href="#about" className=''>About</a>
                     <a href="#contact" className=''>Get In Touch</a>
                 </div>
             </nav>
@@ -55,7 +55,7 @@ export default function Landing() {
                         <h1 className='text-xl font-medium'>Reader Insights</h1>
                         <p className='text-gray-500 -mt-2.5 text-justify'>Track how your stories perform with simple analytics that reveal views, reads, and engagement — helping you grow your audience strategically.</p>
 
-                        
+
                         <h1 className='text-xl font-medium'>Community Connection</h1>
                         <p className='text-gray-500 -mt-2.5 text-justify'>Join a growing network of writers and readers. Comment, follow, and collaborate to make your ideas part of something bigger.</p>
 
