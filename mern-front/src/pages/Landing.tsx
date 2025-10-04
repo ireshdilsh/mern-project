@@ -19,7 +19,7 @@ export default function Landing() {
                 </div>
             </nav>
 
-            <div id="hero-section" className='flex justify-between items-center mt-6 pt-12 pb-12 pl-36 pr-36'>
+            <div id="hero-section" className='flex justify-between items-center mt-6 pt-12 pb-24 pl-36 pr-36'>
                 <div className="flex flex-col items-start justify-left mt-6">
                     <h1 className='text-5xl font-bold mb-4 leading-16'>Weave your thoughts,<br /> frame your story.</h1>
                     <p className='text-base text-gray-600'>Loom & Lens features in-depth writing and personal essays that explore ideas, <br /> culture, and creativity. Join a community of curious minds.</p>
