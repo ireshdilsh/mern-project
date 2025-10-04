@@ -67,8 +67,11 @@ export default function Landing() {
             <section id='topics' className='flex flex-col content-center items-start mt-6 pt-12 pb-12 pl-36 pr-36'>
                 <h1 className='text-4xl font-bold'>Explore Every Idea</h1>
                 <p className='text-gray-500 mt-2'>From tech and lifestyle to culture and personal growth, Currents brings together a world of stories. <br /> Find topics that spark your curiosity and dive into ideas that inspire.</p>
-           
-                
+            </section>
+
+            <section id="pricing" className='bg-white flex content-center items-center flex-col mt-6 pt-18 pb-12 pl-36 pr-36'>
+                <h1 className='text-4xl font-bold'>Choose a Plan That Fits You</h1>
+                <p className='text-gray-500 mt-2 text-center'>Whether you’re just starting out or sharing stories with a growing audience, Currents offers flexible plans to suit every creator. <br /> Get access to powerful tools, insights, and features that help your ideas flow.</p>
             </section>
         </div>
     )
