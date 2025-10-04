@@ -4,22 +4,22 @@ import '../styles/landing.css'
 export default function Landing() {
 
     return (
-        <div id='main-page' className='min-h-screen bg-gray-100'>
+        <div id='main-page' className='min-h-screen bg-gray-50'>
 
             <nav className='flex items-center justify-between pl-36 pr-36 pt-8 pb-4'>
                 <img src={logo} alt="" className='h-16' />
                 <div id='links' className='flex gap-6'>
-                    <a href="#features" className=''>Home</a>
+                    <a href="#home" className=''>Home</a>
                     <a href="#features" className=''>Features</a>
-                    <a href="#features" className=''>About</a>
-                    <a href="#features" className=''>Topics</a>
-                    <a href="#features" className=''>Pricing</a>
-                    <a href="#features" className=''>Write</a>
-                    <a href="#features" className=''>Get In Touch</a>
+                    <a href="#about" className=''>About</a>
+                    <a href="#topics" className=''>Topics</a>
+                    <a href="#pricing" className=''>Pricing</a>
+                    <a href="#write" className=''>Write</a>
+                    <a href="#contact" className=''>Get In Touch</a>
                 </div>
             </nav>
 
-            <div id="hero-section" className='flex justify-between items-center mt-5 pt-12 pb-12 pl-36 pr-36'>
+            <div id="hero-section" className='flex justify-between items-center mt-6 pt-12 pb-12 pl-36 pr-36'>
                 <div className="flex flex-col items-start justify-left mt-6">
                     <h1 className='text-5xl font-bold mb-4 leading-16'>Weave your thoughts,<br /> frame your story.</h1>
                     <p className='text-base text-gray-600'>Loom & Lens features in-depth writing and personal essays that explore ideas, <br /> culture, and creativity. Join a community of curious minds.</p>
@@ -39,6 +39,30 @@ export default function Landing() {
                     <span id='span-s' className='text-9xl font-extrabold absolute text-gray-300 top-8 right-66'>S</span>
                 </div>
             </div>
+
+            <section id='features' className='flex content-center items-center flex-col mt-6 pt-12 pb-12 pl-36 pr-36'>
+                <h1 className='text-4xl font-bold mt-10'>Features that Empower Every Writer</h1>
+                <p className='text-center mt-2 text-gray-500'>Discover a suite of tools designed to enhance your writing experience, from intuitive editing to collaborative feedback.</p>
+                <div className='grid grid-cols-2 gap-8 mt-12'>
+                    <div id='left-side' className='flex flex-col gap-6'>
+
+                        <h1 className='text-xl font-medium'>Smart Writing Editor</h1>
+                        <p className='text-gray-500 -mt-2.5 text-justify'>Craft your thoughts in a clean, distraction-free space with built-in formatting, markdown support, and real-time saving — so you never lose your flow.</p>
+
+                        <h1 className='text-xl font-medium'>Personalized Profiles</h1>
+                        <p className='text-gray-500 -mt-2.5 text-justify'>Showcase your personality with customizable author pages, profile images, and bios — turning your readers into loyal followers.</p>
+
+                        <h1 className='text-xl font-medium'>Reader Insights</h1>
+                        <p className='text-gray-500 -mt-2.5 text-justify'>Track how your stories perform with simple analytics that reveal views, reads, and engagement — helping you grow your audience strategically.</p>
+
+                        
+                        <h1 className='text-xl font-medium'>Community Connection</h1>
+                        <p className='text-gray-500 -mt-2.5 text-justify'>Join a growing network of writers and readers. Comment, follow, and collaborate to make your ideas part of something bigger.</p>
+
+                    </div>
+                    <div id='right-side'></div>
+                </div>
+            </section>
         </div>
     )
 }
