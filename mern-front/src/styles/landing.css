@@ -19,6 +19,14 @@
 }
 
 #modal-card{
-    height: 600px;
-    width: 750px;
+    height: 500px;
+    width: 700px;
 }
+
+#modal-card h1{
+        font-family: "GT Super Text", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* #modal-card #sign-up p,#modal-card #sign-up a{
+    font-size: 14.5px;
+} */
