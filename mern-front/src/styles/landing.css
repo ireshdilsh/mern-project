@@ -17,3 +17,8 @@
     font-weight: 500;
     font-family: "GT Super Text", Georgia, Cambria, "Times New Roman", Times, serif;
 }
+
+#modal-card{
+    height: 600px;
+    width: 750px;
+}

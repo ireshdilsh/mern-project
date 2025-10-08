@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../assets/logo.png'
 import '../styles/landing.css'
 import { Link } from 'react-router-dom'
 
 export default function Landing() {
+
+    const [openModel, setOpenModel] = useState<boolean>(false)
+
     return (
         <div id='landing-page' className='flex justify-center items-center flex-col'>
             <nav className='flex justify-between items-center w-full p-4 pl-40 pr-40 bg-white z-10 border-b border-black'>
@@ -11,8 +14,8 @@ export default function Landing() {
                 <div id='links' className='flex justify-center items-center gap-6'>
                     <a href="">Our Story</a>
                     <a href="">Membership</a>
-                    <a href="">Write</a>
-                    <a href="">Sign in</a>
+                    <a href="#" onClick={() => { setOpenModel(true) }}>Write</a>
+                    <a href="#" onClick={() => { setOpenModel(true) }}>Sign in</a>
                     <button className='bg-black text-white  pt-2 pb-2 pl-4.5 pr-4.5 rounded-3xl cursor-pointer'>Get Started</button>
                 </div>
             </nav>
@@ -41,18 +44,20 @@ export default function Landing() {
                     <Link to="/home">Terms</Link>
                 </div>
             </section>
+
+            {/* Sign in modal */}
+            {openModel && (
+                <div>
+                    <div className='fixed top-0 left-0 w-full h-full bg-black opacity-40 z-20' onClick={() => setOpenModel(false)}></div>
+                    <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-lg shadow-lg z-30' id='modal-card'>
+
+                    </div>
+                </div>
+            )}
         </div>
+
+
     )
 }
 
-// Help
-// Status
-// About
-// Careers
-// Press
-// Blog
-// Privacy
-// Rules
-// Terms
-// Text to speech
 // https://miro.medium.com/v2/format:webp/4*SdjkdS98aKH76I8eD0_qjw.png
