@@ -27,6 +27,10 @@
         font-family: "GT Super Text", Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
+#modal-footer{
+    font-size: 13px;
+}
+
 /* #modal-card #sign-up p,#modal-card #sign-up a{
     font-size: 14.5px;
 } */
