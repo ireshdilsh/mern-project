@@ -25,7 +25,7 @@ export default function Landing() {
                 <div id='left-side' className=''>
                     <h1 className='tracking-tighter leading-30'>Words <br /> Minds & Ideas</h1>
                     <p className='text-xl text-gray-600 mb-8 mt-2'>Create meaningful stories, connect hearts, and share your passion with everyone.</p>
-                    <button className='bg-black text-white pt-2.5 pb-2.5 outline-none border-none pl-12 pr-12 rounded-4xl cursor-pointer text-lg font-semibold'>Start reading</button>
+                    <button onClick={() => { setOpenModel(true) }} className='bg-black text-white pt-2.5 pb-2.5 outline-none border-none pl-12 pr-12 rounded-4xl cursor-pointer text-lg font-semibold'>Start reading</button>
                 </div>
                 <div id='right-side'>
                     <img src="https://miro.medium.com/v2/format:webp/4*SdjkdS98aKH76I8eD0_qjw.png" alt="" className='scale-120 mr-10 pb-4' />
