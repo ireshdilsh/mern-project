@@ -25,6 +25,8 @@ export default function Help() {
                 <img src="https://img.icons8.com/?size=100&id=5tH5sHqq0t2q&format=png&color=000000" className='h-6' alt="" />
                 Please do not share sensitive personal information in your help requests. If your issue is urgent or involves your account security, contact our support team directly. For common questions, check our Help Center first.
             </p>
+            <h1 className='mt-15 text-5xl font-bold tracking-tighter'>How can we help you?</h1>
+            {/* has write the help for things */}
         </div>
     )
 }
