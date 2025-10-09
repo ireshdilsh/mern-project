@@ -49,8 +49,9 @@ export default function Landing() {
             {/* Sign in modal */}
             {openModel && (
                 <div>
-                    <div className='fixed top-0 left-0 w-full h-full bg-black opacity-40 z-20' onClick={() => setOpenModel(false)}></div>
+                    <div className='fixed top-0 left-0 w-full h-full bg-black opacity-40 z-20'></div>
                     <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-sm z-30 flex justify-center items-center flex-col' id='modal-card'>
+                        <img src="https://img.icons8.com/?size=100&id=83149&format=png&color=000000" className='h-5 absolute top-6 right-5 cursor-pointer' onClick={() => { setOpenModel(false) }} alt="" />
                         <h1 className='text-3xl'>Welcome back.</h1>
                         <div className="flex flex-col gap-4 mt-8 mb-8">
                             <button className='cursor-pointer relative border border-black rounded-4xl pt-2 pb-2 pl-16 pr-16 w-76'><img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" className='absolute left-4 top-1/2 transform -translate-y-1/2 h-6' alt="" />Sign in with Google</button>
@@ -59,7 +60,7 @@ export default function Landing() {
                         </div>
                         <div id="sign-up" className='flex gap-1 mb-5'>
                             <p>No account?</p>
-                            <a href='#' onClick={()=>{setOpenModelSignUp(true); setOpenModel(false);}} className='underline underline-offset-4'>Create one</a>
+                            <a href='#' onClick={() => { setOpenModelSignUp(true); setOpenModel(false); }} className='underline underline-offset-4'>Create one</a>
                         </div>
                         <div id="help" className='flex gap-1 mb-5'>
                             <p>Forgot email or trouble signing in? </p>
@@ -71,10 +72,11 @@ export default function Landing() {
             )}
 
             {/* Sign up modal */}
-            {openModelSignUp &&(
+            {openModelSignUp && (
                 <div>
-                    <div className='fixed top-0 left-0 w-full h-full bg-black opacity-40 z-20' onClick={() => setOpenModelSignUp(false)}></div>
+                    <div className='fixed top-0 left-0 w-full h-full bg-black opacity-40 z-20'></div>
                     <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-sm z-30 flex justify-center items-center flex-col' id='modal-card'>
+                        <img src="https://img.icons8.com/?size=100&id=83149&format=png&color=000000" className='h-5 absolute top-6 right-5 cursor-pointer' onClick={() => { setOpenModelSignUp(false) }} alt="" />
                         <h1 className='text-3xl'>Join Medium.</h1>
                         <div className="flex flex-col gap-4 mt-8 mb-8">
                             <button className='cursor-pointer relative border border-black rounded-4xl pt-2 pb-2 pl-16 pr-16 w-76'><img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" className='absolute left-4 top-1/2 transform -translate-y-1/2 h-6' alt="" />Sign up with Google</button>
@@ -83,8 +85,8 @@ export default function Landing() {
                         </div>
                         <div id="sign-up" className='flex gap-1 mb-5'>
                             <p>Already have an account?</p>
-                            <a href='#' onClick={()=>{setOpenModel(true);setOpenModelSignUp(false)}} className='underline underline-offset-4'>Sign in</a>
-                        </div>  
+                            <a href='#' onClick={() => { setOpenModel(true); setOpenModelSignUp(false) }} className='underline underline-offset-4'>Sign in</a>
+                        </div>
                         <p id='modal-footer' className='text-gray-500'>By clicking "Sign up", you accept Medium's <Link to='' className='underline underline-offset-4'>Terms of Service</Link> and <Link to='' className='underline underline-offset-4'>Privacy Policy</Link>.</p>
                     </div>
                 </div>
