@@ -17,7 +17,7 @@ export default function Landing() {
                     <a href="">Membership</a>
                     <a href="#" onClick={() => { setOpenModel(true) }}>Write</a>
                     <a href="#" onClick={() => { setOpenModel(true) }}>Sign in</a>
-                    <button className='bg-black text-white  pt-2 pb-2 pl-4.5 pr-4.5 rounded-3xl cursor-pointer'>Get Started</button>
+                    <button onClick={() => { setOpenModelSignUp(true); setOpenModel(false); }} className='bg-black text-white  pt-2 pb-2 pl-4.5 pr-4.5 rounded-3xl cursor-pointer'>Get Started</button>
                 </div>
             </nav>
 
