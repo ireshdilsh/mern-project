@@ -64,7 +64,7 @@ export default function Landing() {
                         </div>
                         <div id="help" className='flex gap-1 mb-5'>
                             <p>Forgot email or trouble signing in? </p>
-                            <Link to='' className='underline underline-offset-4'>Get help</Link>
+                            <Link to='/help-center' className='underline underline-offset-4'>Get help</Link>
                         </div>
                         <p id='modal-footer' className='text-gray-500'>By clicking "Sign in", you accept Medium's <Link to='' className='underline underline-offset-4'>Terms of Service</Link> and <Link to='' className='underline underline-offset-4'>Privacy Policy</Link>.</p>
                     </div>
