@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard'
 import Landing from './pages/Landing'
 import Help from './pages/Help'
 import TermsService from './pages/TermsService'
+import About from './pages/About'
 
 export default function Controller() {
   return (
@@ -14,6 +15,7 @@ export default function Controller() {
                 <Route path='/help-center' element= {<Help/>}></Route>'
                 <Route path='/dashboard' element = {<Dashboard/>}></Route>
                 <Route path='/terms-service' element = {<TermsService/>}></Route>
+                <Route path='/about-us' element = {<About/>}></Route>
             </Routes>
         </BrowserRouter>
     </div>

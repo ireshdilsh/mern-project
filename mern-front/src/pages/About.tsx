@@ -1,51 +1,40 @@
 import React, { useState } from 'react'
-import logo from '../assets/logo.png'
-import '../styles/landing.css'
-import { Link } from 'react-router-dom'
+import logo from '../assets/white-logo.png'
+import '../styles/about.css'
+import { Link, useNavigate, type NavigateFunction } from 'react-router-dom'
 
-export default function Landing() {
+export default function About() {
+
+    const navigate: NavigateFunction = useNavigate()
 
     const [openModel, setOpenModel] = useState<boolean>(false)
     const [openModelSignUp, setOpenModelSignUp] = useState<boolean>(false)
 
     return (
-        <div id='landing-page' className='flex justify-center items-center flex-col'>
-            <nav className='flex justify-between items-center w-full p-4 pl-40 pr-40 bg-white z-10 border-b border-black'>
-                <img src={logo} alt="" className='h-12' />
-                <div id='links' className='flex justify-center items-center gap-6'>
-                    <a href="">Our Story</a>
-                    <a href="">Membership</a>
-                    <a href="#" onClick={() => { setOpenModel(true) }}>Write</a>
-                    <a href="#" onClick={() => { setOpenModel(true) }}>Sign in</a>
-                    <button onClick={() => { setOpenModelSignUp(true); setOpenModel(false); }} className='bg-black text-white  pt-2 pb-2 pl-4.5 pr-4.5 rounded-3xl cursor-pointer'>Get Started</button>
+        <div id='about-page' className='flex flex-col justify-left items-start bg-black '>
+            <nav className='flex justify-between items-center w-full pl-40 pr-40 pt-5 pb-5 bg-black border-b border-b-white'>
+                <img src={logo} className='h-12 cursor-pointer' onClick={() => { navigate('/') }} alt="" />
+                <div className='flex justify-center items-center gap-3.5'>
+                    <button onClick={()=>{setOpenModel(true)}} className='cursor-pointer text-sm text-white border border-white rounded-4xl pt-1.5 pb-1.5 pl-4 pr-4'>Sign in</button>
+                    <button onClick={()=>{setOpenModelSignUp(true)}} className='cursor-pointer text-sm bg-white text-black rounded-4xl pt-1.5 pb-1.5 pl-4 pr-4'>Sign up</button>
                 </div>
             </nav>
 
-            <section id='landing-body' className='mt-10 flex justify-between items-center w-full pl-40 border-b border-black'>
-                <div id='left-side' className=''>
-                    <h1 className='tracking-tighter leading-30'>Words <br /> Minds & Ideas</h1>
-                    <p className='text-xl text-gray-600 mb-8 mt-2'>Create meaningful stories, connect hearts, and share your passion with everyone.</p>
-                    <button onClick={() => { setOpenModel(true) }} className='bg-black text-white pt-2.5 pb-2.5 outline-none border-none pl-12 pr-12 rounded-4xl cursor-pointer text-lg font-semibold'>Start reading</button>
-                </div>
-                <div id='right-side'>
-                    <img src="https://miro.medium.com/v2/format:webp/4*SdjkdS98aKH76I8eD0_qjw.png" alt="" className='scale-120 mr-10 pb-4' />
-                </div>
-            </section>
+            <h1 id='title' className='text-8xl text-white tracking-tighter pr-40 pl-40 mt-30'>Everyone has a <br /> story to tell</h1>
 
-            <section id='landing-footer' className='flex justify-center items-center w-full z-0 bg-white'>
-                <div className="mt-6 flex gap-5 text-gray-500 z-10 ">
-                    <Link to="/help-center">Help</Link>
-                    <Link to="/home">Status</Link>
-                    <Link to="/about-us">About</Link>
-                    <Link to="/home">Careers</Link>
-                    <Link to="/home">Press</Link>
-                    <Link to="/home">Status</Link>
-                    <Link to="/home">Privacy</Link>
-                    <Link to="/home">Rules</Link>
-                    <Link to="/terms-service">Terms</Link>
-                </div>
-            </section>
+            <p className='text-xl pl-40 pr-180 mt-9 text-white leading-8'>Medium is a home for human stories and ideas. Here, anyone can share knowledge and wisdom with the world—without having to build a mailing list or a following first. The internet is noisy and chaotic; Medium is quiet yet full of insight. It’s simple, beautiful, collaborative, and helps you find the right readers for whatever you have to say.</p>
+            <br /><br />
+            <span className='text-3xl pl-40 pr-180 mt-9 text-white'>Ultimately, our goal is to deepen our collective understanding of the world through the power of writing.</span>
+            <br /><br />
+            <p className='text-xl pl-40 pr-180 mt-5 text-white leading-8'>
+                We believe that what you read and write matters. Words can divide or empower us, inspire or discourage us. In a world where the most sensational and surface-level stories often win, we’re building a system that rewards depth, nuance, and time well spent. A space for thoughtful conversation more than drive-by takes, and substance over packaging.
+                <br /><br />
+                Over 100 million people connect and share their wisdom on Medium every month. They’re software developers, amateur novelists, product designers, CEOs, and anyone burning with a story they need to get out into the world. They write about what they’re working on, what’s keeping them up at night, what they’ve lived through, and what they’ve learned that the rest of us might want to know too.
+                <br /><br />
+                Instead of selling ads or selling your data, we’re supported by a growing community of over a million Medium members who believe in our mission. If you’re new here, start reading. Dive deeper into whatever matters to you. Find a post that helps you learn something new, or reconsider something familiar—and then write your story.
+            </p>
 
+            
             {/* Sign in modal */}
             {openModel && (
                 <div>
@@ -94,4 +83,3 @@ export default function Landing() {
         </div>
     )
 }
-
