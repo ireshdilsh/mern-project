@@ -14,18 +14,49 @@ export default function TermsService() {
             <nav className='pl-40 pr-40 pt-4 pb-4 border-b-3 border-green-500 w-full flex justify-between items-center'>
                 <img src={logo} alt="" className='h-12' onClick={() => { navigate('/') }} />
                 <div className='flex gap-5 items-center justify-center'>
-                    <button onClick={()=>{setOpenModel(true)}} className='flex items-center text-sm gap-2 text-gray-500 cursor-pointer'><img src="https://img.icons8.com/?size=100&id=NNvh71bQhaH2&format=png&color=99a1af" alt="" className='h-5' />write</button>
-                    <button onClick={()=>{setOpenModelSignUp(true)}} className='bg-green-700 text-white text-sm rounded-4xl pl-3 pr-3 pt-1.5 pb-1.5 cursor-pointer'>Sign up</button>
-                    <button onClick={()=>{setOpenModel(true)}} className='text-gray-500 text-sm cursor-pointer'>Sign in</button>
+                    <button onClick={() => { setOpenModel(true) }} className='flex items-center text-sm gap-2 text-gray-500 cursor-pointer'><img src="https://img.icons8.com/?size=100&id=NNvh71bQhaH2&format=png&color=99a1af" alt="" className='h-5' />write</button>
+                    <button onClick={() => { setOpenModelSignUp(true) }} className='bg-green-700 text-white text-sm rounded-4xl pl-3 pr-3 pt-1.5 pb-1.5 cursor-pointer'>Sign up</button>
+                    <button onClick={() => { setOpenModel(true) }} className='text-gray-500 text-sm cursor-pointer'>Sign in</button>
                 </div>
             </nav>
 
             <h1 className='pl-40 pr-40 border-b border-gray-100 w-full font-medium text-xl pt-3.5 pb-3.5' onClick={() => { navigate('/') }}>currents. policy</h1>
 
-            <div className='-mt-5 pl-40 pr-40'>
-                <h1 className='mt-15 text-5xl font-bold tracking-tighter'>currents. Terms of Service</h1>
-                <p className='text-2xl text-gray-400 mt-2'>Effective: September 1, 2020</p>
-                <p className='text-sm text-gray-400 mt-1.5'>12 min read · Sep 2, 2020</p>
+            <div className='pl-40 pr-40 flex justify-center gap-24'>
+                <div className='flex flex-col mt-19'>
+                    <p className='text-gray-400 font-medium text-sm'>Terms of Service, Rules, and Policies</p>
+                </div>
+                <div className='flex flex-col w-full'>
+                    <h1 className='mt-15 text-5xl font-bold tracking-tighter'>currents. Terms of Service</h1>
+                    <p className='text-2xl text-gray-400 mt-2'>Effective: September 1, 2020</p>
+                    <p className='text-sm text-gray-400 mt-1.5'>12 min read · Sep 2, 2020</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+                    <br /><br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
+
+                </div>
             </div>
 
             {/* Sign in modal */}
