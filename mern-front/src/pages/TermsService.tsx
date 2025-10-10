@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import logo from '../assets/logo.png'
 import { Link, useNavigate, type NavigateFunction } from 'react-router-dom'
+import '../styles/termsandservice.css'
 
 export default function TermsService() {
 
@@ -29,33 +30,24 @@ export default function TermsService() {
                 <div className='flex flex-col w-full'>
                     <h1 className='mt-15 text-5xl font-bold tracking-tighter'>currents. Terms of Service</h1>
                     <p className='text-2xl text-gray-400 mt-2'>Effective: September 1, 2020</p>
-                    <p className='text-sm text-gray-400 mt-1.5'>12 min read · Sep 2, 2020</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-                    <br /><br />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis alias. Dolorum ipsa consequatur, sit, illum perspiciatis deserunt eum voluptatum libero necessitatibus, explicabo ratione incidunt voluptate! Doloremque, qui voluptate.</p>
-
+                    <p className='text-sm text-gray-400 mt-1.5 border-b border-gray-100 pb-5'>12 min read · Sep 2, 2020</p>
+                    <p id='terms-tenses' className='mt-4 text-xl leading-8 '>
+                        <span className='italic font-black tracking-tighter'>You can see our previous Terms here.</span> <br />
+                        <br />
+                        Thanks for using Medium. Our mission is to deepen people’s understanding of the world and spread ideas that matter.
+                        <br /><br />
+                        These Terms of Service (“Terms”) apply to your access to and use of the websites, mobile applications and other online products and services (collectively, the “Services”) provided <span className='font-black'>by A Medium Corporation (“Medium” or “we”). By clicking your consent (e.g. “Continue,” “Sign-in,” or “Sign-up,”) or by using our Services, you agree to these Terms, including the mandatory arbitration provision and class action waiver in the Resolving Disputes; Binding Arbitration Section.</span>
+                        <br /><br />
+                        Our Privacy Policy explains how we collect and use your information while our Rules outline your responsibilities when using our Services. By using our Services, you’re agreeing to be bound by these Terms and our Rules. Please see our Privacy Policy for information about how we collect, use, share and otherwise process information about you.
+                        <br /><br />
+                        If you have any questions about these Terms or our Services, please contact us at legal@medium.com.
+                    </p>
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Your Account and Responsibilities</p>
+                    <p id='terms-tenses' className='mt-4 text-xl leading-8 '>
+                        Medium may review your conduct and content for compliance with these Terms and our Rules, and reserves the right to remove any violating content.
+                        <br /><br />
+                        Medium reserves the right to delete or disable content alleged to be infringing the intellectual property rights of others, and to terminate accounts of repeat infringers. We respond to notices of alleged copyright infringement if they comply with the law; please report such notices using our Copyright Policy.
+                    </p>
                 </div>
             </div>
 
