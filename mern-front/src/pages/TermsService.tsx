@@ -56,7 +56,7 @@ export default function TermsService() {
                         <br /><br />
                         If you use the Services to access, collect, or use personal information about other Currents users ("Personal Information"), you agree to do so in compliance with applicable laws. You further agree not to sell any Personal Information, where the term "sell" has the meaning given to it under applicable laws.
                         <br /><br />
-For Personal Information you provide to us (e.g. as a Newsletter Editor), you represent and warrant that you have lawfully collected the Personal Information and that you or a third party has provided all required notices and collected all required consents before collecting the Personal Information. You further represent and warrant that Currents's use of such Personal Information in accordance with the purposes for which you provided us the Personal Information will not violate, misappropriate or infringe any rights of another (including intellectual property rights or privacy rights) and will not cause us to violate any applicable laws.
+                        For Personal Information you provide to us (e.g. as a Newsletter Editor), you represent and warrant that you have lawfully collected the Personal Information and that you or a third party has provided all required notices and collected all required consents before collecting the Personal Information. You further represent and warrant that Currents's use of such Personal Information in accordance with the purposes for which you provided us the Personal Information will not violate, misappropriate or infringe any rights of another (including intellectual property rights or privacy rights) and will not cause us to violate any applicable laws.
                     </p>
 
                     <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>User Content on the Services</p>
@@ -192,9 +192,21 @@ For Personal Information you provide to us (e.g. as a Newsletter Editor), you re
                         </div>
                         <p id='modal-footer' className='text-gray-500'>By clicking "Sign up", you accept Currents's <Link to='/terms-service' className='underline underline-offset-4'>Terms of Service</Link> and <Link to='' className='underline underline-offset-4'>Privacy Policy</Link>.</p>
                     </div>
-                    
+
                 </div>
             )}
+
+            <div id='terms-page' className='flex justify-center items-center border-t border-t-gray-200 w-full gap-5 -mt-2.5 pt-5 pb-5'>
+                <Link className='text-gray-500' to="/home">Help</Link>
+                <Link className='text-gray-500' to="/home">Status</Link>
+                <Link className='text-gray-500' to="/home">About</Link>
+                <Link className='text-gray-500' to="/home">Careers</Link>
+                <Link className='text-gray-500' to="/home">Press</Link>
+                <Link className='text-gray-500' to="/home">Status</Link>
+                <Link className='text-gray-500' to="/home">Privacy</Link>
+                <Link className='text-gray-500' to="/home">Rules</Link>
+                <Link className='text-gray-500' to="/home">Terms</Link>
+            </div>
         </div>
     )
 }
