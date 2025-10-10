@@ -192,6 +192,7 @@ For Personal Information you provide to us (e.g. as a Newsletter Editor), you re
                         </div>
                         <p id='modal-footer' className='text-gray-500'>By clicking "Sign up", you accept Currents's <Link to='/terms-service' className='underline underline-offset-4'>Terms of Service</Link> and <Link to='' className='underline underline-offset-4'>Privacy Policy</Link>.</p>
                     </div>
+                    
                 </div>
             )}
         </div>
