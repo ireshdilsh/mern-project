@@ -12,7 +12,7 @@ export default function Help() {
                 <img onClick={() => { navigate('/') }} src={logo} className='h-12 cursor-pointer' alt="" />
                 <div className='flex justify-center items-center gap-3.5'>
                     <Link to='/' className='text-white text-sm'>Back to currents.</Link>
-                    <button className='text-white border text-sm border-white rounded-3xl px-4 py-2'>Submit a request</button>
+                    <button className='text-white border text-sm border-white rounded-3xl px-4 py-2 cursor-pointer'>Submit a request</button>
                 </div>
             </nav>
 
