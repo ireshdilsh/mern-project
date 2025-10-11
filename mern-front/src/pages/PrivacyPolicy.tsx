@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import logo from '../assets/logo.png'
 import { Link, useNavigate, type NavigateFunction } from 'react-router-dom'
+import logo from '../assets/logo.png'
 import '../styles/termsandservice.css'
 
-export default function TermsService() {
+export default function PrivacyPolicy() {
 
     const navigate: NavigateFunction = useNavigate()
 
@@ -21,7 +21,7 @@ export default function TermsService() {
                 </div>
             </nav>
 
-            <h1 className='cursor-pointer pl-40 pr-40 border-b border-gray-100 w-full font-medium text-xl pt-3.5 pb-3.5' onClick={() => { navigate('/') }}>currents. policy</h1>
+            <h1 className='pl-40 pr-40 border-b border-gray-100 w-full cursor-pointer font-medium text-xl pt-3.5 pb-3.5' onClick={() => { navigate('/') }}>currents. policy</h1>
 
             <div className='pl-40 pr-40 flex justify-center gap-24'>
                 <div className='flex flex-col mt-19'>
@@ -31,9 +31,9 @@ export default function TermsService() {
                     <p className='text-gray-400 font-medium text-sm'>Terms of Service, Rules, and Policies</p>
                 </div>
                 <div className='flex flex-col w-full'>
-                    <h1 className='mt-15 text-5xl font-bold tracking-tighter'>currents. Terms of Service</h1>
-                    <p className='text-2xl text-gray-400 mt-2'>Effective: September 1, 2020</p>
-                    <p className='text-sm text-gray-400 mt-1.5 border-b border-gray-100 pb-5'>12 min read · Sep 2, 2020</p>
+                    <h1 className='mt-15 text-5xl font-bold tracking-tighter'>currents. Privacy Policy</h1>
+                    <p className='text-2xl text-gray-400 mt-2'>Effective: March 24, 2022</p>
+                    <p className='text-sm text-gray-400 mt-1.5 border-b border-gray-100 pb-5'>11 min read · Sep 2, 2020</p>
                     <p id='terms-tenses' className='mt-4 text-xl leading-8 '>
                         <span className='italic font-black tracking-tighter'>You can see our previous Terms here.</span> <br />
                         <br />

@@ -40,7 +40,7 @@ export default function Landing() {
                     <Link to="/home">Careers</Link>
                     <Link to="/home">Press</Link>
                     <Link to="/home">Status</Link>
-                    <Link to="/home">Privacy</Link>
+                    <Link to="/privacy-policy">Privacy</Link>
                     <Link to="/home">Rules</Link>
                     <Link to="/terms-service">Terms</Link>
                 </div>
@@ -66,7 +66,7 @@ export default function Landing() {
                             <p>Forgot email or trouble signing in? </p>
                             <Link to='/help-center' className='underline underline-offset-4'>Get help</Link>
                         </div>
-                        <p id='modal-footer' className='text-gray-500'>By clicking "Sign in", you accept Currents's <Link to='/terms-service' className='underline underline-offset-4'>Terms of Service</Link> and <Link to='' className='underline underline-offset-4'>Privacy Policy</Link>.</p>
+                        <p id='modal-footer' className='text-gray-500'>By clicking "Sign in", you accept Currents's <Link to='/terms-service' className='underline underline-offset-4'>Terms of Service</Link> and <Link to='/privacy-policy' className='underline underline-offset-4'>Privacy Policy</Link>.</p>
                     </div>
                 </div>
             )}
@@ -87,7 +87,7 @@ export default function Landing() {
                             <p>Already have an account?</p>
                             <a href='#' onClick={() => { setOpenModel(true); setOpenModelSignUp(false) }} className='underline underline-offset-4'>Sign in</a>
                         </div>
-                        <p id='modal-footer' className='text-gray-500'>By clicking "Sign up", you accept Currents's <Link to='/terms-service' className='underline underline-offset-4'>Terms of Service</Link> and <Link to='' className='underline underline-offset-4'>Privacy Policy</Link>.</p>
+                        <p id='modal-footer' className='text-gray-500'>By clicking "Sign up", you accept Currents's <Link to='/terms-service' className='underline underline-offset-4'>Terms of Service</Link> and <Link to='/privacy-policy' className='underline underline-offset-4'>Privacy Policy</Link>.</p>
                     </div>
                 </div>
             )}
