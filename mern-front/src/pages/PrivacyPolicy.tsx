@@ -35,20 +35,21 @@ export default function PrivacyPolicy() {
                     <p className='text-2xl text-gray-400 mt-2'>Effective: March 24, 2022</p>
                     <p className='text-sm text-gray-400 mt-1.5 border-b border-gray-100 pb-5'>11 min read · Sep 2, 2020</p>
                     <p id='terms-tenses' className='mt-4 text-xl leading-8 '>
-                        <span className='italic font-black tracking-tighter'>You can see our previous Terms here.</span> <br />
+                        <span className='italic font-black tracking-tighter'>You can see our previous Privacy Policy here.</span> <br />
                         <br />
-                        Thanks for using Currents. Our mission is to deepen people's understanding of the world and spread ideas that matter.
+                        This Privacy Policy explains how Currents Corporation ("Currents," "we," or "us") collects, uses, and discloses information about you. This Privacy Policy applies when you use our websites, mobile applications, and other online products and services that link to this Privacy Policy (collectively, our "Services"), contact our customer service team, engage with us on social media, or otherwise interact with us.
                         <br /><br />
-                        These Terms of Service ("Terms") apply to your access to and use of the websites, mobile applications and other online products and services (collectively, the "Services") provided <span className='font-black'>by A Currents Corporation ("Currents" or "we"). By clicking your consent (e.g. "Continue," "Sign-in," or "Sign-up,") or by using our Services, you agree to these Terms, including the mandatory arbitration provision and class action waiver in the Resolving Disputes; Binding Arbitration Section.</span>
+                        We may change this Privacy Policy from time to time. If we make changes, we will notify you by revising the date at the top of this policy and, in some cases, we may provide you with additional notice (such as adding a statement to our website or providing you with a notification). We encourage you to review this Privacy Policy regularly to stay informed about our information practices and the choices available to you.
                         <br /><br />
-                        Our Privacy Policy explains how we collect and use your information while our Rules outline your responsibilities when using our Services. By using our Services, you’re agreeing to be bound by these Terms and our Rules. Please see our Privacy Policy for information about how we collect, use, share and otherwise process information about you.
+                        We collect information you provide directly to us. For example, you share information directly with us when you create an account, fill out a form, submit or post content through our Services, purchase a membership, communicate with us via third-party platforms, request customer support, or otherwise communicate with us. The types of personal information we may collect include your name, display name, username, bio, email address, business information, your content, including your avatar image, photos, posts, responses, and series published by you, and any other information you choose to provide.
                         <br /><br />
-                        If you have any questions about these Terms or our Services, please contact us at legal@currents.com.
+                        In some cases, we may also collect information you provide about others, such as when you purchase a Currents membership as a gift for someone. We will use this information to fulfill your request and will not send communications to your contacts unrelated to your request, unless they separately consent to receive communications from us or otherwise engage with us.
+
+                        We do not collect payment information through our Services. We rely on third parties to process payments in connection with our Services. Any information you provide to facilitate such a payment is subject to the third-party payment processor’s privacy policy, and we encourage you to review this policy before you provide any information to the payment processor.
                     </p>
-                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Your Account and Responsibilities</p>
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Information We Collect from Other Sources</p>
                     <p id='terms-tenses' className='mt-8 text-xl leading-8 '>
-                        You’re responsible for your use of the Services and any content you provide, including compliance with applicable laws. Content on the Services may be protected by others’ intellectual property rights. Please don’t copy, upload, download, or share content unless you have the right to do so.
-                        <br /><br />
+                        We obtain information from third-party sources. For example, we may collect information about you from social networks, accounting services providers and data analytics providers. Additionally, if you create or log into your Currents account through a third-party platform (such as Apple, Facebook, Google, or Twitter), we will have access to certain information from that platform, such as your name, lists of friends or followers, birthday, and profile picture, in accordance with the authorization procedures determined by such platform.                        <br /><br />
                         Your use of the Services must comply with our Rules.
                         <br /><br />
                         You may need to register for an account to access some or all of our Services. Help us keep your account protected. Safeguard your password to the account, and keep your account information current. We recommend that you do not share your password with others.
@@ -62,28 +63,14 @@ export default function PrivacyPolicy() {
                         For Personal Information you provide to us (e.g. as a Newsletter Editor), you represent and warrant that you have lawfully collected the Personal Information and that you or a third party has provided all required notices and collected all required consents before collecting the Personal Information. You further represent and warrant that Currents's use of such Personal Information in accordance with the purposes for which you provided us the Personal Information will not violate, misappropriate or infringe any rights of another (including intellectual property rights or privacy rights) and will not cause us to violate any applicable laws.
                     </p>
 
-                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>User Content on the Services</p>
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>THIRD-PARTY EMBEDS</p>
                     <p id='terms-tenses' className='mt-8 text-xl leading-8 '>
-                        Currents may review your conduct and content for compliance with these Terms and our Rules, and reserves the right to remove any violating content.
-                        <br /><br />
-                        Currents reserves the right to delete or disable content alleged to be infringing the intellectual property rights of others, and to terminate accounts of repeat infringers. We respond to notices of alleged copyright infringement if they comply with the law; please report such notices using our Copyright Policy.
+                        Currents does not host some of the content displayed on our Services. Users have the ability to post content that is actually hosted by a third party, but is embedded in our pages (an "Embed"). When you interact with an Embed, it can send information about your interaction to the hosting third party just as if you were visiting the third party's site directly. For example, when you load a Currents post page with a YouTube video Embed and watch the video, YouTube receives information about your activity, such as your IP address and how much of the video you watch. Currents does not control what information third parties collect through Embeds or what they do with the information. This Privacy Policy does not apply to information collected through Embeds. The privacy policy belonging to the third party hosting the Embed applies to any information the Embed collects, and we recommend you review that policy before interacting with the Embed.
                     </p>
 
-                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Rights and Ownership</p>
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>TRANSFER OF INFORMATION TO THE UNITED STATES AND OTHER COUNTRIES</p>
                     <p id='terms-tenses' className='mt-8 text-xl leading-8 '>
-                        You retain your rights to any content you submit, post or display on or through the Services.
-                        <br /><br />
-                        Unless otherwise agreed in writing, by submitting, posting, or displaying content on or through the Services, you grant Currents a nonexclusive, royalty-free, worldwide, fully paid, and sublicensable license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, publicly perform and display your content and any name, username or likeness provided in connection with your content in all media formats and distribution methods now known or later developed on the Services.
-                        <br /><br />
-                        Currents needs this license because you own your content and Currents therefore can't display it across its various surfaces (i.e., mobile, web) without your permission.
-                        <br /><br />
-                        This type of license also is needed to distribute your content across our Services. For example, you post a story on Currents. It is reproduced as versions on both our website and app, and distributed to multiple places within Currents, such as the homepage or reading lists. A modification might be that we show a snippet of your work (and not the full post) in a preview, with attribution to you. A derivative work might be a list of top authors or quotes on Currents that uses portions of your content, again with full attribution. This license applies to our Services only, and does not grant us any permissions outside of our Services.
-                        <br /><br />
-                        So long as you comply with these Terms, Currents gives you a limited, personal, non-exclusive, and non-assignable license to access and use our Services.
-                        <br /><br />
-                        The Services are protected by copyright, trademark, and other US and foreign laws. These Terms don't grant you any right, title or interest in the Services, other users' content on the Services, or Currents trademarks, logos or other brand features.
-                        <br /><br />
-                        Separate and apart from the content you submit, post or display on our Services, we welcome feedback, including any comments, ideas and suggestions you have about our Services. We may use this feedback for any purpose, in our sole discretion, without any obligation to you. We may treat feedback as nonconfidential.
+                        Currents is headquartered in the United States, and we have operations and service providers in the United States and other countries. Therefore, we and our service providers may transfer your personal information to, or store or access it in, jurisdictions that may not provide levels of data protection that are equivalent to those of your home jurisdiction. For example, we transfer personal data to Amazon Web Services, one of our service providers that processes personal information for us in various data center locations across the globe, including those listed here. We will take steps to ensure that your personal information receives an adequate level of protection in the jurisdictions in which we process it.
                     </p>
 
                     <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Termination</p>
@@ -91,14 +78,14 @@ export default function PrivacyPolicy() {
                         You're free to stop using our Services at any time. We reserve the right to suspend or terminate your access to the Services with or without notice.
                     </p>
 
-                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Transfer and Processing Data</p>
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Communications Preferences</p>
                     <p id='terms-tenses' className='mt-8 text-xl leading-8'>
-                        In order for us to provide our Services, you agree that we may process, transfer and store information about you in the US and other countries, where you may not have the same rights and protections as you do under local law.
+                        You may opt out of receiving certain communications from us, such as digests, newsletters, and activity notifications, by following the instructions in those communications or through your account’s Settings page. If you opt out, we may still send you administrative emails, such as those about your account or our ongoing business relations.
                     </p>
 
-                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Indemnification</p>
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>YOUR CALIFORNIA PRIVACY RIGHTS</p>
                     <p id='terms-tenses' className='mt-8 text-xl leading-8'>
-                        To the fullest extent permitted by applicable law, you will indemnify, defend and hold harmless Currents, and our officers, directors, agents, partners and employees (individually and collectively, the "Currents Parties") from and against any losses, liabilities, claims, demands, damages, expenses or costs ("Claims") arising out of or related to your violation, misappropriation or infringement of any rights of another (including intellectual property rights or privacy rights) or your violation of the law. You agree to promptly notify Currents Parties of any third-party Claims, cooperate with Currents Parties in defending such Claims and pay all fees, costs and expenses associated with defending such Claims (including attorneys' fees). You also agree that the Currents Parties will have control of the defense or settlement, at Currents's sole option, of any third-party Claims.
+                        The California Consumer Privacy Act or “CCPA” (Cal. Civ. Code § 1798.100 et seq.) affords consumers residing in California certain rights with respect to their personal information. If you are a California resident, this section applies to you.
                     </p>
 
                     <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Disclaimers — Service is "As Is"</p>
@@ -106,14 +93,11 @@ export default function PrivacyPolicy() {
                         Currents aims to give you great Services but there are some things we can't guarantee. Your use of our Services is at your sole risk. You understand that our Services and any content posted or shared by users on the Services are provided "as is" and "as available" without warranties of any kind, either express or implied, including implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement. In addition, Currents doesn't represent or warrant that our Services are accurate, complete, reliable, current or error-free. No advice or information obtained from Currents or through the Services will create any warranty or representation not expressly made in this paragraph. Currents may provide information about third-party products, services, activities or events, or we may allow third parties to make their content and information available on or through our Services (collectively, "Third-Party Content"). We do not control or endorse, and we make no representations or warranties regarding, any Third-Party Content. You access and use Third-Party Content at your own risk. Some locations don't allow the disclaimers in this paragraph and so they might not apply to you.
                     </p>
 
-                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Limitation of Liability</p>
                     <p id='terms-tenses' className='mt-8 text-xl leading-8'>
-                        We don't exclude or limit our liability to you where it would be illegal to do so; this includes any liability for the gross negligence, fraud or intentional misconduct of Currents or the other Currents Parties in providing the Services. In countries where the following types of exclusions aren't allowed, we're responsible to you only for losses and damages that are a reasonably foreseeable result of our failure to use reasonable care and skill or our breach of our contract with you. This paragraph doesn't affect consumer rights that can't be waived or limited by any contract or agreement.
-                        <br /><br />
+Subject to certain limitations, you have the right to (1) request to know more about the categories and specific pieces of personal information we collect, use, and disclose about you, (2) request deletion of your personal information, (3) opt out of any sales of your personal information, if we engage in that activity in the future, and (4) not be discriminated against for exercising these rights. You may make these requests by emailing us at privacy@currents.com or by completing this webform. We will verify a webform request by asking you to provide identifying information. We will not discriminate against you if you exercise your rights under the CCPA.                        <br /><br />
                         In countries where exclusions or limitations of liability are allowed, Currents and Currents Parties won't be liable for:
                         <br /><br />
-                        (a) Any indirect, consequential, exemplary, incidental, punitive, or special damages, or any loss of use, data or profits, under any legal theory, even if Currents or the other Currents Parties have been advised of the possibility of such damages.
-                        <br /><br />
+If we receive your request from an authorized agent, we may ask for evidence that you have provided such agent with a power of attorney or that the agent otherwise has valid written authority to submit requests to exercise rights on your behalf. This may include requiring you to verify your identity. If you are an authorized agent seeking to make a request, please contact us.                        <br /><br />
                         (b) Other than for the types of liability we can't limit by law (as described in this section), we limit the total liability of Currents and the other Currents Parties for any claim arising out of or relating to these Terms or our Services, regardless of the form of the action, to the greater of $50.00 USD or the amount paid by you to use our Services.
                     </p>
 
@@ -138,6 +122,75 @@ export default function PrivacyPolicy() {
                     <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Amendments</p>
                     <p id='terms-tenses' className='mt-8 text-xl leading-8'>
                         We may make changes to these Terms from time to time. If we make changes, we'll provide you with notice of them by sending an email to the email address associated with your account, offering an in-product notification, or updating the date at the top of these Terms. Unless we say otherwise in our notice, the amended Terms will be effective immediately, and your continued use of our Services after we provide such notice will confirm your acceptance of the changes. If you don't agree to the amended Terms, you must stop using our Services.
+                    </p>
+
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>ADDITIONAL DISCLOSURES FOR INDIVIDUALS IN EUROPE</p>
+                    <p id='terms-tenses' className='mt-8 text-xl leading-8'>
+                        If you are located in the European Economic Area ("EEA"), the United Kingdom, or Switzerland, you have certain rights and protections under applicable law regarding the processing of your personal data, and this section applies to you.
+                    </p>
+
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Legal Basis for Processing</p>
+                    <p id='terms-tenses' className='mt-8 text-xl leading-8'>
+                        When we process your personal data, we will do so in reliance on the following lawful bases:
+                        <br /><br />
+                        • To perform our responsibilities under our contract with you (e.g., providing the products and services you requested).
+                        <br /><br />
+                        • When we have a legitimate interest in processing your personal data to operate our business or protect our interests (e.g., to provide, maintain, and improve our products and services, conduct data analytics, and communicate with you).
+                        <br /><br />
+                        • To comply with our legal obligations (e.g., to maintain a record of your consents and track those who have opted out of non-administrative communications).
+                        <br /><br />
+                        • When we have your consent to do so (e.g., when you opt in to receive non-administrative communications from us). When consent is the legal basis for our processing your personal data, you may withdraw such consent at any time.
+                    </p>
+
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Data Retention</p>
+                    <p id='terms-tenses' className='mt-8 text-xl leading-8'>
+                        We store personal data associated with your account for as long as your account remains active. If you close your account, we will delete your account data within 14 days. We store other personal data for as long as necessary to carry out the purposes for which we originally collected it and for other legitimate business purposes, including to meet our legal, regulatory, or other compliance obligations.
+                    </p>
+
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Data Subject Requests</p>
+                    <p id='terms-tenses' className='mt-8 text-xl leading-8'>
+                        Subject to certain limitations, you have the right to request access to the personal data we hold about you and to receive your data in a portable format, the right to ask that your personal data be corrected or erased, and the right to object to, or request that we restrict, certain processing. To exercise your rights:
+                        <br /><br />
+                        • If you sign up for a Currents account, you may at any time request an export of your personal information from the Settings page, or by going to Settings and then selecting Account within our app.
+                        <br /><br />
+                        • You may correct information associated with your account from the Settings page, or by going to Settings and then selecting Account within our app, and the Customize Your Interests page to update your interests.
+                        <br /><br />
+                        • You may withdraw consent by deleting your account at any time through the Settings page, or by going to Settings and then selecting Account within our app (except to the extent Currents is prevented by law from deleting your information).
+                        <br /><br />
+                        • You may object at any time to the use of your personal data by contacting privacy@currents.com.
+                    </p>
+
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Questions or Complaints</p>
+                    <p id='terms-tenses' className='mt-8 text-xl leading-8'>
+                        If you have a concern about our processing of personal data that we are not able to resolve, you have the right to lodge a complaint with the Data Protection Authority where you reside. Contact details for your Data Protection Authority can be found using the links below:
+                        <br /><br />
+                        <strong>For individuals in the EEA:</strong><br />
+                        <a href="https://edpb.europa.eu/about-edpb/board/members_en" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">https://edpb.europa.eu/about-edpb/board/members_en</a>
+                        <br /><br />
+                        <strong>For individuals in the UK:</strong><br />
+                        <a href="https://ico.org.uk/global/contact-us/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">https://ico.org.uk/global/contact-us/</a>
+                        <br /><br />
+                        <strong>For individuals in Switzerland:</strong><br />
+                        <a href="https://www.edoeb.admin.ch/edoeb/en/home/the-fdpic/contact.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">https://www.edoeb.admin.ch/edoeb/en/home/the-fdpic/contact.html</a>
+                    </p>
+
+                    <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>CONTACT US</p>
+                    <p id='terms-tenses' className='mt-8 text-xl leading-8'>
+                        If you have any questions about this Privacy Policy, please contact us at <a href="mailto:privacy@currents.com" className="text-blue-600 underline hover:text-blue-800">privacy@currents.com</a>.
+                        <br /><br />
+                        If you are from the EEA or the United Kingdom and have questions about this Privacy Policy, please contact us at <a href="mailto:privacy@currents.com" className="text-blue-600 underline hover:text-blue-800">privacy@currents.com</a> or our privacy representatives as follows:
+                        <br /><br />
+                        <strong>Privacy representative for EEA</strong><br />
+                        Unit 3D North Point House<br />
+                        North Point Business Park<br />
+                        New Mallow Road<br />
+                        Cork T23AT2P<br />
+                        Ireland
+                        <br /><br />
+                        <strong>Privacy representative for the United Kingdom</strong><br />
+                        37 Albert Embankment<br />
+                        London SE1 7TL<br />
+                        United Kingdom
                     </p>
 
                     <p id='title' className='tracking-tighter text-2xl mt-10 font-bold'>Severability</p>
