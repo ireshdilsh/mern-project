@@ -7,6 +7,7 @@ import TermsService from './pages/TermsService'
 import About from './pages/About'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import Write from './pages/Write'
+import Notification from './pages/Notification'
 
 export default function Controller() {
   return (
@@ -20,6 +21,7 @@ export default function Controller() {
                 <Route path='/privacy-policy' element = {<PrivacyPolicy/>}></Route>
                 <Route path='/about-us' element = {<About/>}></Route>
                 <Route path='/write' element = {<Write/>}></Route>
+                <Route path='/notification' element = {<Notification/>}></Route>
             </Routes>
         </BrowserRouter>
     </div>
