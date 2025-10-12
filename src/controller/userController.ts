@@ -11,3 +11,13 @@ export const saveUser = async (req:any, res:any) => {
         res.status(500).json({ message: "Internal server error" });
     }
 }
+
+export const getUsers = async (req:any, res:any) => {
+    try {
+        const users = await User.find();
+        res.status(200).json({message:"Users retrieved successfully", users });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+}
