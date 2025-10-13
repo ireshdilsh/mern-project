@@ -15,7 +15,7 @@ export default function Landing() {
             <nav className='flex justify-between items-center w-full p-4 pl-40 pr-40 bg-white z-10 border-b border-black'>
                 <img src={logo} alt="" className='h-12' />
                 <div id='links' className='flex justify-center items-center gap-6'>
-                    <a href="">Our Story</a>
+                    <Link to="/about-us">Our Story</Link>
                     <a href="">Membership</a>
                     <a href="#" onClick={() => { setOpenModel(true) }}>Write</a>
                     <a href="#" onClick={() => { setOpenModel(true) }}>Sign in</a>
