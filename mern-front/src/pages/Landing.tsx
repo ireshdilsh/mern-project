@@ -7,7 +7,7 @@ import { useGoogleLogin } from '@react-oauth/google';
 interface GoogleUser {
     name: string,
     email: string,
-    img: string
+    picture: string
 }
 
 export default function Landing() {
@@ -25,7 +25,7 @@ export default function Landing() {
                 const user: GoogleUser = {
                     name: userInfo.name,
                     email: userInfo.email,
-                    img: userInfo.picture,
+                    picture: userInfo.picture,
                 };
 
                 localStorage.setItem("googleUser", JSON.stringify(user));
