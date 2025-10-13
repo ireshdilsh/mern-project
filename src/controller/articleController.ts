@@ -15,7 +15,7 @@ export const createArticle = async (req: any, res: any) => {
 export const getArticles = async (req: any, res: any) => {
     try {
         const articles = await Article.find();
-        res.status(200).json({message:"All Published Articles Here! ",articles})
+        res.status(200).json({message:"Articles retrieved successfully",articles})
     } catch (error) {
         console.log("Cannot fetch articles. ",error)
         res.status(500).json({ message: "Internal server error" });
