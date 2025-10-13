@@ -72,7 +72,6 @@ export default function Write() {
             <p className='text-sm text-gray-500 mt-3 '>More settings</p>
             <p className='text-sm text-gray-500 mt-3 '>Hints and keyboard shortcuts</p>
             <p className='text-sm text-gray-500 mt-3 '>More help</p>
-
           </div>
         </div>
       )}
@@ -85,7 +84,9 @@ export default function Write() {
             <p className=' text-gray-500 font-medium mt-2.5'>{googleUser?.email}</p>
             <p className='text-sm text-gray-500'>{googleUser?.name}</p>
             <hr className='w-full border border-gray-200 mt-4 mb-4' />
-            <p className=' text-gray-600 mt-3 cursor-pointer font-normal flex justify-center items-center gap-2.5'><img src="https://img.icons8.com/?size=100&id=84040&format=png&color=99a1af" className=' h-5' alt="" />Settings</p>
+            <p className='text-gray-600 text-sm text-justify bg-neutral-50 p-4 rounded-sm'>Library, Stories, and Stats are now <br /> in the new sidebar, for easy access <br /> to all your favorite parts of Medium.</p>
+            <p className=' text-gray-600 mt-5 cursor-pointer font-normal flex justify-center items-center gap-2.5'><img src="https://img.icons8.com/?size=100&id=84040&format=png&color=99a1af" className=' h-5' alt="" />Settings</p>
+            <p className=' text-gray-600 mt-5 cursor-pointer font-normal flex justify-center items-center gap-2.5' onClick={()=>{navigate('/help-center')}}><img src="https://img.icons8.com/?size=100&id=646&format=png&color=99a1af" className=' h-5 mt-1' alt="" />Help</p>
             <p className=' text-gray-600 cursor-pointer font-medium bg-neutral-100 w-62 pt-2 pb-2 rounded-sm mt-10  flex justify-center items-center gap-2.5 text-center' onClick={() => { localStorage.removeItem("googleUser"); setGoogleUser(null); navigate('/'); setProfilePopup(false) }}> <img src="https://img.icons8.com/?size=100&id=yYVvZRRwNT5v&format=png&color=99a1af" alt="" className='h-5 mt-0.5' /> Sign out</p>
           </div>
         </div>
