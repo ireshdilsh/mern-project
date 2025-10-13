@@ -2,6 +2,13 @@ import React, { useEffect, useState } from 'react'
 import logo from '../assets/logo.png'
 import { useNavigate, type NavigateFunction } from 'react-router-dom'
 import '../styles/write.css'
+import axios from 'axios';
+
+interface Article{
+  title: string;
+  content: string;
+  name: string;
+}
 
 export default function Write() {
 
@@ -37,6 +44,37 @@ export default function Write() {
 
   const [dotsModal, setDotsModal] = useState<boolean>(false)
 
+  const [title, setTitle] = useState<string>("")
+  const [content, setContent] = useState<string>("")
+
+  // Publish Article Functionality
+  const publishArticle = async (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    if (!title || !content) {
+      alert("Title and Content are required.");
+      return;
+    }
+
+    const newArticle: Article = {
+      title,
+      content,
+      name: googleUser ? googleUser.name : "Unknown Author",
+    }
+
+    try {
+      const resp = await axios.post('http://localhost:5000/api/v1/article/publish/new/article', newArticle);
+      if (resp.status === 201) {
+        alert("Article published successfully!");
+        setTitle("");
+        setContent("");
+      }
+    } catch (error) {
+      console.error("Error publishing article:", error);
+    }
+
+  }
+
   return (
     <div id='write-page' className='flex justify-left items-start flex-col'>
       <nav className='flex justify-between items-center w-full pl-40 pr-40 pt-4 pb-4'>
@@ -45,7 +83,7 @@ export default function Write() {
           <p className='text-sm'>Draft in Iresh Dilshan</p>
         </div>
         <div className='flex justify-center items-center gap-6'>
-          <button className='bg-green-700 text-white text-sm rounded-4xl pl-2.5 pr-2.5 pt-0.5 pb-0.5 cursor-pointer hover:bg-green-800'>Publish</button>
+          <button onClick={publishArticle} className='bg-green-700 text-white text-sm rounded-4xl pl-2.5 pr-2.5 pt-0.5 pb-0.5 cursor-pointer hover:bg-green-800'>Publish</button>
           <img src="https://img.icons8.com/?size=100&id=36944&format=png&color=99a1af" className='h-5 cursor-pointer' alt="3-dots" onClick={() => { setDotsModal(true); setProfilePopup(false) }} />
           <img src="https://img.icons8.com/?size=100&id=eMfeVHKyTnkc&format=png&color=99a1af" className='h-5 cursor-pointer' alt="notification-icon" />
           <div className='bg-pink-600 h-9 w-9 rounded-4xl flex justify-center items-center cursor-pointer' onClick={() => { setProfilePopup(true); setDotsModal(false) }}><p className='text-xl text-white font-medium'>{googleUser?.name.charAt(0)}</p></div>
@@ -53,8 +91,8 @@ export default function Write() {
       </nav>
 
       <div className='w-180 flex flex-col justify-left items-start ml-90 mr-100 mt-14 p-5' onClick={() => { setDotsModal(false) }}>
-        <input type="text" className='w-190 text-5xl outline-none' placeholder='Title' />
-        <textarea className='text-2xl w-190 outline-none mt-8 h-105' placeholder='Tell your story ...'></textarea>
+        <input value={title} onChange={(e)=>{setTitle(e.target.value)}} type="text" className='w-190 text-5xl outline-none' placeholder='Title' />
+        <textarea value={content} onChange={(e)=>{setContent(e.target.value)}} className='text-2xl w-190 outline-none mt-8 h-105' placeholder='Tell your story ...'></textarea>
       </div>
 
       {dotsModal && (
@@ -86,7 +124,7 @@ export default function Write() {
             <hr className='w-full border border-gray-200 mt-4 mb-4' />
             <p className='text-gray-600 text-sm text-justify bg-neutral-50 p-4 rounded-sm'>Library, Stories, and Stats are now <br /> in the new sidebar, for easy access <br /> to all your favorite parts of Medium.</p>
             <p className=' text-gray-600 mt-5 cursor-pointer font-normal flex justify-center items-center gap-2.5'><img src="https://img.icons8.com/?size=100&id=84040&format=png&color=99a1af" className=' h-5' alt="" />Settings</p>
-            <p className=' text-gray-600 mt-5 cursor-pointer font-normal flex justify-center items-center gap-2.5' onClick={()=>{navigate('/help-center')}}><img src="https://img.icons8.com/?size=100&id=646&format=png&color=99a1af" className=' h-5 mt-1' alt="" />Help</p>
+            <p className=' text-gray-600 mt-5 cursor-pointer font-normal flex justify-center items-center gap-2.5' onClick={() => { navigate('/help-center') }}><img src="https://img.icons8.com/?size=100&id=646&format=png&color=99a1af" className=' h-5 mt-1' alt="" />Help</p>
             <p className=' text-gray-600 cursor-pointer font-medium bg-neutral-100 w-62 pt-2 pb-2 rounded-sm mt-10  flex justify-center items-center gap-2.5 text-center' onClick={() => { localStorage.removeItem("googleUser"); setGoogleUser(null); navigate('/'); setProfilePopup(false) }}> <img src="https://img.icons8.com/?size=100&id=yYVvZRRwNT5v&format=png&color=99a1af" alt="" className='h-5 mt-0.5' /> Sign out</p>
           </div>
         </div>
