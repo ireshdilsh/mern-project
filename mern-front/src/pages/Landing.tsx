@@ -4,18 +4,42 @@ import '../styles/landing.css'
 import { Link, useNavigate, type NavigateFunction } from 'react-router-dom'
 import { useGoogleLogin } from '@react-oauth/google';
 
+interface GoogleUser {
+    name: string,
+    email: string,
+    img: string
+}
+
 export default function Landing() {
 
-    const navigate : NavigateFunction = useNavigate()
+    const navigate: NavigateFunction = useNavigate()
 
     const login = useGoogleLogin({
-        onSuccess: (tokenResponse) => {
-            console.log("Google Login Success:", tokenResponse);
-            navigate('/dashboard')
+        onSuccess: async (tokenResponse) => {
+            try {
+                // Fetch user info using the access token
+                const response = await fetch(`https://www.googleapis.com/oauth2/v2/userinfo?access_token=${tokenResponse.access_token}`);
+                const userInfo = await response.json();
+
+                // Create user object
+                const user: GoogleUser = {
+                    name: userInfo.name,
+                    email: userInfo.email,
+                    img: userInfo.picture,
+                };
+
+                localStorage.setItem("googleUser", JSON.stringify(user));
+                console.log("User saved:", user);
+                console.log("Login Successful:", tokenResponse);
+                navigate("/dashboard");
+            } catch (error) {
+                console.error("Error fetching user info:", error);
+                alert("Login failed, please try again.");
+            }
         },
         onError: () => {
             console.log("Login Failed");
-            alert('Something went wrong')
+            alert("Something went wrong");
         },
     });
 
