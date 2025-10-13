@@ -1,9 +1,23 @@
 import React, { useState } from 'react'
 import logo from '../assets/logo.png'
 import '../styles/landing.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, type NavigateFunction } from 'react-router-dom'
+import { useGoogleLogin } from '@react-oauth/google';
 
 export default function Landing() {
+
+    const navigate : NavigateFunction = useNavigate()
+
+    const login = useGoogleLogin({
+        onSuccess: (tokenResponse) => {
+            console.log("Google Login Success:", tokenResponse);
+            navigate('/dashboard')
+        },
+        onError: () => {
+            console.log("Login Failed");
+            alert('Something went wrong')
+        },
+    });
 
     const [openModel, setOpenModel] = useState<boolean>(false)
     const [openModelSignUp, setOpenModelSignUp] = useState<boolean>(false)
@@ -56,7 +70,7 @@ export default function Landing() {
                         <img src="https://img.icons8.com/?size=100&id=83149&format=png&color=000000" className='h-5 absolute top-6 right-5 cursor-pointer' onClick={() => { setOpenModel(false) }} alt="" />
                         <h1 className='text-3xl'>Welcome back.</h1>
                         <div className="flex flex-col gap-4 mt-8 mb-8">
-                            <button className='cursor-pointer relative border border-black rounded-4xl pt-2 pb-2 pl-16 pr-16 w-76'><img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" className='absolute left-4 top-1/2 transform -translate-y-1/2 h-6' alt="" />Sign in with Google</button>
+                            <button onClick={() => login()} className='cursor-pointer relative border border-black rounded-4xl pt-2 pb-2 pl-16 pr-16 w-76'><img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" className='absolute left-4 top-1/2 transform -translate-y-1/2 h-6' alt="" />Sign in with Google</button>
                             <button className='cursor-pointer relative border border-black rounded-4xl pt-2 pb-2 pl-16 pr-16 w-76'><img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" className='absolute left-4 top-1/2 transform -translate-y-1/2 h-7' alt="" />Sign in with Facebook</button>
                             <button onClick={() => { setEmailModal(true); setOpenModel(false) }} className='cursor-pointer relative border border-black rounded-4xl pt-2 pb-2 pl-16 pr-16 w-76'><img src="https://img.icons8.com/?size=100&id=12580&format=png&color=000000" className='absolute left-4 top-1/2 transform -translate-y-1/2 h-5.5' alt="" />Sign in with Email</button>
                         </div>
@@ -135,6 +149,3 @@ export default function Landing() {
         </div>
     )
 }
-
-// this image for continue with email for modal
-// https://miro.medium.com/v2/da:true/3e3f2c8aabad5bb10182c44f47176f83047662875df6ff780201f140e46aa1f9

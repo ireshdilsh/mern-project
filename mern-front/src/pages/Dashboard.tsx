@@ -9,7 +9,7 @@ export default function Dashboard() {
     <div className='flex flex-col justify-center items-center'>
       <nav className='pl-40 pr-40 pt-4 pb-4 border-b border-gray-200 w-full flex justify-between items-center'>
         <div className='flex justify-center items-center gap-8'>
-          <img src={logo} alt="" className='h-11 cursor-pointer' onClick={() => { navigate('/') }} />
+          <img src={logo} alt="" className='h-11'/>
           <input type="text" className='bg-neutral-100 outline-none h-11 w-56 rounded-4xl pl-6 pr-6' placeholder='search' />
         </div>
         <div className='flex gap-7 items-center justify-center'>
