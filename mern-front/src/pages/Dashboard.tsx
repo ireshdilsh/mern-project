@@ -27,5 +27,3 @@ export default function Dashboard() {
     </div>
   )
 }
-// this image for continue with email for modal
-// https://miro.medium.com/v2/da:true/3e3f2c8aabad5bb10182c44f47176f83047662875df6ff780201f140e46aa1f9
