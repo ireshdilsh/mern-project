@@ -21,3 +21,17 @@ export const getArticles = async (req: any, res: any) => {
         res.status(500).json({ message: "Internal server error" });
     }
 }
+
+export const getArticleById = async (req: any, res: any) => {
+    try {
+        const { id } = req.params;
+        const selectedArticle = await Article.findById(id);
+        if (!selectedArticle) {
+            return res.status(404).json({ message: "Article not found" });
+        }
+        res.status(200).json({ message: "Article retrieved successfully", article: selectedArticle });
+    } catch (error) {
+        console.log("Cannot fetch article by ID. ",error)
+        res.status(500).json({ message: "Internal server error" });
+    }
+}
