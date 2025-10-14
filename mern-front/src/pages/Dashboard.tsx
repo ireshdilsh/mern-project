@@ -53,7 +53,7 @@ export default function Dashboard() {
       <nav className='pl-40 pr-40 pt-4 pb-4 border-b border-gray-200 w-full flex justify-between items-center'>
         <div className='flex justify-center items-center gap-8'>
           <img src={logo} alt="" className='h-11' />
-          <input type="text" className='bg-neutral-100 outline-none h-11 w-56 rounded-4xl pl-6 pr-6' placeholder='search' />
+          <input type="text" className='bg-neutral-100 outline-none h-11 w-70 rounded-4xl pl-6 pr-6' placeholder='search' />
         </div>
         <div className='flex gap-7 items-center justify-center'>
           <button onClick={() => { navigate('/write') }} className='flex items-center gap-2 text-gray-500 cursor-pointer text-sm'><img src="https://img.icons8.com/?size=100&id=NNvh71bQhaH2&format=png&color=99a1af" alt="" className='h-5.5' />Write</button>
@@ -88,7 +88,7 @@ export default function Dashboard() {
                   <span style={{ fontFamily: 'Gabarito' }} className='text-sm text-gray-500'>by {blog.name || 'Anonymous'},{blog.title}</span>
                   <h2 style={{ fontFamily: 'Gabarito' }} className='w-170 text-3xl font-bold mt-2 mb-3 text-black hover:underline underline-offset-3 cursor-pointer'>{blog.title}</h2>
                   {blog.content && (
-                    <p style={{ fontFamily: 'Gabarito' }} className='mt-4 text-justify text-gray-600 text-base leading-relaxed mb-4 line-clamp-3'>{blog.content}</p>
+                    <p style={{ fontFamily: 'Gabarito' }} className='mt-4 text-justify text-gray-600 leading-relaxed mb-4 line-clamp-3'>{blog.content}</p>
                   )}
                   <div className='flex items-center justify-between text-sm text-gray-500'>
                     <span style={{ fontFamily: 'Gabarito' }}>{blog.date ? new Date(blog.date).toLocaleDateString() : 'Recent'}</span>
