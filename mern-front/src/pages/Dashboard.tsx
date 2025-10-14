@@ -62,11 +62,6 @@ export default function Dashboard() {
         </div>
       </nav>
 
-      <div className='bg-neutral-100 p-6 rounded-sm mt-5 mb-5 ml-80 mr-80'>
-        <p className='text-sm font-medium'>We’ve made some improvements to how you keep track of your favorite content and creators.
-          Your “Following” list and saved topics are now combined into the new Following Page, giving you a single place to explore all the updates you care about. </p>
-      </div>
-
       {profilePopup && (
         <div className='border border-gray-200 absolute top-19 right-30 rounded-sm bg-white'>
           <div className='pl-4 pr-4 pt-2 pb-4 cursor-pointer flex justify-center items-center flex-col'>
@@ -83,19 +78,27 @@ export default function Dashboard() {
         </div>
       )}
 
-      <div className='flex gap-32'>
-        <div className='pl-29'>
+      <div className='flex gap-0'>
+        <div className='pl-8 '>
           {articles && articles.length > 0 ? (
+            
             articles.map((blog, index) => (
-              <div className='mt-10 max-w-4xl' key={blog._id || blog.id || index}>
-                <div className='p-6 border-b border-b-gray-200'>
-                  <h2 className='text-3xl font-semibold mb-3 text-gray-800 hover:text-black cursor-pointer'>{blog.title}</h2>
+              <div className='mt-5 max-w-4xl' key={blog._id || blog.id || index}>
+                <div className='p-6 pr-8 border-b border-b-gray-200 -ml-9'>
+                  <span style={{ fontFamily: 'Gabarito' }} className='text-sm text-gray-500'>by {blog.name || 'Anonymous'},{blog.title}</span>
+                  <h2 style={{ fontFamily: 'Gabarito' }} className='w-170 text-3xl font-bold mt-2 mb-3 text-black hover:underline underline-offset-3 cursor-pointer'>{blog.title}</h2>
                   {blog.content && (
-                    <p style={{ fontFamily: 'Gabarito' }} className='mt-4 text-gray-600 text-base leading-relaxed mb-4 line-clamp-3'>{blog.content}</p>
+                    <p style={{ fontFamily: 'Gabarito' }} className='mt-4 text-justify text-gray-600 text-base leading-relaxed mb-4 line-clamp-3'>{blog.content}</p>
                   )}
                   <div className='flex items-center justify-between text-sm text-gray-500'>
-                    <span>{blog.name || 'Anonymous'}</span>
-                    <span>{blog.createdAt ? new Date(blog.createdAt).toLocaleDateString() : 'Recent'}</span>
+                    <span style={{ fontFamily: 'Gabarito' }}>{blog.date ? new Date(blog.date).toLocaleDateString() : 'Recent'}</span>
+                    <div className='flex justify-center items-center gap-5'>
+                      <img src="https://img.icons8.com/?size=100&id=prNrA4q2qZqx&format=png&color=99a1af" alt="like-icon" className='h-5'/>
+                      <p className='-ml-4'>12</p>
+                      <img src="https://img.icons8.com/?size=100&id=59999&format=png&color=99a1af" alt="coment-icon" className='h-5'/>
+                      <p className='-ml-4'>12</p>
+                      <img src="https://img.icons8.com/?size=100&id=123456&format=png&color=99a1af" alt="save-blog-icon" className='h-4'/>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -108,7 +111,9 @@ export default function Dashboard() {
             </div>
           )}
         </div>
-        <div className='w-80 border-l border-gray-200'></div>
+        <div className='w-80 border-l border-gray-200'>
+          <h1 className='text-2xl text-center mt-12 font-medium' style={{fontFamily:'Gabarito'}}>Recents Activities</h1>
+        </div>
       </div>
 
     </div>
