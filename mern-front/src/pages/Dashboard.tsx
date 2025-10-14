@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, type NavigateFunction } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import axios from 'axios'
 
 export default function Dashboard() {
 
@@ -12,6 +13,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     loadProfile()
+    loadAllArticles()
   }, []);
 
   const loadProfile = () => {
@@ -32,7 +34,18 @@ export default function Dashboard() {
         setGoogleUser(null);
       }
     }
+  }
 
+  const [articles, setArticles] = useState<any[]>([])
+
+  const loadAllArticles = async () => {
+    try {
+      const resp = await axios.get("http://localhost:5000/api/v1/article/get/all/published/articles")
+      setArticles(resp.data.articles)  // Changed from resp.data.data to resp.data.articles
+      console.log(resp.data, "articles loaded")
+    } catch (error) {
+      console.error("Error loading articles:", error);
+    }
   }
 
   return (
@@ -69,6 +82,35 @@ export default function Dashboard() {
           </div>
         </div>
       )}
+
+      <div className='flex gap-32'>
+        <div className='pl-29'>
+          {articles && articles.length > 0 ? (
+            articles.map((blog, index) => (
+              <div className='mt-10 max-w-4xl' key={blog._id || blog.id || index}>
+                <div className='p-6 border-b border-b-gray-200'>
+                  <h2 className='text-3xl font-semibold mb-3 text-gray-800 hover:text-black cursor-pointer'>{blog.title}</h2>
+                  {blog.content && (
+                    <p style={{ fontFamily: 'Gabarito' }} className='mt-4 text-gray-600 text-base leading-relaxed mb-4 line-clamp-3'>{blog.content}</p>
+                  )}
+                  <div className='flex items-center justify-between text-sm text-gray-500'>
+                    <span>{blog.name || 'Anonymous'}</span>
+                    <span>{blog.createdAt ? new Date(blog.createdAt).toLocaleDateString() : 'Recent'}</span>
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className='flex justify-center items-center flex-col mt-30'>
+              <h1 className='text-3xl text-gray-400 font-medium'>No Articles Found</h1>
+              <p className='text-gray-500 mt-2'>Check if your backend server is running on port 5000</p>
+              <img src="https://img.icons8.com/?size=100&id=45966&format=png&color=99a1af" alt="" className='h-30 mt-5' />
+            </div>
+          )}
+        </div>
+        <div className='w-80 border-l border-gray-200'></div>
+      </div>
+
     </div>
   )
 }
