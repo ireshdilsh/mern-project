@@ -17,13 +17,14 @@ export default function Landing() {
         </div>
       </nav>
 
-      <section className='flex justify-center items-center flex-col mt-30 px-50'>
-        <h1 className='text-7xl font-medium tracking-tighter leading-20 text-center'>Empowering <span>Developers to Share, Learn,</span> and Innovate.</h1>
+      <section className='flex justify-center items-center flex-col mt-33 px-50 relative'>
+        <h1 className='text-7xl font-medium tracking-tighter leading-20 text-center'>Empowering <span className='bg-gradient-to-r from-blue-600 via-purple-600 to-red-500 bg-clip-text text-transparent'>Developers to Share, Learn,</span> and Innovate.</h1>
         <p className=' text-neutral-500 text-center text-lg mt-4'>DevForum is a dedicated space for programmers and IT professionals to publish ideas, explore the latest tech trends, and connect with a global community of passionate developers. Share your knowledge, inspire others, and grow together in the ever-evolving world of technology.</p>
         <div className='flex justify-center items-center gap-8 mt-8'>
           <button className='bg-black text-xl text-white border-none rounded-4xl cursor-pointer px-10 py-3 font-medium w-52'>Join Now</button>
           <button className='cursor-pointer text-xl font-normal'>Start Reading</button>
         </div>
+        
       </section>
     </div>
   )
