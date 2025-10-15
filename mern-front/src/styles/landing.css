@@ -1,11 +1,5 @@
-#landing-page a{
-    font-family: 'Gabarito';
-}
-
-#landing-page h1{
-    font-family: 'Gabarito';
-}
-
+#landing-page a,
+#landing-page h1,
 #landing-page button{
     font-family: 'Gabarito';
 }
