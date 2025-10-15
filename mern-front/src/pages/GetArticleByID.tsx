@@ -83,7 +83,7 @@ export default function GetArticleByID() {
         <div className="whitespace-pre-line text-xl mt-8 font-medium text-justify" style={{ fontFamily: 'GT Super Text' }}>{article.content}</div>
         <hr className='border-none bg-neutral-200 w-full h-0.25 mt-20' />
         <h1 className='text-3xl font-medium mt-15 mb-15 ' style={{ fontFamily: 'Gabarito' }}>Responses (55)</h1>
-        <div className='flex justify-center items-center gap-5 mb-5'>
+        <div className='flex justify-center items-center gap-5 mb-4'>
           <div className='bg-pink-600 h-9 w-9 rounded-4xl flex justify-center items-center cursor-pointer'><p className='text-xl text-white font-medium'>{googleUser?.name.charAt(0)}</p></div>
            <p className='' style={{ fontFamily: 'Gabarito' }}>{googleUser?.name}</p>
         </div>
