@@ -8,6 +8,7 @@ import About from './pages/About'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import Write from './pages/Write'
 import Notification from './pages/Notification'
+import GetArticleByID from './pages/GetArticleByID'
 
 export default function Controller() {
   return (
@@ -22,6 +23,7 @@ export default function Controller() {
                 <Route path='/about-us' element = {<About/>}></Route>
                 <Route path='/write' element = {<Write/>}></Route>
                 <Route path='/notification' element = {<Notification/>}></Route>
+                <Route path='/fetch/article/by/id=/:id/and/title/:title' element = {<GetArticleByID/>}></Route>
             </Routes>
         </BrowserRouter>
     </div>

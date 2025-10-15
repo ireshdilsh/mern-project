@@ -86,7 +86,7 @@ export default function Dashboard() {
               <div className='mt-5 max-w-4xl' key={blog._id || blog.id || index}>
                 <div className='p-6 pr-8 border-b border-b-gray-200 -ml-9'>
                   <span style={{ fontFamily: 'Gabarito' }} className='text-sm text-gray-500'>by {blog.name || 'Anonymous'},{blog.title}</span>
-                  <h2 style={{ fontFamily: 'Gabarito' }} className='w-170 text-3xl font-bold mt-2 mb-3 text-black hover:underline underline-offset-3 cursor-pointer'>{blog.title}</h2>
+                  <h2 onClick={()=>{navigate(`/fetch/article/by/id=/${blog._id}/and/title/${blog.title}`)}} style={{ fontFamily: 'Gabarito' }} className='w-170 text-3xl font-bold mt-2 mb-3 text-black hover:underline underline-offset-3 cursor-pointer'>{blog.title}</h2>
                   {blog.content && (
                     <p style={{ fontFamily: 'Gabarito' }} className='mt-4 text-justify text-gray-600 leading-relaxed mb-4 line-clamp-3'>{blog.content}</p>
                   )}
