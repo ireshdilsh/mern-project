@@ -24,7 +24,10 @@ export default function Landing() {
           <button className='bg-black text-xl text-white border-none rounded-4xl cursor-pointer px-10 py-3 font-medium w-52'>Join Now</button>
           <button className='cursor-pointer text-xl font-normal'>Start Reading</button>
         </div>
-        
+        <div className='h-140 w-140 rounded-full absolute top-0 left-0 right-0 bottom-0 m-auto'>
+          <div className='h-20 w-20 rounded-full bg-amber-300 absolute top-20 left-20 blur-3xl'></div>
+          <div className='h-20 w-20 rounded-full bg-amber-300 absolute bottom-20 right-20 blur-3xl'></div>
+        </div>
       </section>
     </div>
   )
