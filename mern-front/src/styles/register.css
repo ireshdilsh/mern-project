@@ -1,4 +1,9 @@
 #register-page h1,
-#register-page button {
+#register-page button,
+#register-page a{
     font-family: 'Gabarito';
+}
+
+#register-page #last{
+    font-size: 13.5px;
 }

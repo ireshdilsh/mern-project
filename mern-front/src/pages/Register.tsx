@@ -15,10 +15,12 @@ export default function Register() {
                     <button className='flex justify-center items-center gap-4 cursor-pointer border border-neutral-300 rounded-3xl w-100 text-neutral-700 py-2.5'><img src="https://img.icons8.com/?size=100&id=uLWV5A9vXIPu&format=png&color=000000" alt="facebook-logo" className='h-7' /> Sign up with Facebook</button>
                     <button className='flex justify-center items-center gap-4 cursor-pointer border border-neutral-300 rounded-3xl w-100 text-neutral-700 py-2.5'><img src="https://img.icons8.com/?size=100&id=of3VL9FKzJuz&format=png&color=000000" alt="email-logo" className='h-7' /> Sign up with Email</button>
                 </div>
-                <div className='flex justify-between items-center gap-5 mt-8'>
+                <div className='flex justify-center items-center mt-8 gap-20'>
                     <p className='text-neutral-500'>If you already have an account ?</p>
-                    <Link to='/login/user/account' className='text-blue-600 font-medium'>Login</Link>
+                    <Link to='/login/user/account' className='text-blue-600 font-medium hover:underline underline-offset-1'>sign in here</Link>
                 </div>
+                <p className='text-neutral-400 font-normal mt-5 text-center' id='last'>By signing up, you confirm that you’ve read and agreed to our Terms of Service
+                    and Privacy Policy.</p>
             </div>
         </div>
     )
