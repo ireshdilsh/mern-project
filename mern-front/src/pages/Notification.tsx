@@ -7,7 +7,7 @@ export default function Notification() {
     <div className='flex justify-center items-start flex-col' id='notification-page'>
         <Navbar/>
         <div className='flex justify-start items-start flex-col'>
-            <h1 className='text-4xl tracking-tighter pl-50 pt-20'>Notification (45)</h1>
+            <h1 className='text-4xl tracking-tighter pl-50 pt-15'>Notification (45)</h1>
         </div>
     </div>
   )
