@@ -17,10 +17,14 @@ export default function Navbar() {
                         <input type="text" placeholder='Search here ...' className='bg-neutral-100 h-11 w-85 rounded-4xl px-5 outline-none pr-15' />
                     </div>
                 </div>
-                <div className='flex justify-center items-center gap-15'>
+                <div className='flex justify-center items-center gap-8'>
                     <div className='flex justify-center items-center gap-2 cursor-pointer'>
                         <img src="https://img.icons8.com/?size=100&id=kZ0eCZEs0tfC&format=png&color=000000" alt="" className='h-5'/>
                         <p className='text-sm'>Write</p>
+                    </div>
+                    <img src="https://img.icons8.com/?size=100&id=62atSgaif9UE&format=png&color=000000" className='h-5' alt="" />
+                    <div className='flex justify-center items-center rounded-full h-12 w-12 bg-neutral-300 cursor-pointer'>
+                        <p>ID</p>
                     </div>
                 </div>
             </nav>
