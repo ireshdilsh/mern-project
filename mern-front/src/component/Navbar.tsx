@@ -15,34 +15,6 @@ export default function Navbar() {
                     <input type="text" placeholder='Search here ...' className='bg-neutral-50 h-11 w-85 rounded-4xl px-5 outline-none pr-15' />
                 </div>
             </nav>
-            <div className='flex h-full w-full'>
-                <aside className='min-h-screen w-25 flex flex-col justify-start items-center pt-10 border-r border-r-neutral-100 gap-8'>
-                    <div className='flex justify-center items-center flex-col cursor-pointer'>
-                        <img src="https://img.icons8.com/?size=100&id=1iF9PyJ2Thzo&format=png&color=a3a3a3" className='h-4.5' alt="" />
-                        <p className='text-sm text-neutral-500'>Home</p>
-                    </div>
-                    <div className='flex justify-center items-center flex-col cursor-pointer'>
-                        <img src="https://img.icons8.com/?size=100&id=36929&format=png&color=a3a3a3" className='h-5' alt="" />
-                        <p className='text-sm text-neutral-500'>Write</p>
-                    </div>
-                    <div className='flex justify-center items-center flex-col cursor-pointer'>
-                        <img src="https://img.icons8.com/?size=100&id=37975&format=png&color=a3a3a3" className='h-4.5' alt="" />
-                        <p className='text-sm text-neutral-500'>Favourites</p>
-                    </div>
-                    <div className='flex justify-center items-center flex-col cursor-pointer'>
-                        <img src="https://img.icons8.com/?size=100&id=60787&format=png&color=a3a3a3" className='h-4' alt="" />
-                        <p className='text-sm text-neutral-500'>Collection</p>
-                    </div>
-                    <div className='flex justify-center items-center flex-col cursor-pointer'>
-                        <img src="https://img.icons8.com/?size=100&id=2969&format=png&color=a3a3a3" className='h-4.5' alt="" />
-                        <p className='text-sm text-neutral-500'>Settings</p>
-                    </div>
-                    <div className='flex justify-center items-center flex-col cursor-pointer'>
-                        <img src="https://img.icons8.com/?size=100&id=8119&format=png&color=a3a3a3" className='h-4 mt-35' alt="" />
-                        <p className='text-sm text-neutral-500'>Log out</p>
-                    </div>
-                </aside>
-            </div>
         </div>
     )
 }
