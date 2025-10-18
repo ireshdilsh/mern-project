@@ -8,18 +8,22 @@ export default function Navbar() {
     const navigate : NavigateFunction = useNavigate()
 
     const gotoWritePage = ():void => {
-        navigate('/write/page/')
+        navigate('/write/page')
     }
 
     const gotoNotificationsPage = ():void => {
         navigate('/notification/page')
     }
 
+    const gotoDashboard = ():void => {
+        navigate('/dashboard')
+    }
+
     return (
         <div className='flex justify-center items-center flex-col w-full' id='navbar-page'>
-            <nav className='flex justify-between items-center w-full px-50 border-b border-b-neutral-100 py-1'>
+            <nav className='flex justify-between items-center w-full px-50 border-b border-b-neutral-100 py-2.5'>
                 <div className='flex justify-center items-center gap-8'>
-                    <img src={logo} alt="navbar-logo" className='h-12' />
+                    <img src={logo} alt="navbar-logo" className='h-12 cursor-pointer' onClick={gotoDashboard}/>
                     <div className='flex justify-center items-center relative'>
                         <img src="https://img.icons8.com/?size=100&id=59878&format=png&color=a3a3a3" alt="search-icon" className='h-6 absolute right-6 cursor-pointer' />
                         <input type="text" placeholder='Search here ...' className='bg-neutral-100 h-11 w-85 rounded-4xl px-5 outline-none pr-15' />

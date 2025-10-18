@@ -4,6 +4,8 @@ import Landing from './pages/Landing'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
+import Write from './pages/Write'
+import Notification from './pages/Notification'
 
 
 export default function Controller() {
@@ -15,6 +17,8 @@ export default function Controller() {
                 <Route path='/create/account' element = {<Register/>}></Route>
                 <Route path='/login/user/account' element = {<Login/>}></Route>
                 <Route path='/dashboard' element = {<Dashboard/>}></Route>
+                <Route path='/write/page' element = {<Write/>}></Route>
+                <Route path='/notification/page' element = {<Notification/>}></Route>
             </Routes>
         </BrowserRouter>
     </div>
