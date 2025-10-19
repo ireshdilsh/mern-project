@@ -3,13 +3,8 @@ import logo from '../assets/logo.png'
 import '../styles/register.css'
 import { Link, useNavigate, type NavigateFunction } from 'react-router-dom'
 import { useGoogleLogin } from '@react-oauth/google'
+import type {GoogleUser} from '../types/GoogleUser'
 import axios from 'axios'
-
-interface GoogleUser {
-    name: string;
-    email: string;
-    picture: string;
-}
 
 export default function Register() {
 

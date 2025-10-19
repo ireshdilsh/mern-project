@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../assets/logo.png'
 import '../styles/navbar.css'
 import { useNavigate, type NavigateFunction } from 'react-router-dom'
+import type { GoogleUser } from '../types/GoogleUser'
 
 export default function Navbar() {
 
@@ -19,6 +20,15 @@ export default function Navbar() {
         navigate('/dashboard')
     }
 
+    const [user,setUser] = useState<GoogleUser | null>(null)
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem('googleUser')
+        if (storedUser) {
+            setUser(JSON.parse(storedUser))
+        }
+    }, []);
+
     return (
         <div className='flex justify-center items-center flex-col w-full' id='navbar-page'>
             <nav className='flex justify-between items-center w-full px-50 border-b border-b-neutral-100 py-2.5'>
@@ -35,8 +45,8 @@ export default function Navbar() {
                         <p className='text-sm'>Write</p>
                     </div>
                     <img onClick={gotoNotificationsPage} src="https://img.icons8.com/?size=100&id=62atSgaif9UE&format=png&color=000000" className='h-5 cursor-pointer' alt="" />
-                    <div className='flex justify-center items-center rounded-full h-12 w-12 bg-neutral-300 cursor-pointer'>
-                        <p className='text-base font-medium'>ID</p>
+                    <div className='flex justify-center items-center rounded-full h-10 w-10 bg-red-500 cursor-pointer'>
+                        <p className='text-base font-medium text-white'>{user?.name.substring(0,2).toUpperCase()}</p>
                     </div>
                 </div>
             </nav>

@@ -4,12 +4,7 @@ import '../styles/login.css'
 import { Link, useNavigate, type NavigateFunction } from 'react-router-dom'
 import { useGoogleLogin } from '@react-oauth/google'
 import axios from 'axios'
-
-interface GoogleUser {
-    name: string;
-    email: string;
-    picture: string;
-}
+import type { GoogleUser } from '../types/GoogleUser'
 
 export default function Login() {
 
