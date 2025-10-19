@@ -38,6 +38,7 @@ export default function Register() {
                 localStorage.setItem("googleUser", JSON.stringify(user));
 
                 console.log("User saved:", user);
+                console.log("access_token is -> ",tokenResponse.access_token);
 
                 // Navigate to dashboard
                 navigate("/dashboard");
