@@ -33,13 +33,13 @@ export default function Dashboard() {
             <div className='inline-block bg-green-100 mb-5 px-2 py-0.5 rounded-4xl'>
               <p className='text-sm whitespace-nowrap text-green-900'>{article.title} by {article.name}</p>
             </div>
-            <h1 className='text-4xl mb-4 tracking-tight font-semibold'>{article.title}</h1>
+            <h1 className='text-4xl mb-4 tracking-tight font-semibold '>{article.title}</h1>
             <div className='flex justify-between items-center mb-4'>
               <p className='text-gray-600 text-sm'>By {article.name} on {new Date(article.date).toLocaleDateString()}</p>
               <p className='text-gray-600 text-sm'>astimated reading time : {article.readingTime} min</p>
             </div>
             <p className='text-gray-800 text-lg text-justify mb-10'>{article.content.substring(0, 200)}...</p>
-            <Link to={`/view/article/${article._id}`} className='hover:underline underline-offset-4 cursor-pointer'>Read more</Link>
+            <Link to={`/view/article/${article._id}/${article.title}`} className='underline underline-offset-4 cursor-pointer'>Read more</Link>
           </div>
         )) : <p className='pl-50 pt-10 text-neutral-400 font-semibold text-7xl'>No articles found.</p>
         }
