@@ -34,11 +34,11 @@ export default function ArtcileByID() {
             <div className='flex justify-center items-start flex-col mt-20 w-195' id='article-by-id-page'>
                 <p className='text-sm'>{article?.title} by {article?.name}</p>
                 <h1 className='text-5xl tracking-tight font-medium leading-13 my-4'>{article?.title}</h1>
-                <div className='flex justify-between items-center w-full'>
+                <div className='flex justify-between items-center w-full mt-2'>
                     <p className='text-neutral-500 font-light '>By {article?.name} on {article ? new Date(article.date).toLocaleDateString() : ''}</p>
                     <p className='text-neutral-500 font-light '>Estimated reading time : {article?.readingTime} min</p>
                 </div>
-                <div className='mt-8 border-y border-y-neutral-100 text-justify text-xl pt-8 text-neutral-800 font-normal'>
+                <div className='mt-8 border-y border-y-neutral-100 text-justify text-xl py-8 text-neutral-800 font-normal'>
                     {article?.content.split('.').map((sentence, index) => (
                         sentence.trim() && (
                             <span key={index}>
