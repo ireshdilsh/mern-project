@@ -17,8 +17,8 @@ router.get("/get/all/published/articles", getArticles);
 router.get("/get/article/:id", getArticleById);
 router.put("/update/article/:id", updateArticle);
 router.delete("/delete/article/:id", deleteArticle);
-router.patch("/increment/view/:id", incrementViewCount);
-router.patch("/increment/like/:id", incrementLikeCount);
-router.patch("/decrement/like/:id", decrementLikeCount);
+router.put("/increment/view/:id", incrementViewCount);
+router.put("/increment/like/:id", incrementLikeCount);
+router.put("/decrement/like/:id", decrementLikeCount);
 
 export default router;
