@@ -207,38 +207,27 @@ export const incrementLikeCount = async (req: any, res: any) => {
 };
 
 export const decrementLikeCount = async (req: any, res: any) => {
-    try {
+   try {
         const { id } = req.params;
 
-        // Find the article first to check if likeCount is greater than 0
-        const article = await Article.findById(id);
+        // Find and increment like count
+        const article = await Article.findByIdAndUpdate(
+            id,
+            { $inc: { disLikeCount: 1 } }, // Increment disLikeCount by 1
+            { new: true } // Return the updated document
+        );
 
         if (!article) {
             return res.status(404).json({ message: "Article not found" });
         }
 
-        // Only decrement if likeCount is greater than 0
-        if (article.likeCount && article.likeCount > 0) {
-            const updatedArticle = await Article.findByIdAndUpdate(
-                id,
-                { $inc: { likeCount: -1 } }, // Decrement likeCount by 1
-                { new: true } // Return the updated document
-            );
-
-            res.status(200).json({
-                message: "Like count decremented successfully",
-                likeCount: updatedArticle?.likeCount,
-                article: updatedArticle
-            });
-        } else {
-            res.status(200).json({
-                message: "Like count is already 0",
-                likeCount: article.likeCount,
-                article
-            });
-        }
+        res.status(200).json({
+            message: "Dislike count incremented successfully",
+            disLikeCount: article.disLikeCount,
+            article
+        });
     } catch (error) {
-        console.log("Error decrementing like count: ", error);
+        console.log("Error incrementing like count: ", error);
         res.status(500).json({ message: "Internal server error" });
     }
 };

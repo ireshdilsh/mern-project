@@ -37,6 +37,11 @@ const articleSchema = new mongoose.Schema({
         type: Number,
         required: false,
         default: 0
+    },
+    disLikeCount: {
+        type: Number,
+        required: false,
+        default: 0
     }
 });
 
