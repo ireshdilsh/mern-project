@@ -1,13 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../component/Navbar'
 import '../styles/dashboard.css'
+import axios from 'axios';
+import type { Article } from '../types/Article';
 
 export default function Dashboard() {
+
+  const [articles,setArticles] = useState<Article[]>([])
+
+  useEffect(() => {
+      loadAllArticles();
+  }, []);
+
+  const loadAllArticles = async () => {
+    try {
+      const resp = await axios.get('http://localhost:5000/api/v1/article/get/all/published/articles');
+      setArticles(resp.data.articles);
+      console.log(resp.data.articles);
+    } catch (error) {
+      console.log("Error loading articles", error);
+    }
+  }
+
   return (
-    <div className='flex justify-center items-left flex-col w-full' id='dashboard-page'>
+    <div className='flex justify-center items-center flex-col w-full' id='dashboard-page'>
       <Navbar />
-      <div className='flex justify-start items-start flex-col w-full'>
-        <h1 className='text-4xl tracking-tighter pl-50 pt-15'>Dashboard</h1>
+      <div className='flex justify-center items-start flex-col w-full'>
+        { articles ? articles.map((article, index) => (
+          <div key={index} className='py-15 w-200 border-b border-b-neutral-200 mx-50 pr-8 border-r border-r-neutral-200'>
+            <h1 className='text-4xl mb-4 tracking-tight font-semibold hover:underline cursor-pointer'>{article.title}</h1>
+            <p className='text-gray-600 text-sm mb-4'>By {article.name} on {new Date(article.date).toLocaleDateString()}</p>
+            <p className='text-gray-800 text-lg'>{article.content.substring(0, 200)}...</p>
+          </div>
+        )) : <p className='pl-50 pt-10 text-neutral-400 font-semibold text-7xl'>No articles found.</p> 
+        }
       </div>
     </div>
   )

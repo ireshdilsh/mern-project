@@ -1,3 +1,4 @@
-#dashboard-page h1{
+#dashboard-page h1,
+#dashboard-page p{
     font-family: 'Gabarito';
 }
