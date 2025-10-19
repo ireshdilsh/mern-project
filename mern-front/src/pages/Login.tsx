@@ -1,4 +1,3 @@
-import React from 'react'
 import logo from '../assets/logo.png'
 import '../styles/login.css'
 import { Link, useNavigate, type NavigateFunction } from 'react-router-dom'

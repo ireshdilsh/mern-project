@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Landing from './pages/Landing'
 import Register from './pages/Register'
@@ -6,6 +5,7 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Write from './pages/Write'
 import Notification from './pages/Notification'
+import ArtcileByID from './pages/ArtcileByID'
 
 
 export default function Controller() {
@@ -19,6 +19,7 @@ export default function Controller() {
                 <Route path='/dashboard' element = {<Dashboard/>}></Route>
                 <Route path='/write/page' element = {<Write/>}></Route>
                 <Route path='/notification/page' element = {<Notification/>}></Route>
+                <Route path='/view/article/id=/:id' element = {<ArtcileByID/>}></Route>
             </Routes>
         </BrowserRouter>
     </div>

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from '../component/Navbar'
 import '../styles/dashboard.css'
 import axios from 'axios';
 import type { Article } from '../types/Article';
+import { Link } from 'react-router-dom';
 
 export default function Dashboard() {
 
@@ -22,6 +23,7 @@ export default function Dashboard() {
     }
   }
 
+
   return (
     <div className='flex justify-center items-center flex-col w-full' id='dashboard-page'>
       <Navbar />
@@ -37,7 +39,7 @@ export default function Dashboard() {
               <p className='text-gray-600 text-sm'>astimated reading time : {article.readingTime} min</p>
             </div>
             <p className='text-gray-800 text-lg text-justify'>{article.content.substring(0, 200)}...</p>
-            <p className='mt-6 hover:underline underline-offset-4 cursor-pointer'>Read more</p>
+            <Link to={`/view/article/id=/${article._id}`} className='text-sm hover:underline underline-offset-4 cursor-pointer'>Read more</Link>
           </div>
         )) : <p className='pl-50 pt-10 text-neutral-400 font-semibold text-7xl'>No articles found.</p>
         }
