@@ -11,26 +11,32 @@ export default function ArtcileByID() {
     const [article, setArticle] = useState<Article>()
 
     useEffect(() => {
-         axios.put(`http://localhost:5000/api/v1/article/increment/view/${id}`);
+        axios.put(`http://localhost:5000/api/v1/article/increment/view/${id}`);
     }, [id]);
 
     useEffect(() => {
-        const featchArticle = async () => {
-            if (!id) {
-                console.log("No article ID provided");
-                return;
-            }
-
-            try {
-                const resp = await axios.get(`http://localhost:5000/api/v1/article/get/article/${id}`)
-                setArticle(resp.data.article);
-                console.log(resp.data.article);
-            } catch (error) {
-                console.log("Something went wrong", error);
-            }
-        }
         featchArticle()
     }, [id]);
+
+    const featchArticle = async () => {
+        if (!id) {
+            console.log("No article ID provided");
+            return;
+        }
+
+        try {
+            const resp = await axios.get(`http://localhost:5000/api/v1/article/get/article/${id}`)
+            setArticle(resp.data.article);
+            console.log(resp.data.article);
+        } catch (error) {
+            console.log("Something went wrong", error);
+        }
+    }
+
+    const incrementLikes = async () => {
+        await axios.put(`http://localhost:5000/api/v1/article/increment/like/${id}`);
+        featchArticle()
+    }
 
     return (
         <div className='flex justify-center items-center w-full flex-col'>
@@ -49,7 +55,7 @@ export default function ArtcileByID() {
                         <img src="https://img.icons8.com/?size=100&id=85028&format=png&color=333333" className='h-5' alt="" />
                         <p>{article?.viewCount}</p>
                     </div>
-                    <div className='flex justify-center items-center gap-3 cursor-pointer'>
+                    <div className='flex justify-center items-center gap-3 cursor-pointer' onClick={incrementLikes}>
                         <img src="https://img.icons8.com/?size=100&id=33481&format=png&color=333333" className='h-5' alt="" />
                         <p>{article?.likeCount}</p>
                     </div>
