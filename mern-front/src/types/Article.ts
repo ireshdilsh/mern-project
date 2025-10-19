@@ -4,4 +4,5 @@ export interface Article{
     name:string;
     email:string;
     date:Date | string;
+    readingTime?: string;
 }

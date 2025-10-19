@@ -6,10 +6,10 @@ import type { Article } from '../types/Article';
 
 export default function Dashboard() {
 
-  const [articles,setArticles] = useState<Article[]>([])
+  const [articles, setArticles] = useState<Article[]>([])
 
   useEffect(() => {
-      loadAllArticles();
+    loadAllArticles();
   }, []);
 
   const loadAllArticles = async () => {
@@ -26,13 +26,16 @@ export default function Dashboard() {
     <div className='flex justify-center items-center flex-col w-full' id='dashboard-page'>
       <Navbar />
       <div className='flex justify-center items-start flex-col w-full'>
-        { articles ? articles.map((article, index) => (
-          <div key={index} className='py-15 w-200 border-b border-b-neutral-200 mx-50 pr-8 border-r border-r-neutral-200'>
+        {articles ? articles.map((article, index) => (
+          <div key={index} className='py-15 w-200 border-b border-b-neutral-200 mx-50 pr-15 border-r border-r-neutral-200'>
             <h1 className='text-4xl mb-4 tracking-tight font-semibold hover:underline cursor-pointer'>{article.title}</h1>
-            <p className='text-gray-600 text-sm mb-4'>By {article.name} on {new Date(article.date).toLocaleDateString()}</p>
-            <p className='text-gray-800 text-lg'>{article.content.substring(0, 200)}...</p>
+            <div className='flex justify-between items-center mb-4'>
+              <p className='text-gray-600 text-sm'>By {article.name} on {new Date(article.date).toLocaleDateString()}</p>
+              <p className='text-gray-600 text-sm'>astimated reading time : {article.readingTime} min</p>
+            </div>
+            <p className='text-gray-800 text-lg text-justify'>{article.content.substring(0, 200)}...</p>
           </div>
-        )) : <p className='pl-50 pt-10 text-neutral-400 font-semibold text-7xl'>No articles found.</p> 
+        )) : <p className='pl-50 pt-10 text-neutral-400 font-semibold text-7xl'>No articles found.</p>
         }
       </div>
     </div>
