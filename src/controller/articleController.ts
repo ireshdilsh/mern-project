@@ -20,8 +20,8 @@ export const createArticle = async (req: any, res: any) => {
         }
 
         // Validate email format
-        const emailRegex = '/^\S+@\S+\.\S+$/';
-        if (!emailRegex.match(email)) {
+        const emailRegex = /^\S+@\S+\.\S+$/;
+        if (!emailRegex.test(email)) {
             return res.status(400).json({
                 message: "Please provide a valid email address"
             });
@@ -96,8 +96,8 @@ export const updateArticle = async (req: any, res: any) => {
 
         // Validate email format if provided
         if (email) {
-            const emailRegex = '/^\S+@\S+\.\S+$/';
-            if (!emailRegex.match(email)) {
+            const emailRegex = /^\S+@\S+\.\S+$/;
+            if (!emailRegex.test(email)) {
                 return res.status(400).json({
                     message: "Please provide a valid email address"
                 });
@@ -213,7 +213,7 @@ export const decrementLikeCount = async (req: any, res: any) => {
 
         // Find the article first to check if likeCount is greater than 0
         const article = await Article.findById(id);
-        
+
         if (!article) {
             return res.status(404).json({ message: "Article not found" });
         }
