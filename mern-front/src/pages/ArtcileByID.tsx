@@ -32,7 +32,9 @@ export default function ArtcileByID() {
         <div className='flex justify-center items-center w-full flex-col'>
             <Navbar />
             <div className='flex justify-center items-start flex-col mt-20 w-195' id='article-by-id-page'>
-                <p className='text-sm'>{article?.title} by {article?.name}</p>
+                <div className='inline-block bg-green-100 px-3 rounded-4xl'>
+                    <p className='text-sm whitespace-nowrap text-green-900'>{article?.title} by {article?.name}</p>
+                </div>
                 <h1 className='text-5xl tracking-tight font-medium leading-13 my-4'>{article?.title}</h1>
                 <div className='flex justify-between items-center w-full mt-2'>
                     <p className='text-neutral-500 font-light '>By {article?.name} on {article ? new Date(article.date).toLocaleDateString() : ''}</p>
