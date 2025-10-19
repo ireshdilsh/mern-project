@@ -12,9 +12,6 @@ export default function ArtcileByID() {
 
     useEffect(() => {
         axios.put(`http://localhost:5000/api/v1/article/increment/view/${id}`);
-    }, [id]);
-
-    useEffect(() => {
         featchArticle()
     }, [id]);
 
@@ -35,6 +32,11 @@ export default function ArtcileByID() {
 
     const incrementLikes = async () => {
         await axios.put(`http://localhost:5000/api/v1/article/increment/like/${id}`);
+        featchArticle()
+    }
+
+    const incrementDisLikes = async () => {
+        await axios.put(`http://localhost:5000/api/v1/article/decrement/like/${id}`);
         featchArticle()
     }
 
@@ -59,9 +61,9 @@ export default function ArtcileByID() {
                         <img src="https://img.icons8.com/?size=100&id=33481&format=png&color=333333" className='h-5' alt="" />
                         <p>{article?.likeCount}</p>
                     </div>
-                    <div className='flex justify-center items-center gap-3 cursor-pointer'>
+                    <div className='flex justify-center items-center gap-3 cursor-pointer' onClick={incrementDisLikes}>
                         <img src="https://img.icons8.com/?size=100&id=15957&format=png&color=333333" className='h-5' alt="" />
-                        <p>{article?.likeCount}</p>
+                        <p>{article?.disLikeCount}</p>
                     </div>
                 </div>
                 <div className='mt-8 border-y border-y-neutral-100 text-justify text-xl py-8 text-neutral-800 font-normal'>

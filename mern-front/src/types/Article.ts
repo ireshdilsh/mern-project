@@ -9,5 +9,6 @@ export interface Article{
     readingTime?: string;
     viewCount?: number;
     likeCount?: number;
+    disLikeCount?: number;
     image?: string;
 }

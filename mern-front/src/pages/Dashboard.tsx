@@ -50,7 +50,7 @@ export default function Dashboard() {
               </div>
               <div className='flex justify-center items-center gap-3'>
                 <img src="https://img.icons8.com/?size=100&id=15957&format=png&color=333333" className='h-5' alt="" />
-                <p>{article?.likeCount}</p>
+                <p>{article?.disLikeCount}</p>
               </div>
             </div>
             <Link to={`/view/article/${article._id}/${article.title}`} className='underline underline-offset-4 cursor-pointer'>Read more</Link>
