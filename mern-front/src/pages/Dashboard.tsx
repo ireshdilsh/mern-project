@@ -39,7 +39,7 @@ export default function Dashboard() {
               <p className='text-gray-600 text-sm'>astimated reading time : {article.readingTime} min</p>
             </div>
             <p className='text-gray-800 text-lg text-justify'>{article.content.substring(0, 200)}...</p>
-            <Link to={`/view/article/id=/${article._id}`} className='text-sm hover:underline underline-offset-4 cursor-pointer'>Read more</Link>
+            <Link to={`/view/article/${article._id}`} className='text-sm hover:underline underline-offset-4 cursor-pointer'>Read more</Link>
           </div>
         )) : <p className='pl-50 pt-10 text-neutral-400 font-semibold text-7xl'>No articles found.</p>
         }

@@ -19,7 +19,7 @@ export default function Controller() {
                 <Route path='/dashboard' element = {<Dashboard/>}></Route>
                 <Route path='/write/page' element = {<Write/>}></Route>
                 <Route path='/notification/page' element = {<Notification/>}></Route>
-                <Route path='/view/article/id=/:id' element = {<ArtcileByID/>}></Route>
+                <Route path='/view/article/:id' element = {<ArtcileByID/>}></Route>
             </Routes>
         </BrowserRouter>
     </div>
