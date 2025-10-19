@@ -1,89 +1,67 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../component/Navbar'
 import '../styles/write.css'
+import type { Article } from '../types/Article'
+import axios from 'axios'
+import type { GoogleUser } from '../types/GoogleUser'
 
 export default function Write() {
 
-  const fileInputRef = useRef<HTMLInputElement | null>(null)
-  const [preview, setPreview] = useState<string>('')
+  const [title, setTitle] = useState<string>('')
+  const [content, setContent] = useState<string>('')
+  const [user,setUser] = useState<GoogleUser | null>(null)
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (!file) {
-      setPreview('')
-      return
+  useEffect(() => {
+    const storedUser = localStorage.getItem('googleUser')
+    if (storedUser) {
+      setUser(JSON.parse(storedUser))
+    }
+  }, []);
+
+  const publishedArticle = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    const article: Article = {
+      title: title,
+      content: content,
+      name: user?.name || "undefined",
+      email: user?.email || "undefined@mail,com",
+      date: new Date().toISOString()
     }
 
-    const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp', 'image/bmp']
-    if (!validTypes.includes(file.type)) {
-      alert('Please select a valid image file (JPEG, PNG, GIF, WebP, or BMP)')
-      return
+    try {
+      const resp = await axios.post('http://localhost:5000/api/v1/article/publish/new/article', article)
+      console.log(resp.data);
+      alert('Article saved')
+    } catch (error) {
+      console.log("Something Wrong ", error);
     }
-
-    if (file.size > 5 * 1024 * 1024) {
-      alert('Image size should be less than 5MB')
-      return
-    }
-
-    const reader = new FileReader()
-    reader.onload = () => {
-      const result = reader.result as string
-      setPreview(result)
-    }
-    reader.readAsDataURL(file)
   }
 
   return (
     <div className='flex justify-center items-center flex-col' id='write-page'>
       <Navbar />
       <button
+        onClick={publishedArticle}
         className='bg-green-700 text-white text-sm px-2 rounded-4xl font-semibold py-0.5 cursor-pointer absolute top-6 left-262 hover:bg-green-800 disabled:bg-gray-400 disabled:cursor-not-allowed'
       >
         Publish
       </button>
 
       <div className='w-full flex justify-center items-start flex-col px-100 mt-20'>
-        <input
-          ref={fileInputRef}
-          type="file"
-          id="image-upload"
-          className="hidden"
-          accept="image/*"
-          onChange={handleFileChange}
-        />
-
-        <label htmlFor="image-upload" className="mb-6 flex items-center gap-3 cursor-pointer">
-          <img src="https://img.icons8.com/?size=100&id=24717&format=png&color=808080" alt="upload-icon" className="h-12" />
-          <span className="text-gray-600 text-base hover:underline">Add featured image</span>
-        </label>
-
-        {preview ? (
-          <div className="relative mb-4 w-full">
-            <img src={preview} className='h-50 w-full object-cover rounded-md' alt="selected" id='selected-image' />
-            <button
-              onClick={() => {
-                setPreview('')
-                if (fileInputRef.current) {
-                  fileInputRef.current.value = ''
-                }
-              }}
-              className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 cursor-pointer"
-            >
-              Remove
-            </button>
-          </div>
-        ) : (
-          <img src="" className='h-50 w-full object-cover rounded-md mb-4 hidden' alt="" id='selected-image' />
-        )}
-
+        
         <input
           type="text"
           className='text-4xl h-15 w-full outline-none mt-5'
           placeholder='Title'
+          value={title}
+          onChange={(e) => { setTitle(e.target.value) }}
         />
         <textarea
           className='w-full mt-10 text-2xl outline-none h-80'
           placeholder='Tell us your story ...'
+          value={content}
+          onChange={(e) => { setContent(e.target.value) }}
         ></textarea>
       </div>
     </div>
