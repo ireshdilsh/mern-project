@@ -23,18 +23,18 @@ const articleSchema = new mongoose.Schema({
         default: Date.now,
         required: true
     },
-    image: {
-        type: String, // Base64 encoded image string
-        required: false,
-        default: null
-    },
-    imageType: {
-        type: String, // MIME type (e.g., 'image/jpeg', 'image/png')
-        required: false,
-        default: null
-    },
     readingTime: {
         type: Number, // Estimated reading time in minutes
+        required: false,
+        default: 0
+    },
+    viewCount: {
+        type: Number,
+        required: false,
+        default: 0
+    },
+    likeCount: {
+        type: Number,
         required: false,
         default: 0
     }

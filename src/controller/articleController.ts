@@ -8,50 +8,23 @@ const calculateReadingTime = (content: string): number => {
     return readingTime < 1 ? 1 : readingTime; // Minimum 1 minute
 };
 
-// Helper function to validate Base64 image
-const isValidBase64Image = (base64String: string): boolean => {
-    const base64Regex = /^data:image\/(jpeg|jpg|png|gif|webp|bmp|svg\+xml);base64,/i;
-    return base64Regex.test(base64String);
-};
-
-// Helper function to get image type from Base64 string
-const getImageTypeFromBase64 = (base64String: string): string | null => {
-    const match = base64String.match(/^data:image\/([a-zA-Z+]+);base64,/i);
-    return match ? `image/${match[1]}` : null;
-};
-
 export const createArticle = async (req: any, res: any) => {
     try {
-        const { title, content, name, email, date, image } = req.body;
+        const { title, content, name, email, date } = req.body;
 
         // Validate required fields
         if (!title || !content || !name || !email) {
-            return res.status(400).json({ 
-                message: "Title, content, name, and email are required fields" 
+            return res.status(400).json({
+                message: "Title, content, name, and email are required fields"
             });
         }
 
         // Validate email format
-        const emailRegex = /^\S+@\S+\.\S+$/;
-        if (!emailRegex.test(email)) {
+        const emailRegex = '/^\S+@\S+\.\S+$/';
+        if (!emailRegex.match(email)) {
             return res.status(400).json({
                 message: "Please provide a valid email address"
             });
-        }
-
-        let imageData = null;
-        let imageType = null;
-
-        // Process image if provided
-        if (image) {
-            if (isValidBase64Image(image)) {
-                imageData = image;
-                imageType = getImageTypeFromBase64(image);
-            } else {
-                return res.status(400).json({
-                    message: "Invalid image format. Please provide a valid Base64 encoded image (JPEG, PNG, GIF, WebP, BMP, or SVG)."
-                });
-            }
         }
 
         // Calculate reading time
@@ -63,8 +36,6 @@ export const createArticle = async (req: any, res: any) => {
             name,
             email,
             date: date || new Date(),
-            image: imageData,
-            imageType: imageType,
             readingTime: readingTime
         });
 
@@ -115,7 +86,7 @@ export const getArticleById = async (req: any, res: any) => {
 export const updateArticle = async (req: any, res: any) => {
     try {
         const { id } = req.params;
-        const { title, content, name, email, image } = req.body;
+        const { title, content, name, email } = req.body;
 
         // Find the existing article
         const existingArticle = await Article.findById(id);
@@ -125,29 +96,10 @@ export const updateArticle = async (req: any, res: any) => {
 
         // Validate email format if provided
         if (email) {
-            const emailRegex = /^\S+@\S+\.\S+$/;
-            if (!emailRegex.test(email)) {
+            const emailRegex = '/^\S+@\S+\.\S+$/';
+            if (!emailRegex.match(email)) {
                 return res.status(400).json({
                     message: "Please provide a valid email address"
-                });
-            }
-        }
-
-        let imageData = existingArticle.image;
-        let imageType = existingArticle.imageType;
-
-        // Process image if provided
-        if (image !== undefined) {
-            if (image === null || image === "") {
-                // Remove the image
-                imageData = null;
-                imageType = null;
-            } else if (isValidBase64Image(image)) {
-                imageData = image;
-                imageType = getImageTypeFromBase64(image);
-            } else {
-                return res.status(400).json({
-                    message: "Invalid image format. Please provide a valid Base64 encoded image."
                 });
             }
         }
@@ -164,8 +116,6 @@ export const updateArticle = async (req: any, res: any) => {
                 content: updatedContent,
                 name: name || existingArticle.name,
                 email: email || existingArticle.email,
-                image: imageData,
-                imageType: imageType,
                 readingTime: readingTime
             },
             { new: true } // Return the updated document
@@ -201,6 +151,95 @@ export const deleteArticle = async (req: any, res: any) => {
         });
     } catch (error) {
         console.log("Error deleting article: ", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+export const incrementViewCount = async (req: any, res: any) => {
+    try {
+        const { id } = req.params;
+
+        // Find and increment view count
+        const article = await Article.findByIdAndUpdate(
+            id,
+            { $inc: { viewCount: 1 } }, // Increment viewCount by 1
+            { new: true } // Return the updated document
+        );
+
+        if (!article) {
+            return res.status(404).json({ message: "Article not found" });
+        }
+
+        res.status(200).json({
+            message: "View count incremented successfully",
+            viewCount: article.viewCount,
+            article
+        });
+    } catch (error) {
+        console.log("Error incrementing view count: ", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+export const incrementLikeCount = async (req: any, res: any) => {
+    try {
+        const { id } = req.params;
+
+        // Find and increment like count
+        const article = await Article.findByIdAndUpdate(
+            id,
+            { $inc: { likeCount: 1 } }, // Increment likeCount by 1
+            { new: true } // Return the updated document
+        );
+
+        if (!article) {
+            return res.status(404).json({ message: "Article not found" });
+        }
+
+        res.status(200).json({
+            message: "Like count incremented successfully",
+            likeCount: article.likeCount,
+            article
+        });
+    } catch (error) {
+        console.log("Error incrementing like count: ", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+export const decrementLikeCount = async (req: any, res: any) => {
+    try {
+        const { id } = req.params;
+
+        // Find the article first to check if likeCount is greater than 0
+        const article = await Article.findById(id);
+        
+        if (!article) {
+            return res.status(404).json({ message: "Article not found" });
+        }
+
+        // Only decrement if likeCount is greater than 0
+        if (article.likeCount && article.likeCount > 0) {
+            const updatedArticle = await Article.findByIdAndUpdate(
+                id,
+                { $inc: { likeCount: -1 } }, // Decrement likeCount by 1
+                { new: true } // Return the updated document
+            );
+
+            res.status(200).json({
+                message: "Like count decremented successfully",
+                likeCount: updatedArticle?.likeCount,
+                article: updatedArticle
+            });
+        } else {
+            res.status(200).json({
+                message: "Like count is already 0",
+                likeCount: article.likeCount,
+                article
+            });
+        }
+    } catch (error) {
+        console.log("Error decrementing like count: ", error);
         res.status(500).json({ message: "Internal server error" });
     }
 };
