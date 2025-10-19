@@ -7,5 +7,7 @@ export interface Article{
     email:string;
     date:Date | string;
     readingTime?: string;
+    viewCount?: number;
+    likeCount?: number;
     image?: string;
 }

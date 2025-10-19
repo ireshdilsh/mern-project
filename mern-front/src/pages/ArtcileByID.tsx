@@ -11,6 +11,10 @@ export default function ArtcileByID() {
     const [article, setArticle] = useState<Article>()
 
     useEffect(() => {
+         axios.put(`http://localhost:5000/api/v1/article/increment/view/${id}`);
+    }, [id]);
+
+    useEffect(() => {
         const featchArticle = async () => {
             if (!id) {
                 console.log("No article ID provided");
@@ -39,6 +43,20 @@ export default function ArtcileByID() {
                 <div className='flex justify-between items-center w-full mt-2'>
                     <p className='text-neutral-500 font-light '>By {article?.name} on {article ? new Date(article.date).toLocaleDateString() : ''}</p>
                     <p className='text-neutral-500 font-light '>Estimated reading time : {article?.readingTime} min</p>
+                </div>
+                <div className='flex justify-center items-center gap-8 mt-5'>
+                    <div className='flex justify-center items-center gap-3'>
+                        <img src="https://img.icons8.com/?size=100&id=85028&format=png&color=333333" className='h-5' alt="" />
+                        <p>{article?.viewCount}</p>
+                    </div>
+                    <div className='flex justify-center items-center gap-3 cursor-pointer'>
+                        <img src="https://img.icons8.com/?size=100&id=33481&format=png&color=333333" className='h-5' alt="" />
+                        <p>{article?.likeCount}</p>
+                    </div>
+                    <div className='flex justify-center items-center gap-3 cursor-pointer'>
+                        <img src="https://img.icons8.com/?size=100&id=15957&format=png&color=333333" className='h-5' alt="" />
+                        <p>{article?.likeCount}</p>
+                    </div>
                 </div>
                 <div className='mt-8 border-y border-y-neutral-100 text-justify text-xl py-8 text-neutral-800 font-normal'>
                     {article?.content.split('.').map((sentence, index) => (

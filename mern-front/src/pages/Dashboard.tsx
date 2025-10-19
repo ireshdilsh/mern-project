@@ -38,7 +38,21 @@ export default function Dashboard() {
               <p className='text-gray-600 text-sm'>By {article.name} on {new Date(article.date).toLocaleDateString()}</p>
               <p className='text-gray-600 text-sm'>astimated reading time : {article.readingTime} min</p>
             </div>
-            <p className='text-gray-800 text-lg text-justify mb-10'>{article.content.substring(0, 200)}...</p>
+            <p className='text-gray-800 text-lg text-justify mb-8'>{article.content.substring(0, 200)}...</p>
+            <div className='flex justify-center items-center gap-8 my-5 -ml-138'>
+              <div className='flex justify-center items-center gap-3'>
+                <img src="https://img.icons8.com/?size=100&id=85028&format=png&color=333333" className='h-5' alt="" />
+                <p>{article?.viewCount}</p>
+              </div>
+              <div className='flex justify-center items-center gap-3'>
+                <img src="https://img.icons8.com/?size=100&id=33481&format=png&color=333333" className='h-5' alt="" />
+                <p>{article?.likeCount}</p>
+              </div>
+              <div className='flex justify-center items-center gap-3'>
+                <img src="https://img.icons8.com/?size=100&id=15957&format=png&color=333333" className='h-5' alt="" />
+                <p>{article?.likeCount}</p>
+              </div>
+            </div>
             <Link to={`/view/article/${article._id}/${article.title}`} className='underline underline-offset-4 cursor-pointer'>Read more</Link>
           </div>
         )) : <p className='pl-50 pt-10 text-neutral-400 font-semibold text-7xl'>No articles found.</p>
