@@ -2,7 +2,7 @@ import { Article } from "../model/articleModel.js";
 
 // Helper function to calculate reading time (average reading speed: 200-250 words per minute)
 const calculateReadingTime = (content: string): number => {
-    const wordsPerMinute = 225; // Average reading speed
+    const wordsPerMinute = 20; // Average reading speed
     const wordCount = content.trim().split(/\s+/).length;
     const readingTime = Math.ceil(wordCount / wordsPerMinute);
     return readingTime < 1 ? 1 : readingTime; // Minimum 1 minute
