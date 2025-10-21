@@ -1,4 +1,4 @@
-import express, { urlencoded } from "express";
+import express, {type Express, urlencoded} from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./config/dbConfig.js";
