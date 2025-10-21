@@ -1,13 +1,13 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import type { Article } from '../types/Article';
+import {useEffect, useState} from 'react'
+import {useParams} from 'react-router-dom'
+import type {Article} from '../types/Article';
 import Navbar from '../component/Navbar';
 import '../styles/articlebyid.css'
 
 export default function ArtcileByID() {
 
-    const { id } = useParams<{ id: string }>()
+    const {id} = useParams<{ id: string }>()
     const [article, setArticle] = useState<Article>()
 
     useEffect(() => {
@@ -42,7 +42,7 @@ export default function ArtcileByID() {
 
     return (
         <div className='flex justify-center items-center w-full flex-col'>
-            <Navbar />
+            <Navbar/>
             <div className='flex justify-center items-start flex-col mt-20 w-195' id='article-by-id-page'>
                 <div className='inline-block bg-green-100 px-3 rounded-4xl'>
                     <p className='text-sm whitespace-nowrap text-green-900'>{article?.title} by {article?.name}</p>
@@ -54,24 +54,30 @@ export default function ArtcileByID() {
                 </div>
                 <div className='flex justify-center items-center gap-8 mt-5'>
                     <div className='flex justify-center items-center gap-3'>
-                        <img src="https://img.icons8.com/?size=100&id=85028&format=png&color=333333" className='h-5' alt="" />
+                        <img src="https://img.icons8.com/?size=100&id=85028&format=png&color=333333" className='h-5'
+                             alt=""/>
                         <p>{article?.viewCount}</p>
                     </div>
                     <div className='flex justify-center items-center gap-3 cursor-pointer' onClick={incrementLikes}>
-                        <img src="https://img.icons8.com/?size=100&id=33481&format=png&color=333333" className='h-5' alt="" />
+                        <img
+                            src="https://img.icons8.com/?size=100&id=33481&format=png&color=333333" className='h-5'
+                            alt=""/>
                         <p>{article?.likeCount}</p>
                     </div>
+                    
                     <div className='flex justify-center items-center gap-3 cursor-pointer' onClick={incrementDisLikes}>
-                        <img src="https://img.icons8.com/?size=100&id=15957&format=png&color=333333" className='h-5' alt="" />
+                        <img src="https://img.icons8.com/?size=100&id=15957&format=png&color=333333" className='h-5'
+                             alt=""/>
                         <p>{article?.disLikeCount}</p>
                     </div>
                 </div>
-                <div className='mt-8 border-y border-y-neutral-100 text-justify text-xl py-8 text-neutral-800 font-normal'>
+                <div
+                    className='mt-8 border-y border-y-neutral-100 text-justify text-xl py-8 text-neutral-800 font-normal'>
                     {article?.content.split('.').map((sentence, index) => (
                         sentence.trim() && (
                             <span key={index}>
                                 {sentence.trim()}.
-                                {index < article.content.split('.').length - 1 && <><br /><br /></>}
+                                {index < article.content.split('.').length - 1 && <><br/><br/></>}
                             </span>
                         )
                     ))}
