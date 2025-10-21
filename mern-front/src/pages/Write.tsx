@@ -4,12 +4,13 @@ import '../styles/write.css'
 import type { Article } from '../types/Article'
 import axios from 'axios'
 import type { GoogleUser } from '../types/GoogleUser'
+import Swal from 'sweetalert2'
 
 export default function Write() {
 
   const [title, setTitle] = useState<string>('')
   const [content, setContent] = useState<string>('')
-  const [user,setUser] = useState<GoogleUser | null>(null)
+  const [user, setUser] = useState<GoogleUser | null>(null)
 
   useEffect(() => {
     const storedUser = localStorage.getItem('googleUser')
@@ -32,8 +33,21 @@ export default function Write() {
     try {
       const resp = await axios.post('http://localhost:5000/api/v1/article/publish/new/article', article)
       console.log(resp.data);
-      alert('Article saved')
+      Swal.fire({
+        title: "Good job!",
+        text: "Article publish successfully!",
+        icon: "success"
+      });
+      setTitle('')
+      setContent('')
     } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!"
+      });
+      setTitle('')
+      setContent('')
       console.log("Something Wrong ", error);
     }
   }
@@ -49,7 +63,7 @@ export default function Write() {
       </button>
 
       <div className='w-full flex justify-center items-start flex-col px-100 mt-20'>
-        
+
         <input
           type="text"
           className='text-4xl h-15 w-full outline-none mt-5'
