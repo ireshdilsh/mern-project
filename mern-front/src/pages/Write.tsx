@@ -63,6 +63,7 @@ export default function Write() {
       </button>
 
       <div className='w-full flex justify-center items-start flex-col px-100 mt-20'>
+        
         <input
           type="text"
           className='text-4xl h-15 w-full outline-none mt-5'
