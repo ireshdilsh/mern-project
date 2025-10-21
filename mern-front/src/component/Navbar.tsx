@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import logo from '../assets/logo.png'
 import '../styles/navbar.css'
-import {useNavigate, type NavigateFunction} from 'react-router-dom'
+import {useNavigate, type NavigateFunction, Link} from 'react-router-dom'
 import type {GoogleUser} from '../types/GoogleUser'
 
 export default function Navbar() {
@@ -39,6 +39,11 @@ export default function Navbar() {
         setShowProfile(!showProfile)
     }
 
+    const signoutProfile = () => {
+        localStorage.removeItem('googleUser')
+        navigate('/')
+    }
+
     return (
         <div className='flex justify-center items-center flex-col w-full' id='navbar-page'>
             <nav className='flex justify-between items-center w-full px-50 border-b border-b-neutral-100 py-2.5'>
@@ -68,7 +73,7 @@ export default function Navbar() {
             </nav>
 
             {showProfile && (
-                <div className='border border-neutral-100 rounded-sm shadow-sm absolute right-50 bg-white p-5 top-17'>
+                <div className='flex flex-col border border-neutral-100 rounded-sm shadow-sm absolute right-50 bg-white p-5 top-17'>
                     <img src="https://img.icons8.com/?size=100&id=83149&format=png&color=000000" alt="close-img"
                          onClick={closeProfile} className='h-5 cursor-pointer absolute right-2.5 top-3'/>
                     <div className='flex justify-center gap-4 mt-5 border-b border-b-neutral-200 pb-3'>
@@ -76,10 +81,14 @@ export default function Navbar() {
                             className='bg-red-500 text-white font-bold flex justify-center items-center rounded-full w-11'>{user?.name.substring(0, 2).toUpperCase()}
                         </div>
                         <div>
-                            <p className=''>{user?.name}</p>
-                            <p className='text-sm'>{user?.email}</p>
+                            <p className='text-neutral-600'>{user?.name}</p>
+                            <p className='text-sm text-neutral-600'>{user?.email}</p>
                         </div>
                     </div>
+                    <div className='mt-4 border-b border-b-neutral-200 pb-4'>
+                        <Link to='/' className='text-neutral-600 flex justify-center items-center gap-5'><img src="https://img.icons8.com/?size=100&id=84040&format=png&color=808080" alt="settings-img" className='h-5'/>Settings</Link>
+                    </div>
+                    <p className='text-neutral-600 mt-5 flex justify-center items-center gap-5 cursor-pointer' onClick={signoutProfile}><img src="https://img.icons8.com/?size=100&id=vGj0AluRnTSa&format=png&color=808080" className='h-6' alt="logout-img"/>Sign out</p>
                 </div>
             )}
         </div>
