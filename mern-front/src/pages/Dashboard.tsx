@@ -1,9 +1,9 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from '../component/Navbar'
 import '../styles/dashboard.css'
 import axios from 'axios';
-import type {Article} from '../types/Article';
-import {Link} from 'react-router-dom';
+import type { Article } from '../types/Article';
+import { Link } from 'react-router-dom';
 
 export default function Dashboard() {
 
@@ -26,11 +26,11 @@ export default function Dashboard() {
 
     return (
         <div className='flex justify-center items-center flex-col w-full' id='dashboard-page'>
-            <Navbar/>
+            <Navbar />
             <div className='flex justify-center items-start flex-col w-full'>
                 {articles ? articles.map((article, index) => (
                     <div key={index}
-                         className='py-15 w-200 border-b border-b-neutral-200 mx-50 pr-15 border-r border-r-neutral-200'>
+                        className='py-15 w-200 border-b border-b-neutral-200 mx-50 pr-15 border-r border-r-neutral-200'>
                         <div className='inline-block bg-green-100 mb-5 px-2 py-0.5 rounded-4xl'>
                             <p className='text-sm whitespace-nowrap text-green-900'>{article.title} by {article.name}</p>
                         </div>
@@ -43,22 +43,22 @@ export default function Dashboard() {
                         <div className='flex justify-center items-center gap-8 my-5 -ml-138'>
                             <div className='flex justify-center items-center gap-3'>
                                 <img src="https://img.icons8.com/?size=100&id=85028&format=png&color=333333"
-                                     className='h-5' alt=""/>
+                                    className='h-5' alt="" />
                                 <p>{article?.viewCount}</p>
                             </div>
                             <div className='flex justify-center items-center gap-3'>
                                 <img src="https://img.icons8.com/?size=100&id=33481&format=png&color=333333"
-                                     className='h-5' alt=""/>
+                                    className='h-5' alt="" />
                                 <p>{article?.likeCount}</p>
                             </div>
                             <div className='flex justify-center items-center gap-3'>
                                 <img src="https://img.icons8.com/?size=100&id=15957&format=png&color=333333"
-                                     className='h-5' alt=""/>
+                                    className='h-5' alt="" />
                                 <p>{article?.disLikeCount}</p>
                             </div>
                         </div>
                         <Link to={`/view/article/${article._id}/${article.title}`}
-                              className='underline underline-offset-4 cursor-pointer'>Read more</Link>
+                            className='underline underline-offset-4 cursor-pointer'>Read more</Link>
                     </div>
                 )) : <p className='pl-50 pt-10 text-neutral-400 font-semibold text-7xl'>No articles found.</p>
                 }
