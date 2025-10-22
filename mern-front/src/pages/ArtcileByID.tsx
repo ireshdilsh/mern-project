@@ -84,6 +84,12 @@ export default function ArtcileByID() {
                     ))}
                 </div>
                 <h1 className='text-3xl tracking-tighter mt-10'>Comments (10)</h1>
+                <div className='flex justify-center items-left flex-col'>
+                    <div className='flex justify-center items-center mt-5'>
+                        <input type="text" className='bg-neutral-100 w-170 h-10 px-10 rounded-sm' placeholder='Submit response' />
+                        <button className='bg-black text-white rounded-sm px-4 py-2.5 cursor-pointer text-sm'>Responded</button>
+                    </div>
+                </div>
             </div>
         </div>
     )
