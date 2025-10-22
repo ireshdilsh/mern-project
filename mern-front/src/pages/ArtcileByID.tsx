@@ -15,8 +15,9 @@ export default function ArtcileByID() {
     const [comments, setComments] = useState<Comment['comment']>('');
     const [allComments, setAllComments] = useState<Comment[]>([]);
     const [user, setUser] = useState<GoogleUser | null>(null)
+    const [count , setCount] = useState<number>(0)
 
-      useEffect(() => {
+    useEffect(() => {
         const storedUser = localStorage.getItem('googleUser')
         if (storedUser) {
             setUser(JSON.parse(storedUser))
@@ -24,7 +25,18 @@ export default function ArtcileByID() {
         axios.put(`http://localhost:5000/api/v1/article/increment/view/${id}`);
         featchArticle()
         getCommentsforArticle()
+        getCommentsCount()
     }, [id]);
+
+    const getCommentsCount = async () => {
+        try {
+            const resp = await axios.get(`http://localhost:5000/api/v1/comment/get/comment/count/${id}`);
+            setCount(resp.data.count)
+            console.log(resp.data.count);
+        } catch (error) {
+            console.log("Something went wrong", error);
+        }
+    }
 
     const submitComment = async (e: React.MouseEvent<HTMLButtonElement>) => {
         try {
@@ -42,6 +54,7 @@ export default function ArtcileByID() {
             console.log(resp.data);
             setComments('')
             getCommentsforArticle()
+            getCommentsCount()
         } catch (error) {
             console.log('Something went wrong!', error)
         }
@@ -125,7 +138,7 @@ export default function ArtcileByID() {
                         )
                     ))}
                 </div>
-                <h1 className='text-3xl tracking-tighter mt-10'>Comments (10)</h1>
+                <h1 className='text-3xl tracking-tighter mt-10'>Comments ({count})</h1>
                 <div className='flex justify-center items-left flex-col'>
                     <div className='flex justify-center items-center mt-5'>
                         <input type="text" className='bg-neutral-100 w-170 h-10 px-6 rounded-sm' placeholder='Submit response' value={comments} onChange={(e) => setComments(e.target.value)} />
@@ -136,7 +149,7 @@ export default function ArtcileByID() {
                             <div key={commentObj.articleId} className='border-b border-b-neutral-200 w-full pb-6 mb-6'>
                                 <div className='flex justify-start items-center gap-4 mb-2'>
                                     <div className='bg-red-500 text-white rounded-full h-8 w-8 flex justify-center font-semibold items-center'>
-                                        {commentObj?.userName?.substring(0,2).toUpperCase()}
+                                        {commentObj?.userName?.substring(0, 2).toUpperCase()}
                                     </div>
                                     <div className='flex justify-start items-start flex-col'>
                                         <p className='font-medium'>{commentObj?.userName}</p>
