@@ -1,4 +1,6 @@
 #article-by-id-page h1,
-#article-by-id-page p{
+#article-by-id-page p,
+#article-by-id-page input,
+#article-by-id-page button {
     font-family: 'Gabarito';
 }

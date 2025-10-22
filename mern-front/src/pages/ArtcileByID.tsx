@@ -4,16 +4,59 @@ import { useParams } from 'react-router-dom'
 import type { Article } from '../types/Article';
 import Navbar from '../component/Navbar';
 import '../styles/articlebyid.css'
+import type { Comment } from '../types/Comments';
+import type { GoogleUser } from '../types/GoogleUser';
 
 export default function ArtcileByID() {
 
     const { id } = useParams<{ id: string }>()
     const [article, setArticle] = useState<Article>()
 
+    const [comments, setComments] = useState<Comment['comment']>('');
+    const [allComments, setAllComments] = useState<Comment[]>([]);
+    const [user, setUser] = useState<GoogleUser | null>(null)
+
+    const submitComment = async (e: React.MouseEvent<HTMLButtonElement>) => {
+        try {
+            e.preventDefault();
+
+            const commentData: Comment = {
+                articleId: id || '',
+                userName: user?.name || 'undefined',
+                userEmail: user?.email || 'undefined',
+                comment: comments,
+                date: new Date().toISOString()
+            }
+
+            const resp = await axios.post('http://localhost:5000/api/v1/comment/add/comment', commentData)
+            console.log(resp.data);
+            setComments('')
+            alert('Comment submitted successfully!');
+
+        } catch (error) {
+            console.log('Something went wrong!', error)
+        }
+    }
+
     useEffect(() => {
+        const storedUser = localStorage.getItem('googleUser')
+        if (storedUser) {
+            setUser(JSON.parse(storedUser))
+        }
         axios.put(`http://localhost:5000/api/v1/article/increment/view/${id}`);
         featchArticle()
+        getCommentsforArticle()
     }, [id]);
+
+    const getCommentsforArticle = async () => {
+        try {
+            const resp = await axios.get(`http://localhost:5000/api/v1/comment/get/comments/article/${id}`);
+            setAllComments(resp.data.comments);
+            console.log(resp.data.comments);
+        } catch (error) {
+            console.log("Something went wrong", error);
+        }
+    }
 
     const featchArticle = async () => {
         if (!id) {
@@ -86,8 +129,24 @@ export default function ArtcileByID() {
                 <h1 className='text-3xl tracking-tighter mt-10'>Comments (10)</h1>
                 <div className='flex justify-center items-left flex-col'>
                     <div className='flex justify-center items-center mt-5'>
-                        <input type="text" className='bg-neutral-100 w-170 h-10 px-10 rounded-sm' placeholder='Submit response' />
-                        <button className='bg-black text-white rounded-sm px-4 py-2.5 cursor-pointer text-sm'>Responded</button>
+                        <input type="text" className='bg-neutral-100 w-170 h-10 px-6 rounded-sm' placeholder='Submit response' value={comments} onChange={(e) => setComments(e.target.value)} />
+                        <button onClick={submitComment} className='bg-black text-white rounded-sm px-4 py-2.5 cursor-pointer text-sm'>Responded</button>
+                    </div>
+                    <div className='flex justify-center items-center flex-col mt-10'>
+                        {allComments && allComments.map((commentObj) => (
+                            <div key={commentObj.articleId} className='border-b border-b-neutral-200 w-full pb-6 mb-6'>
+                                <div className='flex justify-start items-center gap-4 mb-2'>
+                                    <div className='bg-black text-white rounded-full h-8 w-8 flex justify-center items-center'>
+                                        {commentObj?.userName?.charAt(0).toUpperCase()}
+                                    </div>
+                                    <div className='flex justify-start items-start flex-col'>
+                                        <p className='font-medium'>{commentObj?.userName}</p>
+                                        <p className='text-sm text-neutral-500'>{commentObj?.date ? new Date(commentObj.date).toLocaleDateString() : 'No date'}</p>
+                                    </div>
+                                </div>
+                                <p className='text-neutral-800 text-base'>{commentObj?.comment}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
