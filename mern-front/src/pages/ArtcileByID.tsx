@@ -135,15 +135,15 @@ export default function ArtcileByID() {
                         {allComments && allComments.map((commentObj) => (
                             <div key={commentObj.articleId} className='border-b border-b-neutral-200 w-full pb-6 mb-6'>
                                 <div className='flex justify-start items-center gap-4 mb-2'>
-                                    <div className='bg-black text-white rounded-full h-8 w-8 flex justify-center items-center'>
-                                        {commentObj?.userName?.charAt(0).toUpperCase()}
+                                    <div className='bg-red-500 text-white rounded-full h-8 w-8 flex justify-center font-semibold items-center'>
+                                        {commentObj?.userName?.substring(0,2).toUpperCase()}
                                     </div>
                                     <div className='flex justify-start items-start flex-col'>
                                         <p className='font-medium'>{commentObj?.userName}</p>
                                         <p className='text-sm text-neutral-500'>{commentObj?.date ? new Date(commentObj.date).toLocaleDateString() : 'No date'}</p>
                                     </div>
                                 </div>
-                                <p className='text-neutral-800 text-base'>{commentObj?.comment}</p>
+                                <p className='text-neutral-800 text-base mt-3'>{commentObj?.comment}</p>
                             </div>
                         ))}
                     </div>
