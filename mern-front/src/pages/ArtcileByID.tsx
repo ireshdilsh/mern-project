@@ -16,6 +16,16 @@ export default function ArtcileByID() {
     const [allComments, setAllComments] = useState<Comment[]>([]);
     const [user, setUser] = useState<GoogleUser | null>(null)
 
+      useEffect(() => {
+        const storedUser = localStorage.getItem('googleUser')
+        if (storedUser) {
+            setUser(JSON.parse(storedUser))
+        }
+        axios.put(`http://localhost:5000/api/v1/article/increment/view/${id}`);
+        featchArticle()
+        getCommentsforArticle()
+    }, [id]);
+
     const submitComment = async (e: React.MouseEvent<HTMLButtonElement>) => {
         try {
             e.preventDefault();
@@ -31,22 +41,11 @@ export default function ArtcileByID() {
             const resp = await axios.post('http://localhost:5000/api/v1/comment/add/comment', commentData)
             console.log(resp.data);
             setComments('')
-            alert('Comment submitted successfully!');
-
+            getCommentsforArticle()
         } catch (error) {
             console.log('Something went wrong!', error)
         }
     }
-
-    useEffect(() => {
-        const storedUser = localStorage.getItem('googleUser')
-        if (storedUser) {
-            setUser(JSON.parse(storedUser))
-        }
-        axios.put(`http://localhost:5000/api/v1/article/increment/view/${id}`);
-        featchArticle()
-        getCommentsforArticle()
-    }, [id]);
 
     const getCommentsforArticle = async () => {
         try {
