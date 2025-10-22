@@ -99,66 +99,6 @@ export const getCommentById = async (req: any, res: any) => {
     }
 };
 
-// Update a comment
-export const updateComment = async (req: any, res: any) => {
-    try {
-        const { id } = req.params;
-        const { comment } = req.body;
-
-        if (!comment) {
-            return res.status(400).json({
-                message: "Comment text is required"
-            });
-        }
-
-        const existingComment = await Comment.findById(id);
-        if (!existingComment) {
-            return res.status(404).json({
-                message: "Comment not found"
-            });
-        }
-
-        const updatedComment = await Comment.findByIdAndUpdate(
-            id,
-            { comment },
-            { new: true }
-        );
-
-        res.status(200).json({
-            message: "Comment updated successfully",
-            comment: updatedComment
-        });
-    } catch (error) {
-        console.error("Error updating comment:", error);
-        res.status(500).json({ message: "Internal server error" });
-    }
-};
-
-// Delete a comment
-export const deleteComment = async (req: any, res: any) => {
-    try {
-        const { id } = req.params;
-
-        const comment = await Comment.findByIdAndDelete(id);
-        if (!comment) {
-            return res.status(404).json({
-                message: "Comment not found"
-            });
-        }
-
-        res.status(200).json({
-            message: "Comment deleted successfully",
-            deletedComment: {
-                id: comment._id,
-                comment: comment.comment
-            }
-        });
-    } catch (error) {
-        console.error("Error deleting comment:", error);
-        res.status(500).json({ message: "Internal server error" });
-    }
-};
-
 // Get comment count for an article
 export const getCommentCount = async (req: any, res: any) => {
     try {
