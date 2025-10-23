@@ -1,21 +1,21 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import type { Article } from '../types/Article';
+import {useEffect, useState} from 'react'
+import {useParams} from 'react-router-dom'
+import type {Article} from '../types/Article';
 import Navbar from '../component/Navbar';
 import '../styles/articlebyid.css'
-import type { Comment } from '../types/Comments';
-import type { GoogleUser } from '../types/GoogleUser';
+import type {Comment} from '../types/Comments';
+import type {GoogleUser} from '../types/GoogleUser';
 
 export default function ArtcileByID() {
 
-    const { id } = useParams<{ id: string }>()
+    const {id} = useParams<{ id: string }>()
     const [article, setArticle] = useState<Article>()
 
     const [comments, setComments] = useState<Comment['comment']>('');
     const [allComments, setAllComments] = useState<Comment[]>([]);
     const [user, setUser] = useState<GoogleUser | null>(null)
-    const [count , setCount] = useState<number>(0)
+    const [count, setCount] = useState<number>(0)
 
     useEffect(() => {
         const storedUser = localStorage.getItem('googleUser')
@@ -95,10 +95,9 @@ export default function ArtcileByID() {
         featchArticle()
     }
 
-
     return (
         <div className='flex justify-center items-center w-full flex-col'>
-            <Navbar />
+            <Navbar/>
             <div className='flex justify-center items-start flex-col mt-20 w-195' id='article-by-id-page'>
                 <div className='inline-block bg-green-100 px-3 rounded-4xl'>
                     <p className='text-sm whitespace-nowrap text-green-900'>{article?.title} by {article?.name}</p>
@@ -111,19 +110,19 @@ export default function ArtcileByID() {
                 <div className='flex justify-center items-center gap-8 mt-5'>
                     <div className='flex justify-center items-center gap-3'>
                         <img src="https://img.icons8.com/?size=100&id=85028&format=png&color=333333" className='h-5'
-                            alt="" />
+                             alt=""/>
                         <p>{article?.viewCount}</p>
                     </div>
                     <div className='flex justify-center items-center gap-3 cursor-pointer' onClick={incrementLikes}>
                         <img
                             src="https://img.icons8.com/?size=100&id=33481&format=png&color=333333" className='h-5'
-                            alt="" />
+                            alt=""/>
                         <p>{article?.likeCount}</p>
                     </div>
 
                     <div className='flex justify-center items-center gap-3 cursor-pointer' onClick={incrementDisLikes}>
                         <img src="https://img.icons8.com/?size=100&id=15957&format=png&color=333333" className='h-5'
-                            alt="" />
+                             alt=""/>
                         <p>{article?.disLikeCount}</p>
                     </div>
                 </div>
@@ -133,7 +132,7 @@ export default function ArtcileByID() {
                         sentence.trim() && (
                             <span key={index}>
                                 {sentence.trim()}.
-                                {index < article.content.split('.').length - 1 && <><br /><br /></>}
+                                {index < article.content.split('.').length - 1 && <><br/><br/></>}
                             </span>
                         )
                     ))}
@@ -141,14 +140,19 @@ export default function ArtcileByID() {
                 <h1 className='text-3xl tracking-tighter mt-10'>Comments ({count})</h1>
                 <div className='flex justify-center items-left flex-col'>
                     <div className='flex justify-center items-center mt-5'>
-                        <input type="text" className='bg-neutral-100 w-170 h-10 px-6 rounded-sm' placeholder='Submit response' value={comments} onChange={(e) => setComments(e.target.value)} />
-                        <button onClick={submitComment} className='bg-black text-white rounded-sm px-4 py-2.5 cursor-pointer text-sm'>Responded</button>
+                        <input type="text" className='bg-neutral-100 w-170 h-10 px-6 rounded-sm'
+                               placeholder='Submit response' value={comments}
+                               onChange={(e) => setComments(e.target.value)}/>
+                        <button onClick={submitComment}
+                                className='bg-black text-white rounded-sm px-4 py-2.5 cursor-pointer text-sm'>Responded
+                        </button>
                     </div>
                     <div className='flex justify-center items-center flex-col mt-10'>
                         {allComments && allComments.map((commentObj) => (
                             <div key={commentObj.articleId} className='border-b border-b-neutral-200 w-full pb-6 mb-6'>
                                 <div className='flex justify-start items-center gap-4 mb-2'>
-                                    <div className='bg-red-500 text-white rounded-full h-8 w-8 flex justify-center font-semibold items-center'>
+                                    <div
+                                        className='bg-red-500 text-white rounded-full h-8 w-8 flex justify-center font-semibold items-center'>
                                         {commentObj?.userName?.substring(0, 2).toUpperCase()}
                                     </div>
                                     <div className='flex justify-start items-start flex-col'>
