@@ -19,7 +19,7 @@ server.use('/api/v1/article',articleRoutes)
 server.use('/api/v1/comment',commentRoutes)
 
 server.listen(5000,()=>{
-    console.log("Server is starting")
+    console.log("Server is starting port 5000");
 })
 
  connectDB();
