@@ -4,6 +4,7 @@ export default function MyArticles() {
     return (
         <div className='flex justify-center items-center flex-col'>
             <Navbar/>
+            <div>This is My Article Page</div>
         </div>
     )
 }
