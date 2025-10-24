@@ -86,9 +86,9 @@ export default function Navbar() {
                         </div>
                     </div>
                     <div className='mt-4 border-b border-b-neutral-200 pb-4'>
-                        <Link to='/' className='text-neutral-600 flex justify-center items-center gap-5'><img src="https://img.icons8.com/?size=100&id=84040&format=png&color=808080" alt="settings-img" className='h-5'/>Settings</Link>
+                        <Link to='/' className='text-neutral-600 flex justify-center items-center gap-2.5'><img src="https://img.icons8.com/?size=100&id=84040&format=png&color=808080" alt="settings-img" className='h-5'/>Settings</Link>
                     </div>
-                    <p className='text-neutral-600 mt-5 flex justify-center items-center gap-5 cursor-pointer' onClick={signoutProfile}><img src="https://img.icons8.com/?size=100&id=vGj0AluRnTSa&format=png&color=808080" className='h-6' alt="logout-img"/>Sign out</p>
+                    <p className='text-neutral-600 mt-5 flex justify-center items-center gap-2.5 cursor-pointer' onClick={signoutProfile}><img src="https://img.icons8.com/?size=100&id=vGj0AluRnTSa&format=png&color=808080" className='h-6' alt="logout-img"/>Sign out</p>
                 </div>
             )}
         </div>
