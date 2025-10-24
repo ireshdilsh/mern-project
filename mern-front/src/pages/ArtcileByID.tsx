@@ -6,6 +6,7 @@ import Navbar from '../component/Navbar';
 import '../styles/articlebyid.css'
 import type {Comment} from '../types/Comments';
 import type {GoogleUser} from '../types/GoogleUser';
+import Swal from "sweetalert2";
 
 export default function ArtcileByID() {
 
@@ -52,6 +53,11 @@ export default function ArtcileByID() {
 
             const resp = await axios.post('http://localhost:5000/api/v1/comment/add/comment', commentData)
             console.log(resp.data);
+            Swal.fire({
+                title: "Good job!",
+                text: "Article publish successfully!",
+                icon: "success"
+            });
             setComments('')
             getCommentsforArticle()
             getCommentsCount()
