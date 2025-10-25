@@ -55,7 +55,7 @@ export default function ArtcileByID() {
             console.log(resp.data);
             Swal.fire({
                 title: "Good job!",
-                text: "Article publish successfully!",
+                text: "Responded !",
                 icon: "success"
             });
             setComments('')
