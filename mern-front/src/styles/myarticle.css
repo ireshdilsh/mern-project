@@ -1,3 +1,4 @@
-#my-article-page h1{
+#my-article-page h1,
+#my-article-page button{
     font-family: 'Gabarito';
 }

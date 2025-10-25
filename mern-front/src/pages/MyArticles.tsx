@@ -25,11 +25,14 @@ export default function MyArticles() {
         <div className='flex justify-center items-start flex-col' id='my-article-page'>
             <Navbar />
             <h1 className='text-4xl tracking-tighter pl-50 pt-15'>My Articles</h1>
-            <div className='flex justify-center items-center w-full mt-15'>
+            <div className='flex justify-center items-center flex-col w-full mt-15'>
                 {articles === null ? (
                     <div>Loading...</div>
                 ) : articles.length === 0 ? (
-                    <div>No articles found for this email</div>
+                    <div className='text-3xl flex flex-col justify-center items-center'>
+                        <h1 className='mt-20 tracking-tighter text-neutral-500'> No articles found for You.</h1>
+                        <button className='px-5 py-2.5 font-medium cursor-pointer text-sm mt-5 bg-green-700 text-white rounded-sm w-38'>Write Article</button>
+                    </div>
                 ) : (
                     articles.map((article: Article) => (
                         <div key={article._id} className='article-card'>
