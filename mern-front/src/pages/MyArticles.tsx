@@ -31,7 +31,7 @@ export default function MyArticles() {
     return (
         <div className='flex justify-center items-start flex-col' id='my-article-page'>
             <Navbar />
-            <h1 className='text-4xl tracking-tighter pl-50 pt-15'>My Articles ({articles?.length})</h1>
+            <h1 className='text-3xl font-medium tracking-tighter pl-50 pt-15'>My Articles ({articles?.length})</h1>
             <div className='flex justify-center items-center flex-col w-full mt-10'>
                 {articles === null ? (
                     <div>Loading...</div>
@@ -54,13 +54,13 @@ export default function MyArticles() {
                                 </div>
 
                                 <div className='flex justify-center items-center gap-2.5'>
-                                    <img src="https://img.icons8.com/?size=100&id=85130&format=png&color=000000" alt="" className='h-5'/>
-                                    {article.viewCount}
+                                    <img src="https://img.icons8.com/?size=100&id=83166&format=png&color=000000" alt="" className='h-5'/>
+                                    {article.likeCount}
                                 </div>
 
                                 <div className='flex justify-center items-center gap-2.5'>
-                                    <img src="https://img.icons8.com/?size=100&id=85130&format=png&color=000000" alt="" className='h-5'/>
-                                    {article.viewCount}
+                                    <img src="https://img.icons8.com/?size=100&id=15957&format=png&color=000000" alt="" className='h-5'/>
+                                    {article.disLikeCount}
                                 </div>
                             </div>
                         </div>
