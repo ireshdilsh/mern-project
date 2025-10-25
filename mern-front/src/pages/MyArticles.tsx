@@ -3,6 +3,7 @@ import '../styles/myarticle.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import type { Article } from "../types/Article.ts";
+import {type NavigateFunction, useNavigate} from "react-router-dom";
 
 export default function MyArticles() {
     const [articles, setArticles] = useState<Article[] | null>(null);
@@ -21,6 +22,12 @@ export default function MyArticles() {
         setArticles(resp.data.articles);
     };
 
+    const navigate : NavigateFunction = useNavigate()
+
+    const gotoWritePage = (): void => {
+        navigate('/write/page')
+    }
+
     return (
         <div className='flex justify-center items-start flex-col' id='my-article-page'>
             <Navbar />
@@ -30,8 +37,9 @@ export default function MyArticles() {
                     <div>Loading...</div>
                 ) : articles.length === 0 ? (
                     <div className='text-3xl flex flex-col justify-center items-center'>
-                        <h1 className='mt-20 tracking-tighter text-neutral-500'> No articles found for You.</h1>
-                        <button className='px-5 py-2.5 font-medium cursor-pointer text-sm mt-5 bg-green-700 text-white rounded-sm w-38'>Write Article</button>
+                        <h1 className='mt-10 tracking-tighter text-neutral-500'> No articles found for You.</h1>
+                        <img src="https://img.icons8.com/?size=100&id=Rin5jsZMXvl0&format=png&color=000000" alt="" className='h-30 mt-10'/>
+                        <button onClick={gotoWritePage} className='px-5 py-2.5 font-medium cursor-pointer text-sm mt-5 bg-green-700 text-white rounded-sm w-38'>Write Article</button>
                     </div>
                 ) : (
                     articles.map((article: Article) => (
