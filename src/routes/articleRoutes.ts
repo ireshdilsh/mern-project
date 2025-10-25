@@ -1,13 +1,14 @@
 import express from "express";
-import { 
-    createArticle, 
-    getArticles, 
-    getArticleById, 
-    updateArticle, 
+import {
+    createArticle,
+    getArticles,
+    getArticleById,
+    updateArticle,
     deleteArticle,
     incrementViewCount,
     incrementLikeCount,
-    decrementLikeCount
+    decrementLikeCount,
+    getArticlesByEmail
 } from "../controller/articleController.js";
 
 const router = express.Router();
@@ -20,5 +21,6 @@ router.delete("/delete/article/:id", deleteArticle);
 router.put("/increment/view/:id", incrementViewCount);
 router.put("/increment/like/:id", incrementLikeCount);
 router.put("/decrement/like/:id", decrementLikeCount);
+router.get("/get/articles/by/email/is/:email", getArticlesByEmail);
 
 export default router;

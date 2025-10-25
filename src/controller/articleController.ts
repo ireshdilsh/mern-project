@@ -232,3 +232,18 @@ export const decrementLikeCount = async (req: any, res: any) => {
     }
 };
 
+export const getArticlesByEmail = async (req: any, res: any) => {
+    try {
+        
+        const {email} = req.params;
+        const articles = await Article .find({email: email}).sort({ date: -1 }); // Sort by newest first
+        res.status(200).json({
+            message: "Articles retrieved successfully",
+            count: articles.length,
+            articles
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+}
