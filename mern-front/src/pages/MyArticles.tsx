@@ -31,8 +31,8 @@ export default function MyArticles() {
     return (
         <div className='flex justify-center items-start flex-col' id='my-article-page'>
             <Navbar />
-            <h1 className='text-4xl tracking-tighter pl-50 pt-15'>My Articles</h1>
-            <div className='flex justify-center items-center flex-col w-full mt-15'>
+            <h1 className='text-4xl tracking-tighter pl-50 pt-15'>My Articles ({articles?.length})</h1>
+            <div className='flex justify-center items-center flex-col w-full mt-10'>
                 {articles === null ? (
                     <div>Loading...</div>
                 ) : articles.length === 0 ? (
@@ -43,10 +43,26 @@ export default function MyArticles() {
                     </div>
                 ) : (
                     articles.map((article: Article) => (
-                        <div key={article._id} className='article-card'>
-                            <h2 className='article-title'>{article.title}</h2>
-                            <p className='article-date'>Published on: {new Date(article.date).toLocaleDateString()}</p>
-                            <p className='article-content'>{article.content.substring(0, 100)}...</p>
+                        <div key={article._id} className='mt-15 flex flex-col justify-center items-start pb-10 border-b border-b-neutral-200 w-200'>
+                            <h1 className='text-3xl font-semibold tracking-tighter text-neutral-800 mb-3'>{article.title}</h1>
+                            <p className='text-sm font-light text-neutral-500'>Published on: {new Date(article.date).toLocaleDateString()}</p>
+                            <p className='text-base mt-5 font-normal'>{article.content.substring(0, 300)}...</p>
+                            <div className='mt-10 flex justify-center items-center gap-5'>
+                                <div className='flex justify-center items-center gap-2.5'>
+                                    <img src="https://img.icons8.com/?size=100&id=85130&format=png&color=000000" alt="" className='h-5'/>
+                                    {article.viewCount}
+                                </div>
+
+                                <div className='flex justify-center items-center gap-2.5'>
+                                    <img src="https://img.icons8.com/?size=100&id=85130&format=png&color=000000" alt="" className='h-5'/>
+                                    {article.viewCount}
+                                </div>
+
+                                <div className='flex justify-center items-center gap-2.5'>
+                                    <img src="https://img.icons8.com/?size=100&id=85130&format=png&color=000000" alt="" className='h-5'/>
+                                    {article.viewCount}
+                                </div>
+                            </div>
                         </div>
                     ))
                 )}
