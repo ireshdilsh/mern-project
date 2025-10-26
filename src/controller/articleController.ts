@@ -29,6 +29,8 @@ export const createArticle = async (req: any, res: any) => {
         // Calculate reading time
         const readingTime = calculateReadingTime(content);
 
+
+
         const newArticle = new Article({
             title,
             content,
