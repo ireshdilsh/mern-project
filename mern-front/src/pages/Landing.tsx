@@ -23,7 +23,7 @@ export default function Landing() {
           <a className='font-normal' href="#">Topics</a>
           <a className='font-normal' href="#">Trending</a>
           <a className='font-normal' href="#">Publish</a>
-          <a className='font-normal' href="#">Community</a>
+          <a className='font-normal cursor-pointer' onClick={() => navigate('/community')}>Community</a>
           <a className='font-normal cursor-pointer' onClick={() => navigate('/resources')}>Resources</a>
           <a className='font-normal cursor-pointer' onClick={() => navigate('/about')}>About</a>
         </div>

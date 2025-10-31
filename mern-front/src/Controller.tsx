@@ -9,6 +9,7 @@ import ArtcileByID from './pages/ArtcileByID'
 import MyArticles from "./pages/MyArticles.tsx";
 import About from "./pages/About.tsx";
 import Resources from "./pages/Resources.tsx";
+import Community from "./pages/Community.tsx";
 
 
 export default function Controller() {
@@ -25,6 +26,7 @@ export default function Controller() {
                 <Route path='/view/article/:id/:title' element = {<ArtcileByID/>}></Route>
                 <Route path='/my/articles' element={<MyArticles/>}></Route>
                 <Route path='/about' element={<About/>}></Route>
+                <Route path='/community' element={<Community/>}></Route>
                 <Route path='/resources' element={<Resources/>}></Route>
             </Routes>
         </BrowserRouter>
