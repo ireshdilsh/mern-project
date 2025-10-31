@@ -1,0 +1,79 @@
+#resources-page h1,
+#resources-page h2,
+#resources-page h3,
+#resources-page button,
+#resources-page span {
+    font-family: 'Gabarito';
+}
+
+#resources-page {
+    /*background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);*/
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+/* Resource Card Hover Effect */
+.resource-card {
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-8px);
+    border-color: #e5e7eb;
+}
+
+.resource-card:hover h3 {
+    background: linear-gradient(to right, #2563eb, #9333ea, #ef4444);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Category Button Animation */
+#resources-page button {
+    transition: all 0.3s ease;
+}
+
+#resources-page button:hover {
+    transform: translateY(-2px);
+}
+
+#resources-page button:active {
+    transform: translateY(0);
+}
+
+/* Grid Responsive */
+@media (max-width: 1024px) {
+    #resources-page .grid-cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    #resources-page .grid-cols-3 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.resource-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    /*animation-delay: calc(var(--card-index) * 0.1s);*/
+}
+
+/* Popular Topics Hover */
+#resources-page span:hover {
+    transform: scale(1.05);
+}
+

@@ -1,4 +1,3 @@
-import React from 'react'
 import logo from '../assets/logo.png'
 import bgImg from '../assets/bg-img.png'
 import '../styles/landing.css'
@@ -25,8 +24,8 @@ export default function Landing() {
           <a className='font-normal' href="#">Trending</a>
           <a className='font-normal' href="#">Publish</a>
           <a className='font-normal' href="#">Community</a>
-          <a className='font-normal' href="#">Resources</a>
-          <a className='font-normal' href="#">About</a>
+          <a className='font-normal cursor-pointer' onClick={() => navigate('/resources')}>Resources</a>
+          <a className='font-normal cursor-pointer' onClick={() => navigate('/about')}>About</a>
         </div>
       </nav>
 

@@ -7,6 +7,8 @@ import Write from './pages/Write'
 import Notification from './pages/Notification'
 import ArtcileByID from './pages/ArtcileByID'
 import MyArticles from "./pages/MyArticles.tsx";
+import About from "./pages/About.tsx";
+import Resources from "./pages/Resources.tsx";
 
 
 export default function Controller() {
@@ -22,6 +24,8 @@ export default function Controller() {
                 <Route path='/notification/page' element = {<Notification/>}></Route>
                 <Route path='/view/article/:id/:title' element = {<ArtcileByID/>}></Route>
                 <Route path='/my/articles' element={<MyArticles/>}></Route>
+                <Route path='/about' element={<About/>}></Route>
+                <Route path='/resources' element={<Resources/>}></Route>
             </Routes>
         </BrowserRouter>
     </div>
