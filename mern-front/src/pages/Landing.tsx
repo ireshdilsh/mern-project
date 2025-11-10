@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../styles/Landing.css'
 
 export default function Landing() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -387,3 +388,5 @@ export default function Landing() {
     </div>
   )
 }
+
+
