@@ -108,7 +108,7 @@ export default function Landing() {
       </section>
 
       <section className='flex justify-center items-center gap-5 mx-4 mt-4'>
-        <div className='bg-[#f5f5f7] flex justify-center items-center flex-col'>
+        <div className='bg-[#f5f5f7] flex justify-center items-center flex-col p-20'>
           <h1 className='text-4xl font-semibold'>AirPods Pro 3</h1>
           <h3 className='text-xl mt-2 font-normal'>The world's best in-ear</h3>
           <h3 className='text-xl font-normal'>Active Noise Cansellation.</h3>
