@@ -78,7 +78,7 @@ export default function Landing() {
 
       <section className='bg-black mt-10 flex justify-center items-center flex-col'>
         <h1 className='text-5xl text-white font-semibold pt-16'>iPhone 17 Pro</h1>
-        <h3 className='text-white text-3xl mt-4'>All out Pro.</h3>
+        <h3 className='text-white text-3xl mt-4 font-normal'>All out Pro.</h3>
         <div className='flex justify-center items-center gap-5 mt-5'>
           <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
           <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
@@ -88,8 +88,8 @@ export default function Landing() {
 
       <section className='bg-[#f5f5f7] w-full flex justify-center items-center flex-col mt-4'>
         <h1 className='font-semibold text-5xl pt-10 z-50'>iPhone Air</h1>
-        <h3 className='text-3xl mt-4 z-50'>The thinnest iPhone ever.</h3>
-        <h3 className='text-3xl z-50'>With the power of pro inside.</h3>
+        <h3 className='text-3xl mt-4 z-50 font-normal'>The thinnest iPhone ever.</h3>
+        <h3 className='text-3xl z-50 font-normal'>With the power of pro inside.</h3>
         <div className='flex justify-center items-center gap-5 mt-5'>
           <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
           <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
@@ -99,12 +99,27 @@ export default function Landing() {
 
       <section className='mt-7 flex justify-center items-center flex-col'>
         <h1 className='font-semibold text-5xl pt-10 z-50'>iPad air</h1>
-        <h3 className='text-3xl z-50 mt-4'>Now supercharged by the M3 chip.</h3>
+        <h3 className='text-3xl z-50 mt-4 font-normal'>Now supercharged by the M3 chip.</h3>
         <div className='flex justify-center items-center gap-5 mt-5'>
           <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
           <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
         </div>
         <img src="https://www.apple.com/v/home/ci/images/heroes/ipad-air/hero_ipad_air_avail__c34ycq52exg2_medium_2x.jpg" className='-mt-55 object-cover h-160 w-full' alt="" />
+      </section>
+
+      <section className='flex justify-center items-center gap-5 mx-4 mt-4'>
+        <div className='bg-[#f5f5f7] flex justify-center items-center flex-col'>
+          <h1 className='text-4xl font-semibold'>AirPods Pro 3</h1>
+          <h3 className='text-xl mt-2 font-normal'>The world's best in-ear</h3>
+          <h3 className='text-xl font-normal'>Active Noise Cansellation.</h3>
+          <div className='flex justify-center items-center gap-5 mt-5'>
+          <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
+          <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
+        </div>
+        </div>
+        <div className='bg-[#f5f5f7]'>
+
+        </div>
       </section>
 
       {/* Footer */}
