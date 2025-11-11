@@ -6,12 +6,12 @@ export default function Landing() {
   return (
     <div className='min-h-screen bg-white'>
       {/* Apple Navigation Bar - Exact replica */}
-      <nav className='fixed top-0 w-full bg-[#161617]/80 backdrop-blur-2xl z-50'>
+      <nav className='fixed top-0 w-full bg-[#161617]/90 backdrop-blur-2xl z-50'>
         <div className='max-w-[980px] mx-auto px-6'>
           <div className='flex justify-between items-center h-11'>
             {/* Apple Logo */}
-            <a href='/' className='flex items-center'>
-              <svg className='w-[15px] h-11 text-[#f5f5f7] hover:text-white transition-colors' viewBox='0 0 14 44' fill='currentColor'>
+            <a href='/' className='flex items-center mt-5'>
+              <svg className='w-[15px] h-10 text-[#f5f5f7] hover:text-white transition-colors' viewBox='0 0 14 44' fill='currentColor'>
                 <path d='M12.5849 14.8672C12.2812 14.8672 11.5098 14.7754 10.7129 14.7754C9.91602 14.7754 9.14453 14.8672 9.14453 14.8672C8.59766 14.8672 8.16016 14.4297 8.16016 13.8828C8.16016 13.3613 8.5625 12.9492 9.0332 12.9238C9.0332 12.9238 9.91602 12.832 10.7129 12.832C11.5098 12.832 12.3926 12.9238 12.3926 12.9238C12.8633 12.9492 13.2656 13.3613 13.2656 13.8828C13.2656 14.4297 12.8281 14.8672 12.2812 14.8672H12.5849ZM7.32617 5.29297C8.11523 4.48047 8.66211 3.33398 8.53711 2.16211C7.41602 2.28711 6.09961 3.00586 5.28711 3.86914C4.52539 4.68164 3.95312 5.80273 4.10352 6.92383C5.27539 7.02344 6.51172 6.13086 7.32617 5.29297ZM11.6074 18.1738C10.3467 18.1738 9.49805 17.335 8.53711 17.335C7.55078 17.335 6.55273 18.2236 5.46875 18.2236C2.83398 18.2236 0.5 15.3359 0.5 12.2031C0.5 9.07031 2.43164 7.07422 4.52539 7.07422C5.71875 7.07422 6.625 7.88672 7.47461 7.88672C8.29883 7.88672 9.31836 7.02344 10.6885 7.02344C11.2354 7.02344 13.2656 7.12305 14.5 8.9375C11.7344 10.6055 12.1172 14.7012 14.5 15.6113C14.0039 16.8975 12.5918 18.9648 11.6074 18.1738Z'></path>
               </svg>
             </a>
@@ -75,10 +75,18 @@ export default function Landing() {
         </div>
       </nav>
 
-     
+     <section className='bg-black mt-10 flex justify-center items-center flex-col'>
+          <h1 className='text-5xl text-white font-semibold pt-16'>iPhone 17 Pro</h1>
+          <h3 className='text-white text-3xl mt-4'>All out Pro.</h3>
+          <div className='flex justify-center items-center gap-5 mt-5'>
+            <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer'>Learn more</button>
+            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer hover:bg-blue-500 hover:text-white'>Buy</button>
+          </div>
+          <img src="" alt="" />
+     </section>
 
       {/* Footer */}
-      <footer className='bg-[#f5f5f7] text-[#6e6e73] pt-4 pb-5 px-6 mt-11'>
+      <footer className='bg-[#f5f5f7] text-[#6e6e73] pt-4 pb-5 px-6 mt-5'>
         <div className='max-w-[980px] mx-auto'>
           {/* Footnotes */}
           <div className='text-[12px] leading-[1.33337] mb-3 border-b border-[#d2d2d7] pb-2'>
