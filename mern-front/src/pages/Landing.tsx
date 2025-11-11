@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import heroimg from '../assets/hero-img.png'
+
 export default function Landing() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -42,7 +43,7 @@ export default function Landing() {
                   <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z' />
                 </svg>
               </button>
-              <button 
+              <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className='lg:hidden text-[#f5f5f7] hover:text-white transition-colors'
               >
@@ -75,18 +76,29 @@ export default function Landing() {
         </div>
       </nav>
 
-     <section className='bg-black mt-10 flex justify-center items-center flex-col'>
-          <h1 className='text-5xl text-white font-semibold pt-16'>iPhone 17 Pro</h1>
-          <h3 className='text-white text-3xl mt-4'>All out Pro.</h3>
-          <div className='flex justify-center items-center gap-5 mt-5'>
-            <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
-            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
-          </div>
-          <img src={heroimg} alt="iPhone 17 Pro" className='h-140 scale-100 -mt-20'/>
-     </section>
-     
+      <section className='bg-black mt-10 flex justify-center items-center flex-col'>
+        <h1 className='text-5xl text-white font-semibold pt-16'>iPhone 17 Pro</h1>
+        <h3 className='text-white text-3xl mt-4'>All out Pro.</h3>
+        <div className='flex justify-center items-center gap-5 mt-5'>
+          <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
+          <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
+        </div>
+        <img src={heroimg} alt="iPhone 17 Pro" className='h-140 scale-100 -mt-20' />
+      </section>
+
+      <section className='bg-[#f5f5f7] w-full flex justify-center items-center flex-col mt-4'>
+        <h1 className='font-semibold text-5xl pt-10 z-50'>iPhone Air</h1>
+        <h3 className='text-3xl mt-4 z-50'>The thinnest iPhone ever.</h3>
+        <h3 className='text-3xl z-50'>With the power of pro inside.</h3>
+        <div className='flex justify-center items-center gap-5 mt-5'>
+          <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
+          <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
+        </div>
+        <img src="https://www.apple.com/v/home/ci/images/heroes/iphone-air/hero_iphone_air__0gxyavihpiqu_large.jpg" className='h-150 overflow-x-hidden object-cover -mt-40' alt="" />
+      </section>
+
       {/* Footer */}
-      <footer className='bg-[#f5f5f7] text-[#6e6e73] pt-4 pb-5 px-6 mt-5'>
+      <footer className='bg-[#f5f5f7] text-[#6e6e73] pt-4 pb-5 px-6 mt-4'>
         <div className='max-w-[980px] mx-auto'>
           {/* Footnotes */}
           <div className='text-[12px] leading-[1.33337] mb-3 border-b border-[#d2d2d7] pb-2'>
@@ -94,7 +106,7 @@ export default function Landing() {
               1. Trade‑in values will vary based on the condition, year, and configuration of your eligible trade‑in device. Not all devices are eligible for credit. You must be at least the age of majority to be eligible to trade in for credit or for an Apple Gift Card. Trade‑in value may be applied toward qualifying new device purchase, or added to an Apple Gift Card. Actual value awarded is based on receipt of a qualifying device matching the description provided when estimate was made. Sales tax may be assessed on full value of a new device purchase. In‑store trade‑in requires presentation of a valid photo ID (local law may require saving this information). Offer may not be available in all stores and may vary between in‑store and online trade‑in. Some stores may have additional requirements. Apple or its trade‑in partners reserve the right to refuse, cancel, or limit quantity of any trade‑in transaction for any reason. More details are available from Apple's trade-in partner for trade‑in and recycling of eligible devices. Restrictions and limitations may apply.
             </p>
           </div>
-          
+
           {/* Footer Links */}
           <div className='grid grid-cols-1 md:grid-cols-5 gap-4 text-[12px] leading-[1.33337] mb-2'>
             <div>
@@ -112,7 +124,7 @@ export default function Landing() {
                 <li><a href='#' className='hover:text-black hover:underline'>Gift Cards</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className='font-semibold text-black mb-2'>Services</h3>
               <ul className='space-y-2'>
@@ -128,7 +140,7 @@ export default function Landing() {
                 <li><a href='#' className='hover:text-black hover:underline'>Apple Podcasts</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className='font-semibold text-black mb-2'>Apple Store</h3>
               <ul className='space-y-2'>
@@ -144,21 +156,21 @@ export default function Landing() {
                 <li><a href='#' className='hover:text-black hover:underline'>Shopping Help</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className='font-semibold text-black mb-2'>For Business</h3>
               <ul className='space-y-2'>
                 <li><a href='#' className='hover:text-black hover:underline'>Apple and Business</a></li>
                 <li><a href='#' className='hover:text-black hover:underline'>Shop for Business</a></li>
               </ul>
-              
+
               <h3 className='font-semibold text-black mt-4 mb-2'>For Education</h3>
               <ul className='space-y-2'>
                 <li><a href='#' className='hover:text-black hover:underline'>Apple and Education</a></li>
                 <li><a href='#' className='hover:text-black hover:underline'>Shop for K-12</a></li>
                 <li><a href='#' className='hover:text-black hover:underline'>Shop for College</a></li>
               </ul>
-              
+
               <h3 className='font-semibold text-black mt-4 mb-2'>For Healthcare</h3>
               <ul className='space-y-2'>
                 <li><a href='#' className='hover:text-black hover:underline'>Apple in Healthcare</a></li>
@@ -166,7 +178,7 @@ export default function Landing() {
                 <li><a href='#' className='hover:text-black hover:underline'>Health Records on iPhone</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className='font-semibold text-black mb-2'>Apple Values</h3>
               <ul className='space-y-2'>
@@ -178,7 +190,7 @@ export default function Landing() {
                 <li><a href='#' className='hover:text-black hover:underline'>Racial Equity and Justice</a></li>
                 <li><a href='#' className='hover:text-black hover:underline'>Supplier Responsibility</a></li>
               </ul>
-              
+
               <h3 className='font-semibold text-black mt-4 mb-2'>About Apple</h3>
               <ul className='space-y-2'>
                 <li><a href='#' className='hover:text-black hover:underline'>Newsroom</a></li>
@@ -191,7 +203,7 @@ export default function Landing() {
               </ul>
             </div>
           </div>
-          
+
           {/* Bottom Info */}
           <div className='text-[12px] leading-[1.33337] pt-2 border-t border-[#d2d2d7]'>
             <p className='mb-1'>
