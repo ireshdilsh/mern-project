@@ -4,7 +4,7 @@ export default function Landing() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className='min-h-screen bg-white'>
+    <div className='min-h-screen bg-white overflow-x-hidden'>
       {/* Apple Navigation Bar - Exact replica */}
       <nav className='fixed top-0 w-full bg-[#161617]/90 backdrop-blur-2xl z-50'>
         <div className='max-w-[980px] mx-auto px-6'>
@@ -106,7 +106,7 @@ export default function Landing() {
         <img src="https://www.apple.com/v/home/ci/images/heroes/ipad-air/hero_ipad_air_avail__c34ycq52exg2_medium_2x.jpg" className='-mt-55 object-cover h-160 w-full' alt="" />
       </section>
 
-      <section className='flex justify-center items-center mx-4 mt-4 w-full gap-4'>
+      <section className='flex justify-center items-center mt-4 w-full gap-4'>
         <div className='bg-[#f5f5f7] flex justify-center items-center flex-col p-20'>
           <h1 className='text-4xl font-semibold'>AirPods Pro 3</h1>
           <h3 className='text-xl mt-2 font-normal z-50'>The world's best in-ear</h3>
@@ -131,7 +131,7 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className='flex justify-center items-center mx-4 mt-4 w-full gap-4'>
+      <section className='flex justify-center items-center mt-4 w-full gap-4'>
         <div className='bg-black flex justify-center items-center flex-col p-20'>
           <h1 className='text-4xl font-semibold text-white'>iPad Pro</h1>
           <h3 className='text-xl mt-2 font-normal z-50 text-white'>Advanced AI Performance</h3>
@@ -153,7 +153,7 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className='flex justify-center items-center mx-4 mt-4 w-full gap-4'>
+      <section className='flex justify-center items-center mt-4 w-full gap-4'>
         <div className='bg-[#f5f5f7] flex justify-center items-center flex-col p-20'>
           <div className='flex justify-center items-center gap-2'>
             <img src="https://img.icons8.com/?size=100&id=30840&format=png&color=000000" className='h-8' alt="" />
@@ -163,8 +163,7 @@ export default function Landing() {
           <h3 className='text-xl font-normal z-50'>in credit when you trade in</h3>
           <h3 className='text-xl font-normal z-50'>iPhone 13 or higher.</h3>
           <div className='flex justify-center items-center gap-5 mt-5'>
-            <button className='bg-blue-500 text-white px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
-            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
+            <button className='bg-blue-500 text-white px-5 py-2 rounded-4xl cursor-pointer z-10'>Get your estimate</button>
           </div>
           <img src="https://www.apple.com/v/home/ci/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_large_2x.jpg" className='object-cover h-90 w-200 scale-127 -mt-27' alt="" />
         </div>
@@ -177,7 +176,7 @@ export default function Landing() {
           <h3 className='text-xl font-normal z-50'>with every purchase.</h3>
           <div className='flex justify-center items-center gap-5 mt-5'>
             <button className='bg-blue-500 text-white px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
-            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
+            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Apply now</button>
           </div>
           <img src="https://www.apple.com/v/home/ci/images/promos/apple-card/promo_apple_card__5cm7draujpey_large.jpg" className='object-cover h-90 w-200 scale-125 -mt-20' alt="" />
         </div>
