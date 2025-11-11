@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import heroimg from '../assets/hero-img.png'
 
 export default function Landing() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -77,16 +76,16 @@ export default function Landing() {
       </nav>
 
       <section className='bg-black mt-10 flex justify-center items-center flex-col'>
-        <h1 className='text-5xl text-white font-semibold pt-16'>iPhone 17 Pro</h1>
-        <h3 className='text-white text-3xl mt-4 font-normal'>All out Pro.</h3>
+        <h1 className='text-5xl text-white font-semibold pt-16 z-50'>iPhone 17 Pro</h1>
+        <h3 className='text-white text-3xl mt-4 font-normal z-50'>All out Pro.</h3>
         <div className='flex justify-center items-center gap-5 mt-5'>
           <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
           <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
         </div>
-        <img src={heroimg} alt="iPhone 17 Pro" className='h-140 scale-100 -mt-20' />
+        <img src='https://www.apple.com/v/home/ci/images/heroes/iphone-17-pro/hero_iphone_17_pro__bknyzxfk2agi_large.jpg' alt="iPhone 17 Pro" className='scale-180 -mt-20 object-cover w-full h-80' />
       </section>
 
-      <section className='bg-[#f5f5f7] w-full flex justify-center items-center flex-col mt-4'>
+      <section className='bg-[#f5f5f7] w-full flex justify-center items-center flex-col mt-36'>
         <h1 className='font-semibold text-5xl pt-10 z-50'>iPhone Air</h1>
         <h3 className='text-3xl mt-4 z-50 font-normal'>The thinnest iPhone ever.</h3>
         <h3 className='text-3xl z-50 font-normal'>With the power of pro inside.</h3>
@@ -119,60 +118,68 @@ export default function Landing() {
           <img src="https://www.apple.com/v/home/ci/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_large_2x.jpg" className='object-cover h-90 w-200 scale-125 -mt-20' alt="" />
         </div>
         <div className='bg-[#f5f5f7] flex justify-center items-center flex-col p-20'>
-          <h1 className='text-4xl font-semibold'>AirPods Pro 3</h1>
-          <h3 className='text-xl mt-2 font-normal z-50'>The world's best in-ear</h3>
-          <h3 className='text-xl font-normal z-50'>Active Noise Cansellation.</h3>
+          <div className='flex justify-center items-center gap-2'>
+            <img src="https://img.icons8.com/?size=100&id=30840&format=png&color=000000" className='h-8' alt="" />
+            <h1 className='text-4xl font-semibold z-50 '>WATCH Siries 11</h1>
+          </div>
+          <h3 className='text-xl font-normal z-50'>The ultimate way to watch your health.</h3>
           <div className='flex justify-center items-center gap-5 mt-5'>
             <button className='bg-blue-500 text-white px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
             <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
           </div>
-          <img src="https://www.apple.com/v/home/ci/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_large_2x.jpg" className='object-cover h-90 w-200 scale-125 -mt-20' alt="" />
+          <img src="https://www.apple.com/v/home/ci/images/promos/apple-watch-series-11/promo_apple_watch_series_11__b63hxviqvonm_large.jpg" className='object-cover h-90 w-200 scale-125 -mt-11' alt="" />
+        </div>
+      </section>
+
+      <section className='flex justify-center items-center mx-4 mt-4 w-full gap-4'>
+        <div className='bg-black flex justify-center items-center flex-col p-20'>
+          <h1 className='text-4xl font-semibold text-white'>iPad Pro</h1>
+          <h3 className='text-xl mt-2 font-normal z-50 text-white'>Advanced AI Performance</h3>
+          <h3 className='text-xl font-normal z-50 text-white'>and game-changing capabilities.</h3>
+          <div className='flex justify-center items-center gap-5 mt-5'>
+            <button className='bg-blue-500 text-white px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
+            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
+          </div>
+          <img src="https://www.apple.com/v/home/ci/images/promos/ipad-pro/promo_ipad_pro__c529dk533k4m_large.jpg" className='object-cover h-90 w-200 scale-125 -mt-20' alt="" />
+        </div>
+        <div className='bg-black flex justify-center items-center flex-col p-20'>
+          <h1 className='text-4xl font-semibold text-white'>Mac Book Pro 14"</h1>
+          <h3 className='text-xl mt-2 font-normal z-50 text-white'>Supercharged by M5</h3>
+          <div className='flex justify-center items-center gap-5 mt-5'>
+            <button className='bg-blue-500 text-white px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
+            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
+          </div>
+          <img src="https://www.apple.com/v/home/ci/images/promos/macbook-pro-m5/promo_macbook_pro_m5__gnwzdhijhm6a_large.jpg" className='object-cover h-90 w-200 scale-125 -mt-14' alt="" />
         </div>
       </section>
 
       <section className='flex justify-center items-center mx-4 mt-4 w-full gap-4'>
         <div className='bg-[#f5f5f7] flex justify-center items-center flex-col p-20'>
-          <h1 className='text-4xl font-semibold'>AirPods Pro 3</h1>
-          <h3 className='text-xl mt-2 font-normal z-50'>The world's best in-ear</h3>
-          <h3 className='text-xl font-normal z-50'>Active Noise Cansellation.</h3>
+          <div className='flex justify-center items-center gap-2'>
+            <img src="https://img.icons8.com/?size=100&id=30840&format=png&color=000000" className='h-8' alt="" />
+            <h1 className='text-4xl font-semibold z-50 '>Trade In</h1>
+          </div>
+          <h3 className='text-xl mt-2 font-normal z-50'>Get up to $180-$670</h3>
+          <h3 className='text-xl font-normal z-50'>in credit when you trade in</h3>
+          <h3 className='text-xl font-normal z-50'>iPhone 13 or higher.</h3>
           <div className='flex justify-center items-center gap-5 mt-5'>
             <button className='bg-blue-500 text-white px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
             <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
           </div>
-          <img src="https://www.apple.com/v/home/ci/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_large_2x.jpg" className='object-cover h-90 w-200 scale-125 -mt-20' alt="" />
+          <img src="https://www.apple.com/v/home/ci/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_large_2x.jpg" className='object-cover h-90 w-200 scale-127 -mt-27' alt="" />
         </div>
-        <div className='bg-[#f5f5f7] flex justify-center items-center flex-col p-20'>
-          <h1 className='text-4xl font-semibold'>AirPods Pro 3</h1>
-          <h3 className='text-xl mt-2 font-normal z-50'>The world's best in-ear</h3>
-          <h3 className='text-xl font-normal z-50'>Active Noise Cansellation.</h3>
+        <div className='bg-[#f5f5f7] flex justify-center items-center flex-col p-20 '>
+          <div className='flex justify-center items-center gap-2'>
+           <img src="https://img.icons8.com/?size=100&id=30840&format=png&color=000000" className='h-8' alt="" />
+          <h1 className='text-4xl font-semibold z-50 '>Card</h1>
+         </div>
+          <h3 className='text-xl mt-2 font-normal z-50'>Get up to 3% Daily Cash back</h3>
+          <h3 className='text-xl font-normal z-50'>with every purchase.</h3>
           <div className='flex justify-center items-center gap-5 mt-5'>
             <button className='bg-blue-500 text-white px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
             <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
           </div>
-          <img src="https://www.apple.com/v/home/ci/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_large_2x.jpg" className='object-cover h-90 w-200 scale-125 -mt-20' alt="" />
-        </div>
-      </section>
-      
-      <section className='flex justify-center items-center mx-4 mt-4 w-full gap-4'>
-        <div className='bg-[#f5f5f7] flex justify-center items-center flex-col p-20'>
-          <h1 className='text-4xl font-semibold'>AirPods Pro 3</h1>
-          <h3 className='text-xl mt-2 font-normal z-50'>The world's best in-ear</h3>
-          <h3 className='text-xl font-normal z-50'>Active Noise Cansellation.</h3>
-          <div className='flex justify-center items-center gap-5 mt-5'>
-            <button className='bg-blue-500 text-white px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
-            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
-          </div>
-          <img src="https://www.apple.com/v/home/ci/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_large_2x.jpg" className='object-cover h-90 w-200 scale-125 -mt-20' alt="" />
-        </div>
-        <div className='bg-[#f5f5f7] flex justify-center items-center flex-col p-20'>
-          <h1 className='text-4xl font-semibold'>AirPods Pro 3</h1>
-          <h3 className='text-xl mt-2 font-normal z-50'>The world's best in-ear</h3>
-          <h3 className='text-xl font-normal z-50'>Active Noise Cansellation.</h3>
-          <div className='flex justify-center items-center gap-5 mt-5'>
-            <button className='bg-blue-500 text-white px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
-            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
-          </div>
-          <img src="https://www.apple.com/v/home/ci/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_large_2x.jpg" className='object-cover h-90 w-200 scale-125 -mt-20' alt="" />
+          <img src="https://www.apple.com/v/home/ci/images/promos/apple-card/promo_apple_card__5cm7draujpey_large.jpg" className='object-cover h-90 w-200 scale-125 -mt-20' alt="" />
         </div>
       </section>
 
