@@ -79,12 +79,12 @@ export default function Landing() {
           <h1 className='text-5xl text-white font-semibold pt-16'>iPhone 17 Pro</h1>
           <h3 className='text-white text-3xl mt-4'>All out Pro.</h3>
           <div className='flex justify-center items-center gap-5 mt-5'>
-            <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer'>Learn more</button>
-            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer hover:bg-blue-500 hover:text-white'>Buy</button>
+            <button className='bg-blue-500 text-white text-lg px-5 py-2 rounded-4xl cursor-pointer z-10'>Learn more</button>
+            <button className='border border-blue-500 text-blue-500 rounded-4xl px-5 py-2 text-lg cursor-pointer z-10 hover:bg-blue-500 hover:text-white'>Buy</button>
           </div>
-          <img src={heroimg} alt="iPhone 17 Pro" className='h-120 scale-100 -mt-15'/>
+          <img src={heroimg} alt="iPhone 17 Pro" className='h-140 scale-100 -mt-20'/>
      </section>
-
+     
       {/* Footer */}
       <footer className='bg-[#f5f5f7] text-[#6e6e73] pt-4 pb-5 px-6 mt-5'>
         <div className='max-w-[980px] mx-auto'>
