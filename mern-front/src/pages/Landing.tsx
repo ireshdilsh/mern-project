@@ -169,9 +169,9 @@ export default function Landing() {
         </div>
         <div className='bg-[#f5f5f7] flex justify-center items-center flex-col p-20 '>
           <div className='flex justify-center items-center gap-2'>
-           <img src="https://img.icons8.com/?size=100&id=30840&format=png&color=000000" className='h-8' alt="" />
-          <h1 className='text-4xl font-semibold z-50 '>Card</h1>
-         </div>
+            <img src="https://img.icons8.com/?size=100&id=30840&format=png&color=000000" className='h-8' alt="" />
+            <h1 className='text-4xl font-semibold z-50 '>Card</h1>
+          </div>
           <h3 className='text-xl mt-2 font-normal z-50'>Get up to 3% Daily Cash back</h3>
           <h3 className='text-xl font-normal z-50'>with every purchase.</h3>
           <div className='flex justify-center items-center gap-5 mt-5'>
