@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import { useState } from 'react'
 
 export default function Landing() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <div className='min-h-screen bg-white'>

@@ -6,6 +6,7 @@ import Dashboard from './pages/dashboard/Dashboard'
 import Upload from './pages/dashboard/Upload'
 import Albums from './pages/dashboard/Albums'
 import Stories from './pages/dashboard/Stories'
+import FamilyGroups from './pages/dashboard/FamilyGroups'
 
 export default function Controller() {
   return (
@@ -19,6 +20,7 @@ export default function Controller() {
                 <Route path='/upload' element={<Upload />} />
                 <Route path='/albums' element={<Albums />} />
                 <Route path='/stories' element={<Stories />} />
+                <Route path='/family-groups' element={<FamilyGroups />} />
             </Routes>
         </BrowserRouter>
     </div>
