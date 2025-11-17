@@ -97,7 +97,7 @@ export default function Upload() {
                 </h3>
                 <p className='text-neutral-600'>Supports: JPG, PNG, GIF, MP4, MOV (Max 100MB per file)</p>
               </div>
-              <button className='bg-gradient-to-r from-purple-600 to-pink-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all'>
+              <button className='bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all'>
                 Choose Files
               </button>
             </div>
@@ -206,7 +206,7 @@ export default function Upload() {
             <button
               onClick={handleUpload}
               disabled={isUploading}
-              className='w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed'
+              className='w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed'
             >
               {isUploading ? 'Uploading...' : `Upload ${files.length} File${files.length > 1 ? 's' : ''}`}
             </button>
