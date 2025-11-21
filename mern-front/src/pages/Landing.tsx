@@ -497,14 +497,8 @@ export default function Landing() {
 
       {/* Sign In Modal */}
       {showSignInModal && (
-        <div className='fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4' onClick={closeSignInModal}>
-          <div className='bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 relative' onClick={(e) => e.stopPropagation()}>
-            <button onClick={closeSignInModal} className='absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors'>
-              <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
-              </svg>
-            </button>
-            
+        <div className='fixed inset-0 flex items-center justify-center z-50 p-4' style={{backgroundColor: 'rgba(0,0,0,0.5)'}} onClick={closeSignInModal}>
+          <div className='bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] w-full max-w-md p-8 relative' onClick={(e) => e.stopPropagation()}>
             {!showEmailSignIn ? (
               <>
                 <div className='text-center mb-8'>
@@ -513,7 +507,7 @@ export default function Landing() {
                 </div>
 
                 <div className='space-y-3'>
-                  <button onClick={handleGoogleAuth} className='w-full flex items-center justify-center gap-3 px-6 py-3 bg-white border-2 border-gray-300 rounded-xl hover:bg-gray-50 hover:border-blue-600 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-sm'>
+                  <button onClick={handleGoogleAuth} className='w-full flex items-center justify-center gap-3 px-6 py-3 bg-white border-2 border-gray-300 rounded-xl hover:bg-gray-50 hover:border-blue-600 transition-all transform hover:scale-[1.02] active:scale-[0.98]'>
                     <svg className='w-6 h-6' viewBox='0 0 24 24'>
                       <path fill='#4285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z' />
                       <path fill='#34A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z' />
@@ -523,7 +517,7 @@ export default function Landing() {
                     <span className='text-lg font-semibold text-gray-700'>Continue with Google</span>
                   </button>
 
-                  <button onClick={() => setShowEmailSignIn(true)} className='w-full flex items-center justify-center gap-3 px-6 py-3 bg-white border-2 border-gray-300 rounded-xl hover:bg-gray-50 hover:border-blue-600 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-sm'>
+                  <button onClick={() => setShowEmailSignIn(true)} className='w-full flex items-center justify-center gap-3 px-6 py-3 bg-white border-2 border-gray-300 rounded-xl hover:bg-gray-50 hover:border-blue-600 transition-all transform hover:scale-[1.02] active:scale-[0.98]'>
                     <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                       <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' />
                     </svg>
@@ -590,14 +584,8 @@ export default function Landing() {
 
       {/* Sign Up Modal */}
       {showSignUpModal && (
-        <div className='fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4' onClick={closeSignUpModal}>
-          <div className='bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 relative' onClick={(e) => e.stopPropagation()}>
-            <button onClick={closeSignUpModal} className='absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors'>
-              <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
-              </svg>
-            </button>
-            
+        <div className='fixed inset-0 flex items-center justify-center z-50 p-4' style={{backgroundColor: 'rgba(0,0,0,0.5)'}} onClick={closeSignUpModal}>
+          <div className='bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-neutral-300 w-full max-w-md p-8 relative max-h-[90vh] overflow-y-auto' onClick={(e) => e.stopPropagation()}>
             {!showEmailSignUp ? (
               <>
                 <div className='text-center mb-8'>
@@ -606,7 +594,7 @@ export default function Landing() {
                 </div>
 
                 <div className='space-y-3'>
-                  <button onClick={handleGoogleAuth} className='w-full flex items-center justify-center gap-3 px-6 py-3 bg-white border-2 border-gray-300 rounded-xl hover:bg-gray-50 hover:border-blue-600 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-sm'>
+                  <button onClick={handleGoogleAuth} className='w-full flex items-center justify-center gap-3 px-6 py-3 bg-white border-2 border-gray-300 rounded-xl hover:bg-gray-50 hover:border-blue-600 transition-all transform hover:scale-[1.02] active:scale-[0.98]'>
                     <svg className='w-6 h-6' viewBox='0 0 24 24'>
                       <path fill='#4285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z' />
                       <path fill='#34A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z' />
@@ -616,7 +604,7 @@ export default function Landing() {
                     <span className='text-lg font-semibold text-gray-700'>Continue with Google</span>
                   </button>
 
-                  <button onClick={() => setShowEmailSignUp(true)} className='w-full flex items-center justify-center gap-3 px-6 py-3 bg-white border-2 border-gray-300 rounded-xl hover:bg-gray-50 hover:border-blue-600 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-sm'>
+                  <button onClick={() => setShowEmailSignUp(true)} className='w-full flex items-center justify-center gap-3 px-6 py-3 bg-white border-2 border-gray-300 rounded-xl hover:bg-gray-50 hover:border-blue-600 transition-all transform hover:scale-[1.02] active:scale-[0.98]'>
                     <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                       <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' />
                     </svg>
@@ -624,7 +612,20 @@ export default function Landing() {
                   </button>
                 </div>
 
-                <p className='mt-8 text-center text-sm text-gray-600'>
+                <div className='mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg'>
+                  <p className='text-xs text-gray-700 text-center leading-relaxed'>
+                    By signing up, you agree to our{' '}
+                    <a href='#' className='text-blue-600 hover:text-blue-700 font-semibold underline' onClick={(e) => e.preventDefault()}>
+                      Terms of Service
+                    </a>
+                    {' '}and{' '}
+                    <a href='#' className='text-blue-600 hover:text-blue-700 font-semibold underline' onClick={(e) => e.preventDefault()}>
+                      Privacy Policy
+                    </a>
+                  </p>
+                </div>
+
+                <p className='mt-6 text-center text-sm text-gray-600'>
                   Already have an account?{' '}
                   <button onClick={() => { closeSignUpModal(); openSignInModal(); }} className='text-blue-600 hover:text-blue-700 font-semibold'>
                     Sign in
@@ -691,12 +692,38 @@ export default function Landing() {
                     />
                   </div>
 
+                  <div className='bg-gray-50 p-3 rounded-lg border border-gray-200'>
+                    <div className='flex items-start'>
+                      <input 
+                        type='checkbox' 
+                        id='terms-checkbox'
+                        className='w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-600 mt-1 flex-shrink-0' 
+                        required 
+                      />
+                      <label htmlFor='terms-checkbox' className='ml-3 text-xs text-gray-700 leading-relaxed'>
+                        I agree to the{' '}
+                        <a href='#' className='text-blue-600 hover:text-blue-700 font-medium underline' onClick={(e) => e.preventDefault()}>
+                          Terms of Service
+                        </a>
+                        {' '}and{' '}
+                        <a href='#' className='text-blue-600 hover:text-blue-700 font-medium underline' onClick={(e) => e.preventDefault()}>
+                          Privacy Policy
+                        </a>
+                        . I understand that my data will be processed according to MemoryVerse's privacy practices.
+                      </label>
+                    </div>
+                  </div>
+
                   <button type='submit' className='w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-[1.02] active:scale-[0.98]'>
                     Create Account
                   </button>
                 </form>
 
-                <p className='mt-6 text-center text-sm text-gray-600'>
+                <p className='mt-4 text-center text-xs text-gray-500'>
+                  By creating an account, you agree to receive promotional emails from MemoryVerse. You can unsubscribe at any time.
+                </p>
+
+                <p className='mt-4 text-center text-sm text-gray-600'>
                   <button onClick={() => setShowEmailSignUp(false)} className='text-blue-600 hover:text-blue-700 font-semibold'>
                     ← Back to options
                   </button>
