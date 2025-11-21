@@ -30,7 +30,7 @@ export default function Landing() {
               <a href='#features' className='px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium'>Features</a>
               <a href='#how-it-works' className='px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium'>How It Works</a>
               <a href='#testimonials' className='px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium'>Testimonials</a>
-              <a href='#pricing' className='px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium'>Pricing</a>
+              <Link to='/pricing' className='px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium'>Pricing</Link>
             </div>
 
             {/* CTA Buttons */}
@@ -65,7 +65,7 @@ export default function Landing() {
                 <a href='#features' className='px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium'>Features</a>
                 <a href='#how-it-works' className='px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium'>How It Works</a>
                 <a href='#testimonials' className='px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium'>Testimonials</a>
-                <a href='#pricing' className='px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium'>Pricing</a>
+                <Link to='/pricing' className='px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium'>Pricing</Link>
                 <div className='pt-4 flex flex-col space-y-2'>
                   <Link to='/login' className='px-4 py-2 text-center text-gray-700 hover:text-gray-900 font-medium transition-colors'>
                     Sign In
