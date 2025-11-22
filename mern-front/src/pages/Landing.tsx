@@ -1,5 +1,6 @@
 import FeaturesSection from "../sections/FeaturesSection";
 import HeroSection from "../sections/HeroSection";
+import PricingSection from "../sections/PricingSection";
 
 export default function Landing() {
 
@@ -7,6 +8,7 @@ export default function Landing() {
     <div>
       <HeroSection/>
       <FeaturesSection/>
+      <PricingSection/>
     </div>
   )
 }
