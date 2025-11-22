@@ -1,6 +1,23 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 export default function Careers() {
+  const [showContactModal, setShowContactModal] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle form submission here
+    console.log('Form submitted:', formData)
+    setShowContactModal(false)
+    setFormData({ name: '', email: '', phone: '', message: '' })
+  }
+
   const benefits = [
     {
       icon: '🏥',
@@ -249,11 +266,112 @@ export default function Careers() {
           <p className='text-xl text-blue-100 mb-8'>
             We're always looking for exceptional talent. Send us your resume and let's talk!
           </p>
-          <button className='inline-block px-8 py-4 bg-white hover:bg-gray-100 text-blue-600 rounded-xl font-semibold text-lg transition-all shadow-lg hover:shadow-xl'>
+          <button 
+            onClick={() => setShowContactModal(true)}
+            className='inline-block px-8 py-4 bg-white hover:bg-gray-100 text-blue-600 rounded-xl font-semibold text-lg transition-all shadow-lg hover:shadow-xl'
+          >
             Get in Touch
           </button>
         </div>
       </section>
+
+      {/* Contact Modal */}
+      {showContactModal && (
+        <div className='fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4'>
+          <div className='bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto'>
+            <div className='p-8'>
+              <div className='flex items-center justify-between mb-6'>
+                <h3 className='text-3xl font-bold text-gray-900'>Get in Touch</h3>
+                <button
+                  onClick={() => setShowContactModal(false)}
+                  className='text-gray-400 hover:text-gray-600 transition-colors'
+                >
+                  <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12' />
+                  </svg>
+                </button>
+              </div>
+
+              <p className='text-gray-600 mb-8'>
+                We'd love to hear from you! Fill out the form below and we'll get back to you within 24 hours.
+              </p>
+
+              <form onSubmit={handleSubmit} className='space-y-6'>
+                <div>
+                  <label className='block text-sm font-semibold text-gray-900 mb-2'>
+                    Full Name *
+                  </label>
+                  <input
+                    type='text'
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent'
+                    placeholder='John Doe'
+                  />
+                </div>
+
+                <div>
+                  <label className='block text-sm font-semibold text-gray-900 mb-2'>
+                    Email Address *
+                  </label>
+                  <input
+                    type='email'
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent'
+                    placeholder='john@example.com'
+                  />
+                </div>
+
+                <div>
+                  <label className='block text-sm font-semibold text-gray-900 mb-2'>
+                    Phone Number
+                  </label>
+                  <input
+                    type='tel'
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent'
+                    placeholder='+1 (555) 123-4567'
+                  />
+                </div>
+
+                <div>
+                  <label className='block text-sm font-semibold text-gray-900 mb-2'>
+                    Message / Resume Link *
+                  </label>
+                  <textarea
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    rows={5}
+                    className='w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent resize-none'
+                    placeholder='Tell us about yourself and include a link to your resume or portfolio...'
+                  ></textarea>
+                </div>
+
+                <div className='flex space-x-4'>
+                  <button
+                    type='button'
+                    onClick={() => setShowContactModal(false)}
+                    className='flex-1 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-xl font-semibold transition-all'
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type='submit'
+                    className='flex-1 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-all'
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className='bg-gray-900 text-gray-300 py-12'>
