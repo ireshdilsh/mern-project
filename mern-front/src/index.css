@@ -2,7 +2,7 @@
 
 @import "tailwindcss";
 
-@layer base {
+/* @layer base {
   * {
     @apply antialiased;
   }
@@ -42,4 +42,4 @@
   .glow-hover:hover {
     box-shadow: 0 0 40px rgba(168, 85, 247, 0.6), 0 0 60px rgba(236, 72, 153, 0.3);
   }
-}
+} */
