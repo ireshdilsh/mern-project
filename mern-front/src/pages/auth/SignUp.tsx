@@ -47,7 +47,7 @@ export default function SignUp() {
           <p className='text-xl text-blue-100 mb-8 leading-relaxed'>
             Join over 50,000 families using MemoryVerse to preserve and share their precious moments.
           </p>
-          
+
           {/* Stats */}
           <div className='grid grid-cols-3 gap-6 mb-8'>
             <div>
