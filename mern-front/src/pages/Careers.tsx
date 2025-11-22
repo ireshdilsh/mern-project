@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import Footer from '../components/Footer'
 
 export default function Careers() {
   const [showContactModal, setShowContactModal] = useState(false)
@@ -373,20 +374,7 @@ export default function Careers() {
         </div>
       )}
 
-      {/* Footer */}
-      <footer className='bg-gray-900 text-gray-300 py-12'>
-        <div className='max-w-7xl mx-auto px-6'>
-          <div className='flex flex-col md:flex-row justify-between items-center'>
-            <p className='text-sm'>© 2025 MemoryVerse. All rights reserved.</p>
-            <div className='flex space-x-6 mt-4 md:mt-0'>
-              <Link to='/about' className='text-sm hover:text-white transition-colors'>About</Link>
-              <Link to='/blog' className='text-sm hover:text-white transition-colors'>Blog</Link>
-              <Link to='/careers' className='text-sm hover:text-white transition-colors'>Careers</Link>
-              <Link to='/press' className='text-sm hover:text-white transition-colors'>Press</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

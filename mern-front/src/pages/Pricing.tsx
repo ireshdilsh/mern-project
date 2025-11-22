@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Footer from '../components/Footer'
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true)
@@ -268,19 +269,7 @@ export default function Pricing() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className='bg-gray-900 text-gray-300 py-12'>
-        <div className='max-w-7xl mx-auto px-6'>
-          <div className='flex flex-col md:flex-row justify-between items-center'>
-            <p className='text-sm'>© 2025 MemoryVerse. All rights reserved.</p>
-            <div className='flex space-x-6 mt-4 md:mt-0'>
-              <a href='#' className='text-sm hover:text-white transition-colors'>Privacy Policy</a>
-              <a href='#' className='text-sm hover:text-white transition-colors'>Terms of Service</a>
-              <a href='#' className='text-sm hover:text-white transition-colors'>Contact</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
