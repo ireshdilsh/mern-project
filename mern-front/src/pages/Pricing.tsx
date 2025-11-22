@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true)
@@ -268,8 +267,6 @@ export default function Pricing() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

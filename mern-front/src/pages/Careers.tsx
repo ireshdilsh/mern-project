@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import Footer from '../components/Footer'
 
 export default function Careers() {
   const [showContactModal, setShowContactModal] = useState(false)
@@ -373,8 +372,6 @@ export default function Careers() {
           </div>
         </div>
       )}
-
-      <Footer />
     </div>
   )
 }

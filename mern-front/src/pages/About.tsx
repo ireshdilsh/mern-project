@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
 
 export default function About() {
   const team = [
@@ -199,8 +198,6 @@ export default function About() {
           </Link>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

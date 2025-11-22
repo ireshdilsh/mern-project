@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
 
 export default function Landing() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -390,8 +389,6 @@ export default function Landing() {
           </p>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

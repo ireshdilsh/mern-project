@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
 
 export default function Press() {
   const pressReleases = [
@@ -259,8 +258,6 @@ export default function Press() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

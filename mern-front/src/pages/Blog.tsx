@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import Footer from '../components/Footer'
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState('All')
@@ -252,8 +251,6 @@ export default function Blog() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }
