@@ -43,7 +43,7 @@ export default function HeroSection() {
       {/* Sign in modal */}
       {openSignInModal && (
         <div className='w-full h-full absolute top-0 left-0 flex justify-center items-center' id='modal-overlay'>
-            <div className='bg-white py-15 px-15 w-120 flex justify-center items-center flex-col rounded-lg'>
+            <div className='bg-white py-12 px-15 w-120 flex justify-center items-center flex-col rounded-lg'>
               <img onClick={()=>{setOpenSignInModal(false)}} className='h-4 cursor-pointer -mr-100 -mt-6' src="https://img.icons8.com/?size=100&id=88571&format=png&color=000000" alt="close-icn" />
               <h1 className='text-3xl font-semibold mt-5'>Good to See You Again !</h1>
               <p className='text-neutral-500 text-center mt-3'>Enter your details to reconnect with your memories and tools instantly.</p>
