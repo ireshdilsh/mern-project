@@ -1,7 +1,13 @@
 import '../styles/landing.css'
 import heroImage from '../assets/hero.png'
+import { useNavigate, type NavigateFunction } from 'react-router-dom'
 
 export default function HeroSection() {
+
+  const navigate : NavigateFunction = useNavigate()
+
+  // has implment navigations
+
   return (
     <div className='w-full' id='hero-bg'>
       <img src={heroImage} className='bg-cover object-cover w-full h-160 absolute -z-10' alt="" />
