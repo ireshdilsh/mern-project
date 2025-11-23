@@ -2,4 +2,9 @@
 
 .logo{
     font-family: "Spicy Rice", serif;
+    font-size: 28px;
+}
+
+#hero-bg{
+    background: rgba(255, 255, 255, 0.6);
 }
