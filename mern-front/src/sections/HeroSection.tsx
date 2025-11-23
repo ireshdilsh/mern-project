@@ -1,10 +1,13 @@
 import '../styles/landing.css'
 import heroImage from '../assets/hero.png'
 import { useNavigate, type NavigateFunction } from 'react-router-dom'
+import { useState } from 'react';
 
 export default function HeroSection() {
 
-  const navigate : NavigateFunction = useNavigate()
+  const navigate: NavigateFunction = useNavigate()
+
+  const [openSignInModal, setOpenSignInModal] = useState<boolean>(false);
 
   // has implment navigations
 
@@ -22,7 +25,7 @@ export default function HeroSection() {
           <a href="">Pricing</a>
           <a href="">About</a>
           <a href="">Contact</a>
-          <a href="">Sign in</a>
+          <button onClick={() => { setOpenSignInModal(true) }}>Sign in</button>
         </div>
       </nav>
       <div className='flex justify-center items-center flex-col pb-35 mt-29'>
@@ -36,6 +39,15 @@ export default function HeroSection() {
           </button>
         </div>
       </div>
+
+      {/* Sign in modal */}
+      {openSignInModal && (
+        <div className='w-full h-full absolute top-0 left-0 flex justify-center items-center' id='modal-overlay'>
+            <div className='bg-white py-15 px-20 w-100 flex justify-center items-center flex-col rounded-lg'>
+              <h1 className='text-3xl font-semibold'>Sign in</h1>
+            </div>
+        </div>
+      )}
     </div>
   )
 }
