@@ -29,7 +29,7 @@ export default function HeroSection() {
         <h1 className='text-7xl font-semibold text-center'>Smarter Memory <br />Keeping Starts Here.</h1>
         <p className='text-lg mt-5'>Organize, sort, and relive your memories instantly with AI-powered albums, stories, and highlight reels.</p>
         <div className='flex justify-center items-center gap-5 mt-10'>
-          <button className='bg-black text-white px-5 py-3 font-semibold rounded-lg outline-none cursor-pointer'>Create Free Account</button>
+          <button className='bg-black text-white px-5 py-3 font-semibold rounded-lg outline-none cursor-pointer hover:opacity-80'>Create Free Account</button>
           <button className='px-5 py-3 font-semibold rounded-lg outline-none cursor-pointer flex justify-center items-center gap-4'>
             Watch Demo
             <img src="https://img.icons8.com/?size=100&id=n2C7Bts7cbWW&format=png&color=000000" className='h-4' alt="" />
