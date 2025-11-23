@@ -25,7 +25,7 @@ export default function HeroSection() {
           <a href="">Sign in</a>
         </div>
       </nav>
-      <div className='flex justify-center items-center flex-col pb-35 mt-20'>
+      <div className='flex justify-center items-center flex-col pb-35 mt-29'>
         <h1 className='text-7xl font-semibold text-center'>Smarter Memory <br />Keeping Starts Here.</h1>
         <p className='text-lg mt-5'>Organize, sort, and relive your memories instantly with AI-powered albums, stories, and highlight reels.</p>
         <div className='flex justify-center items-center gap-5 mt-10'>
