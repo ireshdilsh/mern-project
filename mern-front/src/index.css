@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-
 @import "tailwindcss";
+
+ h1, button {
+    font-family: 'Space Grotesk', sans-serif;
+  }
 
 /* @layer base {
   * {
@@ -16,6 +19,12 @@
     font-family: 'Space Grotesk', sans-serif;
     @apply font-bold;
   }
+
+  .spicy-rice-regular {
+  font-family: "Spicy Rice", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 }
 
 @layer utilities {
@@ -43,3 +52,4 @@
     box-shadow: 0 0 40px rgba(168, 85, 247, 0.6), 0 0 60px rgba(236, 72, 153, 0.3);
   }
 } */
+
