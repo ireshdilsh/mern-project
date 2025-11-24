@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Landing from './pages/Landing'
+import HowItWorks from './sections/HowItWorks'
 
 export default function Controller() {
   return (
@@ -8,6 +9,7 @@ export default function Controller() {
       <BrowserRouter>
         <Routes>
           <Route path='' element = {<Landing/>}></Route>
+          <Route path='/how-it-works' element = {<HowItWorks/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
