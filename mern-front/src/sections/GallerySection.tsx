@@ -16,6 +16,7 @@ export default function GallerySection() {
         <img className='h-80 w-108 bg-cover object-cover rounded-xl' src="https://images.pexels.com/photos/5637770/pexels-photo-5637770.jpeg" alt="" />
         <img className='h-80 w-108 bg-cover object-cover rounded-xl' src="https://images.pexels.com/photos/3968133/pexels-photo-3968133.jpeg" alt="" />
       </div>
+      <button className='mt-10 flex justify-center items-center gap-2 px-7 font-medium py-2 cursor-pointer'>Load More <img src="https://img.icons8.com/?size=100&id=60662&format=png&color=000000" className='h-4' alt="" /></button>
     </div>
   )
 }
