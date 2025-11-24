@@ -3,7 +3,7 @@ import '../styles/landing.css'
 
 export default function footer() {
     return (
-        <div className='flex flex-col justify-center bg-black text-white -mt-4 pt-16 pb-10 px-35 w-full'>
+        <footer className='flex flex-col justify-center bg-black text-white -mt-4 pt-16 pb-10 px-35 w-full'>
            <div className='flex justify-center gap-25 pb-15 border-b border-b-white'>
              <div className='flex flex-col'>
                 <h2 className='logo text-xl font-medium text-white'>MemoraAI</h2>
@@ -55,6 +55,6 @@ export default function footer() {
                     <img className='h-5 cursor-pointer' src="https://img.icons8.com/?size=100&id=8808&format=png&color=ffffff" alt="linkedin" />
                 </div>
               </div>
-        </div>
+        </footer>
     )
 }

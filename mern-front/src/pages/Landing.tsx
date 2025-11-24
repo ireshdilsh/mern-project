@@ -34,12 +34,12 @@ export default function Landing() {
             MemoraAI
           </div>
           <div className='flex justify-center items-center gap-6'>
-            <a href="">Home</a>
-            <a href="">Features</a>
-            <a href="">How it works</a>
-            <a href="">Pricing</a>
-            <a href="">About</a>
-            <a href="">Gallery</a>
+            <a href="#hero-bg">Home</a>
+            <a href="#features">Features</a>
+            <a href="#work">How it works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
             <p className='cursor-pointer' onClick={() => { setOpenSignInModal(true) }}>Sign in</p>
           </div>
         </nav>
@@ -91,7 +91,7 @@ export default function Landing() {
       </section>
 
       {/* Features Section */}
-      <section className='flex justify-center items-center flex-col mt-25 px-35'>
+      <section className='flex justify-center items-center flex-col mt-25 px-35' id='features'>
         <h1 className='text-5xl font-medium'>Smart Memory Organization</h1>
         <p className='text-neutral-500 text-base mt-2'>AI automatically sorts your photos and videos by events, people, and dates so everything stays beautifully organized.</p>
         <div className='flex justify-center items-center flex-col gap-6 mt-10'>
@@ -157,7 +157,7 @@ export default function Landing() {
       </section>
 
       {/* How it Work */}
-      <section className='flex justify-center items-center flex-col px-35 mt-25 bg-neutral-50 py-25'>
+      <section className='flex justify-center items-center flex-col px-35 mt-25 bg-neutral-50 py-25' id='work'>
         <h1 className='text-5xl font-medium'>How It Works</h1>
         <p className='text-neutral-500 mt-2 text-base'>Experience the magic of AI-powered photo management in just a few simple steps.</p>
         <div className='flex justify-center items-center mt-10 gap-10'>
@@ -211,7 +211,7 @@ export default function Landing() {
       </section>
 
       {/* Pricing */}
-      <section className='flex justify-center items-center flex-col mt-25 px-35 '>
+      <section className='flex justify-center items-center flex-col mt-25 px-35' id='pricing'>
         <h1 className='text-5xl font-medium'>Plans for Every Stage</h1>
         <p className='text-neutral-500 text-base mt-2'>Whether you're just starting out or scaling fast, our pricing is built to match your needs and budget.</p>
         <div className='flex justify-center items-center mt-10 gap-2'>
@@ -265,14 +265,14 @@ export default function Landing() {
       </section>
 
       {/* About */}
-      <section className='flex justify-center items-center flex-col my-25 px-36 py-25 bg-neutral-50'>
+      <section className='flex justify-center items-center flex-col my-25 px-36 py-25 bg-neutral-50' id='about'>
         <h1 className='text-5xl font-medium'>Everyone has a story to tell</h1>
         <p className='text-neutral-500 mt-2 text-base'>Everyone has a story to tell. We make it effortless to capture, organize, and bring those stories to life with smart, intuitive AI tools.</p>
 
       </section>
 
       {/* Gallery */}
-      <section className='flex justify-center items-center flex-col my-25 px-35'>
+      <section className='flex justify-center items-center flex-col my-25 px-35' id='gallery'>
         <h1 className='text-5xl font-medium'>Moments That Matter</h1>
         <p className='text-neutral-500 mt-2 text-base'>Discover a collection of memories captured, organized, and brought to life with AI. Every image holds a story worth remembering.</p>
         <div className='flex justify-center items-center mt-8 gap-2.5'>
@@ -288,6 +288,64 @@ export default function Landing() {
         </div>
         <button className='mt-10 flex justify-center items-center gap-2 px-7 font-medium py-2 cursor-pointer'>Load More <img src="https://img.icons8.com/?size=100&id=60662&format=png&color=000000" className='h-4' alt="" /></button>
       </section>
+
+      {/* footer */}
+      <footer className='flex flex-col justify-center bg-black text-white -mt-4 pt-16 pb-10 px-35 w-full'>
+        <div className='flex justify-center gap-25 pb-15 border-b border-b-white'>
+          <div className='flex flex-col'>
+            <h2 className='logo text-xl font-medium text-white'>MemoraAI</h2>
+            <p className='text-white'>AI-powered tools to save, organize, and enhance your digital memories.</p>
+          </div>
+
+          {/* Quick Links */}
+          <div className='flex flex-col w-40'>
+            <h1 className='text-xl mb-5 font-semibold'>Quick Links</h1>
+            <div className='flex flex-col gap-3'>
+              <a href="#hero-bg">Home</a>
+              <a href="#features">Features</a>
+              <a href="#work">How it works</a>
+              <a href="#pricing">Pricing</a>
+              <a href="#about">About</a>
+              <a href="#gallery">Gallery</a>
+            </div>
+          </div>
+
+          {/* support link */}
+          <div className='flex flex-col w-50'>
+            <h1 className='text-xl mb-5 font-semibold'>Support</h1>
+            <div className='flex flex-col gap-3'>
+              <a href="">Help & FAQ</a>
+              <a href="">Privacy Policy</a>
+              <a href="">Terms & Conditions</a>
+              <a href="">Cookie Policy</a>
+              <a href="">Status Page</a>
+              <a href="">Get in Touch</a>
+            </div>
+          </div>
+
+          {/* NewsLetter for */}
+          <div className='flex flex-col'>
+            <h1 className='text-xl mb-5 font-semibold'>Stay Updated With MemoraAI</h1>
+            <p className='text-white mb-5'>Subscribe to our newsletter to get the latest updates and offers.</p>
+            <div className='flex items-center'>
+              <input className='px-3 py-2.5 rounded-l-sm border-none outline-none bg-white text-black' type="text" placeholder='Enter your email' />
+              <button className='bg-blue-600 px-4 py-2.5 rounded-r-sm border-none font-medium text-white cursor-pointer hover:opacity-80'>Subscribe</button>
+            </div>
+          </div>
+        </div>
+        <div className='flex justify-between items-center w-full mt-10'>
+          <p className='text-white'>&copy; 2024 MemoraAI. All rights reserved.</p>
+          <div className='flex items-center gap-4'>
+            <img className='h-5 cursor-pointer' src="https://img.icons8.com/?size=100&id=118467&format=png&color=ffffff" alt="facebook" />
+            <img className='h-5 cursor-pointer' src="https://img.icons8.com/?size=100&id=A4DsujzAX4rw&format=png&color=ffffff" alt="twitter" />
+            <img className='h-5 cursor-pointer' src="https://img.icons8.com/?size=100&id=59813&format=png&color=ffffff" alt="instagram" />
+            <img className='h-5 cursor-pointer' src="https://img.icons8.com/?size=100&id=8808&format=png&color=ffffff" alt="linkedin" />
+          </div>
+        </div>
+      </footer>
+
     </div>
+
+
   )
 }
