@@ -5,7 +5,7 @@ export default function PricingSection() {
         <div className='flex justify-center items-center flex-col mt-25 px-35 py-15 bg-neutral-50'>
             <h1 className='text-5xl font-medium'>Plans for Every Stage</h1>
             <p className='text-neutral-500 text-base mt-2'>Whether you're just starting out or scaling fast, our pricing is built to match your needs and budget.</p>
-            <div className='flex justify-center items-center mt-10 gap-3.5'>
+            <div className='flex justify-center items-center mt-10 gap-2'>
                 {/* Basic Plan */}
                 <div className='flex justify-start items-start flex-col border border-neutral-300 rounded-md p-10 w-100'>
                     <h1 className='text-xl font-medium'>Basic Plan</h1>
