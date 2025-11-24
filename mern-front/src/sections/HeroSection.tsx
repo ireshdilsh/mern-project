@@ -31,7 +31,7 @@ export default function HeroSection() {
           <a href="">How it works</a>
           <a href="">Pricing</a>
           <a href="">About</a>
-          <a href="">Contact</a>
+          <a href="">Gallery</a>
           <p className = 'cursor-pointer' onClick={() => { setOpenSignInModal(true) }}>Sign in</p>
         </div>
       </nav>
