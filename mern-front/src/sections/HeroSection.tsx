@@ -19,7 +19,7 @@ export default function HeroSection() {
   }
 
   return (
-    <div className='w-full' id='hero-bg'>
+    <section className='w-full' id='hero-bg'>
       <img src={heroImage} className='bg-cover object-cover w-full h-160 absolute -z-10' alt="" />
       <nav className='flex justify-between items-center w-full px-35 pt-16'>
         <div className="logo">
@@ -80,6 +80,6 @@ export default function HeroSection() {
             </div>
         </div>
       )}
-    </div>
+    </section>
   )
 }

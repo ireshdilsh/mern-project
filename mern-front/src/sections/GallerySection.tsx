@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function GallerySection() {
   return (
-    <div className='flex justify-center items-center flex-col my-25 px-35'>
+    <section className='flex justify-center items-center flex-col my-25 px-35'>
       <h1 className='text-5xl font-medium'>Moments That Matter</h1>
       <p className='text-neutral-500 mt-2 text-base'>Discover a collection of memories captured, organized, and brought to life with AI. Every image holds a story worth remembering.</p>
       <div className='flex justify-center items-center mt-8 gap-2.5'>
@@ -17,6 +17,6 @@ export default function GallerySection() {
         <img className='h-80 w-108 bg-cover object-cover rounded-xl' src="https://images.pexels.com/photos/3968133/pexels-photo-3968133.jpeg" alt="" />
       </div>
       <button className='mt-10 flex justify-center items-center gap-2 px-7 font-medium py-2 cursor-pointer'>Load More <img src="https://img.icons8.com/?size=100&id=60662&format=png&color=000000" className='h-4' alt="" /></button>
-    </div>
+    </section>
   )
 }

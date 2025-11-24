@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function HowItWorks() {
   return (
-    <div className='flex justify-center items-center flex-col px-35 mt-25 bg-neutral-50 py-25'>
+    <section className='flex justify-center items-center flex-col px-35 mt-25 bg-neutral-50 py-25'>
       <h1 className='text-5xl font-medium'>How It Works</h1>
       <p className='text-neutral-500 mt-2 text-base'>Experience the magic of AI-powered photo management in just a few simple steps.</p>
       <div className='flex justify-center items-center mt-10 gap-10'>
@@ -53,6 +53,6 @@ export default function HowItWorks() {
           <p className='text-center text-neutral-500'>Easily create albums, slideshows, and share your favorite moments with friends and family directly from the platform.</p>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

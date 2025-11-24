@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PricingSection() {
     return (
-        <div className='flex justify-center items-center flex-col mt-25 px-35 '>
+        <section className='flex justify-center items-center flex-col mt-25 px-35 '>
             <h1 className='text-5xl font-medium'>Plans for Every Stage</h1>
             <p className='text-neutral-500 text-base mt-2'>Whether you're just starting out or scaling fast, our pricing is built to match your needs and budget.</p>
             <div className='flex justify-center items-center mt-10 gap-2'>
@@ -53,6 +53,6 @@ export default function PricingSection() {
                     <button className='mt-7 bg-black px-5 py-2 text-white border-none rounded-sm w-full cursor-pointer font-semibold hover:opacity-80'>Let's talk</button>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
