@@ -1,3 +1,4 @@
+import Footer from "../components/footer";
 import AboutSection from "../sections/AboutSection";
 import FeaturesSection from "../sections/FeaturesSection";
 import GallerySection from "../sections/GallerySection";
@@ -15,6 +16,7 @@ export default function Landing() {
       <PricingSection/>
       <AboutSection/>
       <GallerySection/>
+      <Footer/>
     </div>
   )
 }
