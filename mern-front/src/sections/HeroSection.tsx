@@ -1,11 +1,8 @@
 import '../styles/landing.css'
 import heroImage from '../assets/hero.png'
-import { useNavigate, type NavigateFunction } from 'react-router-dom'
 import { useState } from 'react';
 
 export default function HeroSection() {
-
-  const navigate: NavigateFunction = useNavigate()
 
   const [openSignInModal, setOpenSignInModal] = useState<boolean>(false);
   const [openSignUpModal, setOpenSignUpModal] = useState<boolean>(false);
