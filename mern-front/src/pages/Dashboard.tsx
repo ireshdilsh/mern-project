@@ -74,11 +74,10 @@ export default function Dashboard() {
                     </button>
                 </div>
                 <div className='mt-15'>
-                    <h1 className='text-2xl font-medium text-[#333] tracking-tighter'>Recent Albums</h1>
                     <div className='mt-10'>
                         {albums && albums.map((album:Album) => (
                             <div key={album._id} className='border border-neutral-200 rounded-md p-5 mb-5'>
-                                <h2 className='text-xl font-medium text-[#333]'>{album.title}</h2>
+                                <h2 className='text-lg font-medium text-[#333]'>{album.title}</h2>
                             </div>
                         ))}
                     </div>
