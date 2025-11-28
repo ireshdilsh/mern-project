@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 export default function Features() {
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             {/* Features Section */}
             <section className='flex justify-center items-center flex-col mt-25 px-35' id='features'>
                 <h1 className='text-5xl font-medium'>Smart Memory Organization</h1>
@@ -71,7 +71,7 @@ export default function Features() {
                     </div>
                 </div>
             </section>
-            <Footer/>
+            <Footer />
         </div>
     )
 }
