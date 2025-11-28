@@ -13,3 +13,13 @@ export const createNewAlbum = (req:any,res:any) => {
         res.status(500).json({error: "Error creating album"});
     });
 }
+
+export const getAllAlbums = (req:any,res:any) => {
+    Album.find()
+    .then((albums) => {
+        res.status(200).json(albums);
+    })
+    .catch((error) => {
+        res.status(500).json({error: "Error fetching albums"});
+    });
+}
