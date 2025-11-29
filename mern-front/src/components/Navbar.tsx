@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import logo from '../assets/logo.png'
 import login from '../assets/login.jpeg'
+import signup from '../assets/signup.jpeg'
 import '../styles/landing.css'
 
 export default function Navbar() {
@@ -93,7 +94,7 @@ export default function Navbar() {
                             <p className='text-sm w-96 text-neutral-400 mt-8 text-center'>By continuing, you confirm that you have read and agree to our Terms and Privacy Policy.</p>
                         </div>
                         <div className='h-full'>
-                            <img id='signin-img' src={login} alt="" className='overflow-hidden w-130 h-full'/>
+                            <img id='signin-img' src={signup} alt="" className='overflow-hidden w-130 h-full'/>
                         </div>
                     </div>
                 </div>
