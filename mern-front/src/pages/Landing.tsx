@@ -19,7 +19,7 @@ export default function Landing() {
         <p className='text-neutral-400 text-lg mt-2'>Turn ideas into high-impact thumbnails with AI. Generate, style, and optimize your thumbnails instantly—no design skills needed.</p>
         <div className='flex justify-center items-center gap-4 mt-7'>
           <input type="text" className='w-3xl h-12 border border-neutral-200 rounded-3xl px-5 outline-none' placeholder='Type your thumbnail idea…' />
-          <button className='bg-[#333] rounded-3xl flex justify-center items-center px-5 py-2.5 cursor-pointer'><img className='h-6' src="https://img.icons8.com/?size=100&id=60700&format=png&color=ffffff" alt="send-icon" /></button>
+          <button className='bg-[#333] rounded-3xl flex justify-center items-center px-5 py-2.5 cursor-pointer h-12'><img className='h-6' src="https://img.icons8.com/?size=100&id=60700&format=png&color=ffffff" alt="send-icon" /></button>
         </div>
       </div>
     </div>
