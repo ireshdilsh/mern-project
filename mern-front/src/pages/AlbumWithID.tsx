@@ -42,7 +42,6 @@ export default function AlbumWithId() {
         return (
             <div className='flex justify-center items-center h-screen'>
                 <p className='text-lg'>Loading album...</p>
-                <p>{album?.title}</p>
             </div>
         );
     }
@@ -78,12 +77,12 @@ export default function AlbumWithId() {
                         <div className='text-center'>
                             <img
                                 className='h-16 mx-auto mb-4 opacity-50'
-                                src="https://img.icons8.com/?size=100&id=12160&format=png&color=999999"
+                                src="https://img.icons8.com/?size=100&id=GiNKOzxL3w6e&format=png&color=999999"
                                 alt="album-icon"
                             />
                             <p className='text-lg text-neutral-400'>No images in this album yet</p>
                             <p className='text-sm text-neutral-400 mt-2'>Upload some photos to get started</p>
-                            <button className='mt-4 px-6 py-2 bg-black text-white rounded-md cursor-pointer'>
+                            <button className='mt-4 px-6 py-2 bg-black text-white rounded-md cursor-pointer font-medium'>
                                 Upload Images
                             </button>
                         </div>
