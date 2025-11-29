@@ -1,6 +1,7 @@
 import '../styles/landing.css'
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 type Album = {
     _id: string;
@@ -8,6 +9,7 @@ type Album = {
 };
 
 export default function Dashboard() {
+    const navigate = useNavigate();
 
     useEffect(() => {
         loadAllAlbums()
@@ -50,6 +52,10 @@ export default function Dashboard() {
         }
     }
 
+    const handleAlbumClick = (albumId: string) => {
+        navigate(`/album/${albumId}`);
+    }
+
 
     return (
         <div className='flex justify-center items-start w-full flex-col h-full'>
@@ -73,11 +79,16 @@ export default function Dashboard() {
                         Album
                     </button>
                 </div>
-                <div className='mt-15'>
-                    <div className='mt-10'>
+                <div className='mt-8'>
+                    <div className='mt-10 flex justify-center items-center gap-5'>
                         {albums && albums.map((album:Album) => (
-                            <div key={album._id} className='border border-neutral-200 rounded-md p-5 mb-5'>
-                                <h2 className='text-lg font-medium text-[#333]'>{album.title}</h2>
+                            <div
+                                key={album._id}
+                                className='p-5 mb-5 flex flex-col justify-center items-center cursor-pointer hover:bg-gray-50 rounded-lg transition-colors'
+                                onClick={() => handleAlbumClick(album._id)}
+                            >
+                                <img className='h-15' src="https://img.icons8.com/?size=100&id=12160&format=png&color=000000" alt="album-icon"/>
+                                <p className='text-base font-medium text-[#333] mt-2'>{album.title}</p>
                             </div>
                         ))}
                     </div>
