@@ -13,14 +13,7 @@ export default function Controller() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element = {<Landing/>}></Route>
-          <Route path='/about' element = {<About/>}></Route>
-          <Route path='/features' element={<Features/>}></Route>
-          <Route path='/gallery' element={<Gallery/>}></Route>
-          <Route path='/pricing' element = {<Pricing/>}></Route>
-          <Route path='/how/it/works' element = {<HowWorks/>}></Route>
-          <Route path='/user/dashboard' element = {<Dashboard/>}></Route>
-          <Route path='/album/:id' element = {<AlbumWithID/>}></Route>
+          
         </Routes>
       </BrowserRouter>
     </div>
