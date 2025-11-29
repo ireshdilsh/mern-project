@@ -6,8 +6,8 @@ export default function Landing() {
     <div>
       <nav className='mt-5 flex justify-between items-center px-35'>
         <img src={logo} alt="ai-logo" className='h-8' />
-        <div className="flex">
-
+        <div className="flex justify-center items-center gap-4">
+          
         </div>
         <div className="flex justify-center items-center gap-2">
           <button className='font-medium cursor-pointer hover:bg-neutral-100 px-3.5 py-2 rounded-3xl'>Sign in</button>
