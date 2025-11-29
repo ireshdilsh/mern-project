@@ -32,3 +32,14 @@ export const deleteAlbum = async (req: any, res: any) => {
         res.status(400).json({message: "Something Went Wrong"});
     }
 }
+
+export const getAlbumDetailsWithID = async (req: any, res: any) => {
+    try {
+        const {id} = req.params;
+        const selectedAlbumDetails = await Album.findById(id)
+        res.status(200).json({selectedAlbumDetails: selectedAlbumDetails});
+    }catch (e) {
+        console.error(e);
+        res.status(400).json({message:"Something Went Wrong"})
+    }
+}
