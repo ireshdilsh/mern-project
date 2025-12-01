@@ -11,12 +11,12 @@ export default function Gallery() {
     <div className='px-35 flex flex-col justify-center items-center mt-13 gap-3'>
         <div className='flex justify-center gap-3'>
             <img src={img_1} className='w-120 h-120  object-cover rounded-lg' alt="" />
-            <img src={img_2} className='w-120 h-90 object-cover rounded-lg' alt="" />
+            <img src={img_2} className='w-120 h-90 object-cover rounded-lg mt-40' alt="" />
             <img src={img_3} className='w-120 object-cover rounded-lg' alt="" />
         </div>
          <div className='flex justify-center gap-3'>
-            <img src={img_4} className='w-120 object-cover rounded-lg' alt="" />
-            <img src={img_5} className='w-120 h-90 object-cover -mt-30 rounded-lg' alt="" />
+            <img src={img_4} className='w-120 object-cover -mt-10 rounded-lg' alt="" />
+            <img src={img_5} className='w-120 h-90 object-cover -mt-0 rounded-lg' alt="" />
             <img src={img_6} className='w-120 object-cover rounded-lg' alt="" />
         </div>
     </div>
