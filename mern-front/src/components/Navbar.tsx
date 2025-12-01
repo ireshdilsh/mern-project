@@ -53,7 +53,7 @@ export default function Navbar() {
             <nav className='mt-5 flex justify-between items-center px-35'>
                 <img src={logo} alt="ai-logo" className='h-8' />
                 <div className="flex justify-center items-center gap-4">
-                    <a href="">Home</a>
+                    <Link to="/">Home</Link>
                     <Link to="/how/it/works">How it Works</Link>
                     <a href="">Gallery</a>
                     <a href="">Terms & Conditions</a>
