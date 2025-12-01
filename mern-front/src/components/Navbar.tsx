@@ -3,6 +3,7 @@ import logo from '../assets/logo.png'
 import login from '../assets/login.jpeg'
 import signup from '../assets/signup.jpeg'
 import '../styles/landing.css'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
 
@@ -52,7 +53,10 @@ export default function Navbar() {
             <nav className='mt-5 flex justify-between items-center px-35'>
                 <img src={logo} alt="ai-logo" className='h-8' />
                 <div className="flex justify-center items-center gap-4">
-
+                    <a href="">Home</a>
+                    <Link to="/how/it/works">How it Works</Link>
+                    <a href="">Gallery</a>
+                    <a href="">Terms & Conditions</a>
                 </div>
                 <div className="flex justify-center items-center gap-2">
                     <button onClick={openSigninModal} className='font-medium cursor-pointer hover:bg-neutral-100 px-3.5 py-2 rounded-3xl'>Sign in</button>
