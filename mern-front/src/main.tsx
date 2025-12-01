@@ -15,4 +15,3 @@ createRoot(document.getElementById('root')!).render(
   // </StrictMode>,
 )
 
-// https://xxxbp.tv/video/819575/godavari-river-hot-scene
