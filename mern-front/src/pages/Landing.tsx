@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Gallery from './Gallery'
 
 export default function Landing() {
   return (
@@ -14,10 +15,12 @@ export default function Landing() {
         </div>
 
         {/* gallery */}
-        <section id='gallery'>
-          
+        <section id='gallery'>  
+            <Gallery/>
         </section>
-        <footer></footer>
+        <footer>
+
+        </footer>
       </div>
     </div>
   )
