@@ -14,6 +14,11 @@ export default function Landing() {
             dfgdfg
           </div>
         </nav>
+
+      <section className='flex flex-col justify-center items-center gap-5 mt-30 text-[#333]'>
+        <h1 className='text-6xl font-semibold bg-white'>Create Stunning AI Images in Seconds</h1>
+      </section>
+
       </div>
 
     </div>
