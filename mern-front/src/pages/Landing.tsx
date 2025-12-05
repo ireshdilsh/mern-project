@@ -35,6 +35,8 @@ export default function Landing() {
                 </div>
             </div>
             <div className='flex justify-center items-center flex-col gap-8 mt-20'>
+                <h1 className='font-semibold text-4xl'>See Our Impact in Numbers</h1>
+                <p className='text-neutral-600 w-100 text-sm'>Our AI platform empowers millions of creators worldwide. Generate high-quality images instantly, explore thousands of unique styles, and bring your imagination to life—effortlessly and reliably.</p>
                 <div className='flex justify-center items-center gap-25'>
                     <div className='flex flex-col justify-center items-center gap-2'>
                         <p className='text-4xl font-semibold'>12 million</p>
