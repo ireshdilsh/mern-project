@@ -34,10 +34,10 @@ export default function Landing() {
                     </button>
                 </div>
             </div>
-            <div className='flex justify-center items-center flex-col gap-8 mt-20'>
+            <div className='flex justify-center items-center flex-col mt-25 bg-neutral-50 py-16'>
                 <h1 className='font-semibold text-4xl'>See Our Impact in Numbers</h1>
-                <p className='text-neutral-600 w-100 text-sm'>Our AI platform empowers millions of creators worldwide. Generate high-quality images instantly, explore thousands of unique styles, and bring your imagination to life—effortlessly and reliably.</p>
-                <div className='flex justify-center items-center gap-25'>
+                <p className='text-neutral-600 w-220 mt-3 text-center'>Our AI platform empowers millions of creators worldwide. Generate high-quality images instantly, explore thousands of unique styles, and bring your imagination to life—effortlessly and reliably.</p>
+                <div className='flex justify-center items-center gap-25 mt-10'>
                     <div className='flex flex-col justify-center items-center gap-2'>
                         <p className='text-4xl font-semibold'>12 million</p>
                         <p className='text-sm text-neutral-600 font-semibold'>AI Images Generated</p>
@@ -52,7 +52,7 @@ export default function Landing() {
                     </div>
                 </div>
 
-                <div className='flex justify-center items-center gap-25'>
+                <div className='flex justify-center items-center gap-25 mt-10'>
                     <div className='flex flex-col justify-center items-center gap-2'>
                         <p className='text-4xl font-semibold'>320 000</p>
                         <p className='text-sm text-neutral-600 font-semibold'>New Users Every Month</p>
