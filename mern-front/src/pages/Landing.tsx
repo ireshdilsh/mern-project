@@ -5,7 +5,7 @@ export default function Landing() {
         <div>
             <nav className='flex justify-between items-center w-full px-20 mt-4'>
                 <div className='flex items-center justify-center gap-2'>
-                    <img src={logo} alt="" className='h-6'/>
+                    <img src={logo} alt="" className='h-6' />
                     <h1 className='text-lg font-semibold'>stability.ai</h1>
                 </div>
                 <div className='flex items-center justify-center gap-4'>
@@ -20,10 +20,10 @@ export default function Landing() {
             </nav>
 
             <div className='flex flex-col justify-center items-center gap-8 mt-32'>
-                <h1 className='text-5xl font-semibold text-center leading-14'>Create Stunning AI Images Instantly With <br/> the Power of Smart Imagination.</h1>
+                <h1 className='text-5xl font-semibold text-center leading-14'>Create Stunning AI Images Instantly With <br /> the Power of Smart Imagination.</h1>
                 <p className='text-neutral-600 text-center'>Turn your ideas into high-quality, visually striking images
                     with powerful AI.
-                    <br/> Simply type your prompt, pick a style, and watch your imagination come to life—instantly.</p>
+                    <br /> Simply type your prompt, pick a style, and watch your imagination come to life—instantly.</p>
 
                 <div className='flex justify-center items-center gap-3'>
                     <button className='font-semibold text-white bg-black px-10 py-2.5 rounded-md cursor-pointer hover:opacity-80'>Get
@@ -35,8 +35,6 @@ export default function Landing() {
                 </div>
             </div>
             <div className='flex justify-center items-center flex-col mt-25 bg-neutral-50 py-16'>
-                <h1 className='font-semibold text-4xl'>See Our Impact in Numbers</h1>
-                <p className='text-neutral-600 w-220 mt-3 text-center'>Our AI platform empowers millions of creators worldwide. Generate high-quality images instantly, explore thousands of unique styles, and bring your imagination to life—effortlessly and reliably.</p>
                 <div className='flex justify-center items-center gap-25 mt-10'>
                     <div className='flex flex-col justify-center items-center gap-2'>
                         <p className='text-4xl font-semibold'>12 million</p>
@@ -66,6 +64,7 @@ export default function Landing() {
                         <p className='text-sm text-neutral-600 font-semibold'>Uptime & System Reliability</p>
                     </div>
                 </div>
+                <p className='text-neutral-600 w-220 mt-15 text-sm text-center'>Our AI platform empowers millions of creators worldwide. Generate high-quality images instantly, explore thousands of unique styles, and bring your imagination to life—effortlessly and reliably.</p>
             </div>
         </div>
     )
