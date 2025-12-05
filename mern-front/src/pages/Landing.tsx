@@ -54,7 +54,7 @@ export default function Landing() {
       {/* Image Carousel */}
       <div className='relative my-10 w-full max-w-5xl'>
         <div className='overflow-hidden rounded-lg shadow-2xl'>
-          <div className='relative h-96'>
+          <div className='relative h-[32rem]'>
             {images.map((img, idx) => (
               <div
                 key={idx}
