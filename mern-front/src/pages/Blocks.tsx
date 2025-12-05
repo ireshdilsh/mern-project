@@ -27,6 +27,14 @@ export default function Blocks() {
                 <div className='border border-neutral-100 h-60 w-70'></div>
                 <div className='border border-neutral-100 h-60 w-70'></div>
             </div>
+              <div className='flex justify-center items-center'>
+                <div className='border border-neutral-100 h-60 w-70'></div>
+                <div className='border border-neutral-100 h-60 w-70'></div>
+                <div className='border border-neutral-100 h-60 w-70'></div>
+                <div className='border border-neutral-100 h-60 w-70'></div>
+                <div className='border border-neutral-100 h-60 w-70'></div>
+                <div className='border border-neutral-100 h-60 w-70'></div>
+            </div>
 
         </div>
     )

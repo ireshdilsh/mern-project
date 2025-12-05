@@ -16,10 +16,6 @@ export default function Landing() {
     return () => clearInterval(interval)
   }, [])
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-  }
-
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
   }
