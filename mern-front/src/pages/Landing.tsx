@@ -1,11 +1,11 @@
-import logo from '../assets/logo-icon.png'
+import logo from '../assets/CTRMaker__1_-removebg-preview.png'
 
 export default function Landing() {
     return (
         <div>
             <nav className='flex justify-between items-center w-full px-20 mt-4'>
                 <div className='flex items-center justify-center gap-2'>
-                    <img src={logo} alt="" className='h-8'/>
+                    <img src={logo} alt="" className='h-7'/>
                     <h1 className='text-lg font-semibold'>stability.ai</h1>
                 </div>
                 <div className='flex items-center justify-center gap-4'>
