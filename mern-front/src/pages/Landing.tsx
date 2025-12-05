@@ -5,7 +5,7 @@ export default function Landing() {
         <div>
             <nav className='flex justify-between items-center w-full px-20 mt-4'>
                 <div className='flex items-center justify-center gap-2'>
-                    <img src={logo} alt="" className='h-7'/>
+                    <img src={logo} alt="" className='h-6'/>
                     <h1 className='text-lg font-semibold'>stability.ai</h1>
                 </div>
                 <div className='flex items-center justify-center gap-4'>
