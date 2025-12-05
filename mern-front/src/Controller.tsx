@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import './index.css' 
 import Landing from './pages/Landing'
 
 export default function Controller() {
