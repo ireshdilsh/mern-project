@@ -350,7 +350,6 @@ export default function Landing() {
                 </div>
             </section>
 
-            {/* legal & license */}
             {/* Legal & License Section */}
             <section className='py-20 bg-white' id='legal-license'>
                 <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -360,10 +359,10 @@ export default function Landing() {
                         <p className='text-sm font-semibold text-red-600 uppercase tracking-wide'>
                             Terms and Trust
                         </p>
-                        <h2 className='mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900'>
+                        <h2 className='mt-2 text-2xl sm:text-3xl lg:text-4xl font-semibold '>
                             Licensing, Ownership, and Safety
                         </h2>
-                        <p className='mt-4 max-w-3xl text-xl text-neutral-600 mx-auto'>
+                        <p className='mt-2 max-w-3xl text-neutral-600 mx-auto'>
                             Everything you need to know about your rights, commercial use, and content moderation policies.
                         </p>
                     </div>
