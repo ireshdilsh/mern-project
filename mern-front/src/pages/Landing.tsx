@@ -591,9 +591,9 @@ export default function Landing() {
                             </h3>
                             <div className='flex space-x-4'>
                                 {/* Placeholder for Social Icons (e.g., Twitter, Discord) */}
-                                <a href="#" className='text-neutral-400 hover:text-white transition duration-150'>[Twitter]</a>
-                                <a href="#" className='text-neutral-400 hover:text-white transition duration-150'>[Discord]</a>
-                                <a href="#" className='text-neutral-400 hover:text-white transition duration-150'>[Github]</a>
+                                <a href="#" className='text-neutral-400 hover:text-white transition duration-150'><img src="https://img.icons8.com/?size=100&id=A4DsujzAX4rw&format=png&color=fcfcfc" className='h-5' alt="" /></a>
+                                <a href="#" className='text-neutral-400 hover:text-white transition duration-150'><img src="https://img.icons8.com/?size=100&id=30888&format=png&color=fcfcfc" className='h-5' alt="" /></a>
+                                <a href="#" className='text-neutral-400 hover:text-white transition duration-150'><img src="https://img.icons8.com/?size=100&id=12599&format=png&color=fcfcfc" className='h-5' alt="" /></a>
                             </div>
                         </div>
                     </div>
