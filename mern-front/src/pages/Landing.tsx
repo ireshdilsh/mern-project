@@ -580,7 +580,7 @@ export default function Landing() {
                                 <li><a href="#company" className='text-neutral-400 hover:text-white transition duration-150'>About Us</a></li>
                                 <li><a href="#legal-license" className='text-neutral-400 hover:text-white transition duration-150'>Legal & License</a></li>
                                 <li><a href="#" className='text-neutral-400 hover:text-white transition duration-150'>Careers</a></li>
-                                <li><a href="#" className='text-neutral-400 hover:text-white transition duration-150'>Contact</a></li>
+                                <li><Link to="/contact" className='text-neutral-400 hover:text-white transition duration-150'>Contact</Link></li>
                             </ul>
                         </div>
 
