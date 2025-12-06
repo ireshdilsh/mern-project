@@ -1,6 +1,7 @@
 import { useState, type SVGProps } from 'react';
 import logo from '../assets/CTRMaker__1_-removebg-preview.png'
 import '../styles/landing.css'
+import { Link } from 'react-router-dom';
 
 const MenuIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
@@ -447,9 +448,9 @@ export default function Landing() {
                             Need more details? Access our official documents.
                         </p>
                         <div className='flex justify-center gap-4 mt-4'>
-                            <a href="#" className='text-base font-semibold text-white bg-red-600 px-8 py-3 rounded-md hover:bg-red-700 transition duration-150'>
+                            <Link to="/legal/and/licensing" className='text-base font-semibold text-white bg-red-600 px-8 py-3 rounded-md hover:bg-red-700 transition duration-150'>
                                 Read Full Terms of Service
-                            </a>
+                            </Link>
                             <a href="#" className='text-base font-semibold text-gray-900 border border-gray-300 px-8 py-3 rounded-md hover:bg-neutral-100 transition duration-150'>
                                 View Privacy Policy
                             </a>
@@ -458,6 +459,7 @@ export default function Landing() {
 
                 </div>
             </section>
+
 
         </div>
     )
