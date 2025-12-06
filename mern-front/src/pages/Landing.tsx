@@ -577,7 +577,7 @@ export default function Landing() {
                                 Company
                             </h3>
                             <ul className='space-y-3 text-sm'>
-                                <li><a href="#company" className='text-neutral-400 hover:text-white transition duration-150'>About Us</a></li>
+                                <li><Link to="/about" className='text-neutral-400 hover:text-white transition duration-150'>About Us</Link></li>
                                 <li><a href="#legal-license" className='text-neutral-400 hover:text-white transition duration-150'>Legal & License</a></li>
                                 <li><a href="#" className='text-neutral-400 hover:text-white transition duration-150'>Careers</a></li>
                                 <li><Link to="/contact" className='text-neutral-400 hover:text-white transition duration-150'>Contact</Link></li>
