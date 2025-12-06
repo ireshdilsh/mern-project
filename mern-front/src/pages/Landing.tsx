@@ -1,7 +1,31 @@
+import { useState } from 'react';
 import logo from '../assets/CTRMaker__1_-removebg-preview.png'
 import '../styles/landing.css'
 
+const MenuIcon = (props) => (
+    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+);
+const XIcon = (props) => (
+    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+);
+
 export default function Landing() {
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const navItems = [
+        { name: 'Home', href: '#' },
+        { name: 'Features', href: '#features' }, // Linked to the section we created
+        { name: 'Models', href: '#' },
+        { name: 'Legal & License', href: '#' },
+        { name: 'Company', href: '#' },
+        { name: 'Deployment', href: '#' },
+        { name: 'Applications', href: '#' },
+    ];
 
     // Features cards details
     const features = [
@@ -39,34 +63,85 @@ export default function Landing() {
 
     return (
         <div>
-            <nav className='flex justify-between items-center w-full px-20 mt-4'>
-                <div className='flex items-center justify-center gap-2'>
-                    <img src={logo} alt="" className='h-6' />
-                    <h1 className='text-lg font-semibold'>stability.ai</h1>
+
+            <nav className='sticky top-0 z-50 bg-white shadow-sm'>
+                <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+                    <div className='flex justify-between items-center h-16 w-full'>
+
+                        {/* Left Side: Logo and Title */}
+                        <div className='flex items-center gap-2'>
+                            <img src={logo} alt="" className='h-6' />
+                            <h1 className='text-xl font-bold'>stability.ai</h1>
+                        </div>
+
+                        {/* Center: Desktop Navigation Links (Hidden on Mobile) */}
+                        <div className='hidden lg:flex items-center gap-6 xl:gap-8'>
+                            {navItems.map((item) => (
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className='font-semibold text-sm text-gray-700 hover:text-black transition duration-150'>
+                                    {item.name}
+                                </a>
+                            ))}
+                        </div>
+
+                        {/* Right Side: Menu Button (Hidden on Desktop) */}
+                        <div className='lg:hidden'>
+                            <button
+                                type='button'
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                className='inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-black hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black'
+                                aria-controls="mobile-menu"
+                                aria-expanded="false"
+                            >
+                                {isMenuOpen ? <XIcon /> : <MenuIcon />}
+                            </button>
+                        </div>
+
+                    </div>
                 </div>
-                <div className='flex items-center justify-center gap-4'>
-                    <a className='font-semibold text-sm' href="">Home</a>
-                    <a className='font-semibold text-sm' href="">Features</a>
-                    <a className='font-semibold text-sm' href="">Models</a>
-                    <a className='font-semibold text-sm' href="">Legal & License</a>
-                    <a className='font-semibold text-sm' href="">Company</a>
-                    <a className='font-semibold text-sm' href="">Deployment</a>
-                    <a className='font-semibold text-sm' href="">Applications</a>
+
+                {/* Mobile Menu Panel (Hidden by default, shown when isMenuOpen is true) */}
+                <div className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
+                    <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
+                        {navItems.map((item) => (
+                            <a
+                                key={item.name}
+                                href={item.href}
+                                onClick={() => setIsMenuOpen(false)} // Close menu on click
+                                className='block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-neutral-100'
+                            >
+                                {item.name}
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </nav>
 
-            <div className='flex flex-col justify-center items-center gap-8 mt-32'>
-                <h1 className='text-5xl font-semibold text-center tracking-wide' id='hero-title'>Create Stunning AI Images Instantly With <br /> the Power of Smart Imagination.</h1>
-                <p className='text-neutral-600 text-center'>Turn your ideas into high-quality, visually striking images
-                    with powerful AI.
-                    <br /> Simply type your prompt, pick a style, and watch your imagination come to life—instantly.</p>
+            {/* hero */}
+            <div className='flex flex-col items-center text-center px-4 sm:px-6 mt-20 md:mt-28 lg:mt-36'>
+                {/* Hero Title */}
+                <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight max-w-4xl' id='hero-title'>
+                    Create Stunning AI Images Instantly With <br className='hidden sm:inline-block' /> the Power of Smart Imagination.
+                </h1>
 
-                <div className='flex justify-center items-center gap-3'>
-                    <button className='font-semibold text-white bg-black px-10 py-2.5 rounded-md cursor-pointer hover:opacity-80'>Get
-                        Started
+                {/* Sub-Headline Paragraph */}
+                <p className='text-base sm:text-lg text-neutral-600 mt-6 max-w-3xl'>
+                    Turn your ideas into high-quality, visually striking images with powerful AI.
+                    <br />
+                    Simply type your prompt, pick a style, and watch your imagination come to life—instantly.
+                </p>
+
+                {/* Action Buttons */}
+                <div className='flex justify-center items-center gap-3 mt-8 md:mt-10'>
+                    <button
+                        className='font-semibold text-white bg-black px-8 sm:px-10 py-2.5 rounded-md cursor-pointer transition duration-150 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2'>
+                        Get Started
                     </button>
-                    <button className='font-semibold px-10 py-2.5 rounded-md cursor-pointer border border-black'>Start
-                        Create
+                    <button
+                        className='font-semibold px-8 sm:px-10 py-2.5 rounded-md cursor-pointer border border-black transition duration-150 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2'>
+                        Start Create
                     </button>
                 </div>
             </div>
