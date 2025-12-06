@@ -1,5 +1,7 @@
 import { useState, type SVGProps } from 'react';
 import logo from '../assets/CTRMaker__1_-removebg-preview.png'
+import img1 from '../assets/login.jpeg'
+import img2 from '../assets/gallery/coding-3.jpg'
 import '../styles/landing.css'
 import { Link } from 'react-router-dom';
 
@@ -19,11 +21,11 @@ export default function Landing() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navItems = [
-        { name: 'Home', href: '#' },
+        { name: 'Home', href: '#hero' },
         { name: 'Features', href: '#features' }, // Linked to the section we created
         { name: 'Models', href: '#models' },
-        { name: 'Legal & License', href: '#' },
-        { name: 'Company', href: '#' }
+        { name: 'Legal & License', href: '#legal-license' },
+        { name: 'Company', href: '#company' }
     ]
 
     // Features cards details
@@ -106,7 +108,7 @@ export default function Landing() {
                 {/* Mobile Menu Panel (Hidden by default, shown when isMenuOpen is true) */}
                 <div className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
                     <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-                        
+
                         {navItems.map((item) => (
                             <a
                                 key={item.name}
@@ -126,7 +128,7 @@ export default function Landing() {
             </nav>
 
             {/* hero */}
-            <div className='flex flex-col items-center text-center px-4 sm:px-6 mt-20 md:mt-28 lg:mt-36'>
+            <div className='flex flex-col items-center text-center px-4 sm:px-6 mt-20 md:mt-28 lg:mt-36' id='hero'>
                 {/* Hero Title */}
                 <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-black max-w-4xl' id='hero-title'>
                     Create Stunning AI Images Instantly With  the Power of Smart Imagination.
@@ -453,7 +455,163 @@ export default function Landing() {
                 </div>
             </section>
 
+            {/* Company Section */}
+            <section className='py-20 bg-gray-50' id='company'>
+                <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+                    {/* Section Header */}
+                    <div className='text-center mb-16'>
+                        <p className='text-sm font-semibold text-indigo-600 uppercase tracking-wide'>
+                            Our Identity
+                        </p>
+                        <h2 className='mt-2 text-2xl sm:text-3xl lg:text-4xl font-semibold'>
+                            Pioneering the Future of Creative AI
+                        </h2>
+                    </div>
 
+                    {/* Two-Column Grid: Content (Left) and Images (Right) */}
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16'>
+
+                        {/* Left Column: Content (Mission, Vision, Values) */}
+                        <div className='space-y-12'>
+
+                            {/* Mission Block */}
+                            <div className='p-6 '>
+                                <h3 className='text-2xl font-bold text-gray-900 mb-4 flex items-center'>
+                                    <span className='mr-3 text-indigo-600'>🚀</span> Our Mission
+                                </h3>
+                                <p className='text-neutral-700 leading-relaxed'>
+                                    To make powerful, accessible AI tools available to every artist, developer, and creator worldwide. We believe in fostering innovation, safety, and collaborative problem-solving.
+                                </p>
+                            </div>
+
+                            {/* Values Block */}
+                            <div className='p-6'>
+                                <h3 className='text-2xl font-bold text-gray-900 mb-6 flex items-center'>
+                                    <span className='mr-3 text-indigo-600'>🌟</span> Core Values
+                                </h3>
+                                <ul className='space-y-4 '>
+                                    <li className='flex items-start'>
+                                        <svg className="flex-shrink-0 h-6 w-6 text-black mt-1 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.975 1.5 1.5 0 00-1.4 1.5v6.5a1.5 1.5 0 001.5 1.5h1.5" />
+                                        </svg>
+                                        <div>
+                                            <strong className='text-gray-900'>Innovation First:</strong> Continuously pushing the boundaries of generative models to deliver state-of-the-art results.
+                                        </div>
+                                    </li>
+                                    <li className='flex items-start'>
+                                        <svg className="flex-shrink-0 h-6 w-6 text-black mt-1 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6-4a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        <div>
+                                            <strong className='text-gray-900'>Trust & Safety:</strong> Building responsible AI with robust safety features and transparent data practices.
+                                        </div>
+                                    </li>
+                                    <li className='flex items-start'>
+                                        <svg className="flex-shrink-0 h-6 w-6 text-black mt-1 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.463 9.243 5 7.5 5 5.757 5 4.168 5.463 3 6.253M12 6.253c1.168.79 2.757 1.253 4.5 1.253 1.743 0 3.332-.463 4.5-1.253M12 6.253v13m0-13V12" />
+                                        </svg>
+                                        <div>
+                                            <strong className='text-gray-900'>Community Focus:</strong> Empowering our community through open-source initiatives and accessible tools.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* Right Column: 3D Image Placeholders */}
+                        <div className='space-y-8'>
+
+                            {/* Image 1: 3D Tiger */}
+                            <div className='relative w-full h-80 overflow-hidden'>
+                                <div className='absolute inset-0 flex items-center justify-center text-xl font-semibold p-4 text-center'>
+                                    <img src={img1} alt="" />
+                                </div>
+                            </div>
+
+                            {/* Image 2: Anime Assassin */}
+                            <div className='relative w-full h-80 overflow-hidden'>
+                                <div className='absolute inset-0 flex items-center justify-center text-xl font-semibold p-4 text-center'>
+                                    <img src={img2} alt="Anime Assassin AI Art" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer Section */}
+            <footer className='bg-black text-white py-12 md:py-16'>
+                <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+
+                    {/* Top Section: Logo, Mission, and Social Links */}
+                    <div className='grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-neutral-700 pb-10 mb-10'>
+
+                        {/* Column 1: Brand Info */}
+                        <div className='md:col-span-1'>
+                            <div className='flex items-center gap-2'>
+                                <img src={logo} alt="stability.ai logo" className='h-7 filter invert' />
+                                {/* Assuming the logo might need to be inverted to be visible on black background */}
+                                <h1 className='text-xl font-bold'>stability.ai</h1>
+                            </div>
+                            <p className='mt-4 text-neutral-400 text-sm max-w-xs'>
+                                The premier platform for generative AI, empowering creators to turn imagination into reality—instantly.
+                            </p>
+                        </div>
+
+                        {/* Column 2: Quick Links (Navigation) */}
+                        <div>
+                            <h3 className='text-md font-semibold mb-4 text-neutral-200 uppercase tracking-wider'>
+                                Platform
+                            </h3>
+                            <ul className='space-y-3 text-sm'>
+                                <li><a href="#features" className='text-neutral-400 hover:text-white transition duration-150'>Features</a></li>
+                                <li><a href="#models" className='text-neutral-400 hover:text-white transition duration-150'>Models</a></li>
+                                <li><a href="#" className='text-neutral-400 hover:text-white transition duration-150'>API Access</a></li>
+                                <li><a href="#" className='text-neutral-400 hover:text-white transition duration-150'>Pricing</a></li>
+                            </ul>
+                        </div>
+
+                        {/* Column 3: Company & Legal */}
+                        <div>
+                            <h3 className='text-md font-semibold mb-4 text-neutral-200 uppercase tracking-wider'>
+                                Company
+                            </h3>
+                            <ul className='space-y-3 text-sm'>
+                                <li><a href="#company" className='text-neutral-400 hover:text-white transition duration-150'>About Us</a></li>
+                                <li><a href="#legal-license" className='text-neutral-400 hover:text-white transition duration-150'>Legal & License</a></li>
+                                <li><a href="#" className='text-neutral-400 hover:text-white transition duration-150'>Careers</a></li>
+                                <li><a href="#" className='text-neutral-400 hover:text-white transition duration-150'>Contact</a></li>
+                            </ul>
+                        </div>
+
+                        {/* Column 4: Social Media / Newsletter (Placeholder) */}
+                        <div>
+                            <h3 className='text-md font-semibold mb-4 text-neutral-200 uppercase tracking-wider'>
+                                Connect
+                            </h3>
+                            <div className='flex space-x-4'>
+                                {/* Placeholder for Social Icons (e.g., Twitter, Discord) */}
+                                <a href="#" className='text-neutral-400 hover:text-white transition duration-150'>[Twitter]</a>
+                                <a href="#" className='text-neutral-400 hover:text-white transition duration-150'>[Discord]</a>
+                                <a href="#" className='text-neutral-400 hover:text-white transition duration-150'>[Github]</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Bottom Section: Copyright and Credits */}
+                    <div className='flex flex-col sm:flex-row justify-between items-center text-sm text-neutral-500 pt-4'>
+                        <p className='order-2 sm:order-1 mt-4 sm:mt-0'>
+                            &copy; {new Date().getFullYear()} stability.ai. All rights reserved.
+                        </p>
+                        <div className='order-1 sm:order-2 space-x-4'>
+                            <a href="#legal-license" className='hover:text-white transition duration-150'>Privacy</a>
+                            <a href="#legal-license" className='hover:text-white transition duration-150'>Terms</a>
+                            <a href="#" className='hover:text-white transition duration-150'>Sitemap</a>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
         </div>
     )
 }
