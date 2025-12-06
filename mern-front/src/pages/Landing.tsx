@@ -2,12 +2,12 @@ import { useState } from 'react';
 import logo from '../assets/CTRMaker__1_-removebg-preview.png'
 import '../styles/landing.css'
 
-const MenuIcon = (props) => (
+const MenuIcon = (props: any) => (
     <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
 );
-const XIcon = (props) => (
+const XIcon = (props: any) => (
     <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
     </svg>
@@ -20,7 +20,7 @@ export default function Landing() {
     const navItems = [
         { name: 'Home', href: '#' },
         { name: 'Features', href: '#features' }, // Linked to the section we created
-        { name: 'Models', href: '#' },
+        { name: 'Models', href: '#models' },
         { name: 'Legal & License', href: '#' },
         { name: 'Company', href: '#' },
         { name: 'Deployment', href: '#' },
@@ -64,7 +64,7 @@ export default function Landing() {
     return (
         <div>
 
-            <nav className='sticky top-0 z-50 bg-white shadow-sm'>
+            <nav className='sticky top-0 z-50 bg-transparent backdrop-blur-md'>
                 <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                     <div className='flex justify-between items-center h-16 w-full'>
 
@@ -122,25 +122,24 @@ export default function Landing() {
             {/* hero */}
             <div className='flex flex-col items-center text-center px-4 sm:px-6 mt-20 md:mt-28 lg:mt-36'>
                 {/* Hero Title */}
-                <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight max-w-4xl' id='hero-title'>
-                    Create Stunning AI Images Instantly With <br className='hidden sm:inline-block' /> the Power of Smart Imagination.
+                <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black max-w-4xl' id='hero-title'>
+                    Create Stunning AI Images Instantly With  the Power of Smart Imagination.
                 </h1>
 
                 {/* Sub-Headline Paragraph */}
                 <p className='text-base sm:text-lg text-neutral-600 mt-6 max-w-3xl'>
                     Turn your ideas into high-quality, visually striking images with powerful AI.
-                    <br />
                     Simply type your prompt, pick a style, and watch your imagination come to life—instantly.
                 </p>
 
                 {/* Action Buttons */}
                 <div className='flex justify-center items-center gap-3 mt-8 md:mt-10'>
                     <button
-                        className='font-semibold text-white bg-black px-8 sm:px-10 py-2.5 rounded-md cursor-pointer transition duration-150 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2'>
+                        className='font-semibold text-white bg-black px-8 sm:px-10 py-2.5 rounded-md cursor-pointer transition duration-150 hover:opacity-80'>
                         Get Started
                     </button>
                     <button
-                        className='font-semibold px-8 sm:px-10 py-2.5 rounded-md cursor-pointer border border-black transition duration-150 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2'>
+                        className='font-semibold px-8 sm:px-10 py-2.5 rounded-md cursor-pointer border border-black transition duration-150'>
                         Start Create
                     </button>
                 </div>
@@ -197,6 +196,7 @@ export default function Landing() {
                 </p>
             </div>
 
+            {/* features section */}
             <section className='py-20 bg-white' id='features'>
                 <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 
@@ -238,6 +238,225 @@ export default function Landing() {
                             </div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* Model section */}
+            <section className='py-20 bg-neutral-50' id='models'>
+                <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+
+                    {/* Section Header */}
+                    <div className='text-center'>
+                        <p className='text-sm font-semibold text-indigo-600 uppercase tracking-wide'>
+                            The Engine of Creativity
+                        </p>
+                        <h2 className='mt-2 text-2xl sm:text-3xl lg:text-4xl font-semibold text-black'>
+                            Explore Our Foundational Models
+                        </h2>
+                        <p className='mt-2.5 max-w-3xl text-neutral-600 mx-auto'>
+                            Choose the right model for your task. Each one is fine-tuned for speed, quality, and specific artistic styles.
+                        </p>
+                    </div>
+
+                    {/* Models Grid */}
+                    <div className='mt-20 grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-12'>
+
+                        {/* Model Card 1: Stable Diffusion XL */}
+                        <div className='bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl'>
+                            <div className='p-6 flex flex-col h-full'>
+                                <span className='w-42 inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full mb-4'>
+                                    BEST FOR GENERAL USE
+                                </span>
+                                <h3 className='text-2xl font-bold text-gray-900 mb-3'>
+                                    SDXL 1.0
+                                </h3>
+                                <p className='text-gray-600 mb-6 flex-grow'>
+                                    Our flagship model offers unparalleled detail, photorealism, and prompt understanding. Ideal for professionals and high-quality artistic projects.
+                                </p>
+                                <ul className='space-y-2 text-sm text-gray-700'>
+                                    <li className='flex items-center'>
+                                        <svg className="flex-shrink-0 h-5 w-5 text-indigo-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                        **Exceptional Photorealism**
+                                    </li>
+                                    <li className='flex items-center'>
+                                        <svg className="flex-shrink-0 h-5 w-5 text-indigo-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                        Complex Composition
+                                    </li>
+                                </ul>
+                                <button className='cursor-pointer mt-6 w-full text-center bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-150'>
+                                    Try SDXL
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Model Card 2: SD 2.1 */}
+                        <div className='bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl'>
+                            <div className='p-6 flex flex-col h-full'>
+                                <span className='w-31 inline-block bg-teal-100 text-teal-800 text-xs font-semibold px-3 py-1 rounded-full mb-4'>
+                                    BEST FOR SPEED
+                                </span>
+                                <h3 className='text-2xl font-bold text-gray-900 mb-3'>
+                                    SD 2.1
+                                </h3>
+                                <p className='text-gray-600 mb-6 flex-grow'>
+                                    A lightweight and fast model. Perfect for quick ideation, rapid prototyping, and integration into time-sensitive applications via API.
+                                </p>
+                                <ul className='space-y-2 text-sm text-gray-700'>
+                                    <li className='flex items-center'>
+                                        <svg className="flex-shrink-0 h-5 w-5 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                        **Low Latency Generation**
+                                    </li>
+                                    <li className='flex items-center'>
+                                        <svg className="flex-shrink-0 h-5 w-5 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                        Smaller File Sizes
+                                    </li>
+                                </ul>
+                                <button className='cursor-pointer mt-6 w-full text-center bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-150'>
+                                    Try SD 2.1
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Model Card 3: SDXL Turbo */}
+                        <div className='bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl'>
+                            <div className='p-6 flex flex-col h-full'>
+                                <span className='w-43.5 inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full mb-4'>
+                                    BEST FOR INTERACTIVITY
+                                </span>
+                                <h3 className='text-2xl font-bold text-gray-900 mb-3'>
+                                    SDXL Turbo
+                                </h3>
+                                <p className='text-gray-600 mb-6 flex-grow'>
+                                    Designed for real-time creativity. Generates images in a single step, making it perfect for live demos and interactive experiences.
+                                </p>
+                                <ul className='space-y-2 text-sm text-gray-700'>
+                                    <li className='flex items-center'>
+                                        <svg className="flex-shrink-0 h-5 w-5 text-yellow-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                        **Real-time Image Generation**
+                                    </li>
+                                    <li className='flex items-center'>
+                                        <svg className="flex-shrink-0 h-5 w-5 text-yellow-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                        High Consistency
+                                    </li>
+                                </ul>
+                                <button className='cursor-pointer mt-6 w-full text-center bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-150'>
+                                    Try SDXL Turbo
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            {/* legal & license */}
+            {/* Legal & License Section */}
+            <section className='py-20 bg-white' id='legal-license'>
+                <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+
+                    {/* Section Header */}
+                    <div className='text-center mb-16'>
+                        <p className='text-sm font-semibold text-red-600 uppercase tracking-wide'>
+                            Terms and Trust
+                        </p>
+                        <h2 className='mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900'>
+                            Licensing, Ownership, and Safety
+                        </h2>
+                        <p className='mt-4 max-w-3xl text-xl text-neutral-600 mx-auto'>
+                            Everything you need to know about your rights, commercial use, and content moderation policies.
+                        </p>
+                    </div>
+
+                    {/* Legal Points Grid */}
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16'>
+
+                        {/* Point 1: Commercial Use Rights */}
+                        <div className='flex items-start space-x-4'>
+                            <div className='flex-shrink-0'>
+                                <svg className="h-8 w-8 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3-.895-3-2 1.343-2 3-2z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.693C5.025 14.956 6 13.568 6 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 className='text-xl font-bold text-gray-900'>
+                                    Full Commercial License
+                                </h3>
+                                <p className='mt-2 text-neutral-600'>
+                                    You **retain 100% ownership** of all images you generate using paid credits. This includes the right to use, sell, and sublicense your creations for commercial purposes without restriction.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Point 2: User Content Ownership */}
+                        <div className='flex items-start space-x-4'>
+                            <div className='flex-shrink-0'>
+                                <svg className="h-8 w-8 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 className='text-xl font-bold text-gray-900'>
+                                    Your Prompts, Your Data
+                                </h3>
+                                <p className='mt-2 text-neutral-600'>
+                                    We do not claim ownership over the prompts, input text, or uploaded images you use. Your private inputs remain confidential and are not used for training models without explicit consent.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Point 3: Content Moderation Policy */}
+                        <div className='flex items-start space-x-4'>
+                            <div className='flex-shrink-0'>
+                                <svg className="h-8 w-8 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.772-1.333-2.694-1.333-3.464 0L3.332 16c-.772 1.333.19 3 1.732 3z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 className='text-xl font-bold text-gray-900'>
+                                    Responsible Content Policy
+                                </h3>
+                                <p className='mt-2 text-neutral-600'>
+                                    We strictly prohibit the generation of illegal, harmful, hateful, or abusive content. Our platform uses safety filters to enforce our community guidelines and maintain a safe environment.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Point 4: Model Training Data */}
+                        <div className='flex items-start space-x-4'>
+                            <div className='flex-shrink-0'>
+                                <svg className="h-8 w-8 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 className='text-xl font-bold text-gray-900'>
+                                    Transparency in Training
+                                </h3>
+                                <p className='mt-2 text-neutral-600'>
+                                    Our models are trained on datasets that respect copyright and content integrity. We are committed to transparency regarding the data sources used for our foundational models.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {/* CTA to Full Documents */}
+                    <div className='mt-20 text-center'>
+                        <p className='text-lg font-medium text-gray-900'>
+                            Need more details? Access our official documents.
+                        </p>
+                        <div className='flex justify-center gap-4 mt-4'>
+                            <a href="#" className='text-base font-semibold text-white bg-red-600 px-8 py-3 rounded-md hover:bg-red-700 transition duration-150'>
+                                Read Full Terms of Service
+                            </a>
+                            <a href="#" className='text-base font-semibold text-gray-900 border border-gray-300 px-8 py-3 rounded-md hover:bg-neutral-100 transition duration-150'>
+                                View Privacy Policy
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
