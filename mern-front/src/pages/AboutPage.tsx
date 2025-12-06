@@ -1,13 +1,9 @@
 import React from 'react'
 
 export default function AboutPage() {
-    return (
-        <div>
-
-        </div>
-    )
-}
-<div className='min-h-screen bg-gray-50'>
+  return (
+    <div>
+        <div className='min-h-screen bg-gray-50'>
 
     {/* Header & Hero Introduction */}
     <header className='bg-white shadow-sm'>
@@ -29,7 +25,7 @@ export default function AboutPage() {
 
             {/* 1. Mission and Vision (Two-Column Layout) */}
             <section className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
-
+                
                 {/* Left: Mission & Vision Content */}
                 <div className='space-y-10'>
                     <div className='p-6 bg-white rounded-xl shadow-lg border border-neutral-100'>
@@ -50,7 +46,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                 </div>
-
+                
                 {/* Right: Visionary Image Placeholder */}
                 <div className='relative w-full h-96 bg-neutral-200 rounded-xl shadow-xl overflow-hidden mt-8 lg:mt-0'>
                     <div className='absolute inset-0 flex items-center justify-center text-xl font-semibold text-neutral-600 p-4 text-center'>
@@ -66,25 +62,25 @@ export default function AboutPage() {
                     The Principles That Guide Us
                 </h2>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
-
+                    
                     <div className='text-center p-6 bg-white rounded-xl shadow-md'>
                         <span className='inline-block p-3 bg-indigo-100 rounded-full text-indigo-600 mb-4'>[Icon]</span>
                         <h3 className='text-xl font-bold mb-2'>Inclusivity</h3>
                         <p className='text-neutral-600'>Building tools that are accessible and beneficial to everyone, everywhere.</p>
                     </div>
-
+                    
                     <div className='text-center p-6 bg-white rounded-xl shadow-md'>
                         <span className='inline-block p-3 bg-indigo-100 rounded-full text-indigo-600 mb-4'>[Icon]</span>
                         <h3 className='text-xl font-bold mb-2'>Transparency</h3>
                         <p className='text-neutral-600'>Being open about our models, data sourcing, and content policies.</p>
                     </div>
-
+                    
                     <div className='text-center p-6 bg-white rounded-xl shadow-md'>
                         <span className='inline-block p-3 bg-indigo-100 rounded-full text-indigo-600 mb-4'>[Icon]</span>
                         <h3 className='text-xl font-bold mb-2'>Responsibility</h3>
                         <p className='text-neutral-600'>Prioritizing safety and ethical guidelines in AI development.</p>
                     </div>
-
+                    
                     <div className='text-center p-6 bg-white rounded-xl shadow-md'>
                         <span className='inline-block p-3 bg-indigo-100 rounded-full text-indigo-600 mb-4'>[Icon]</span>
                         <h3 className='text-xl font-bold mb-2'>Excellence</h3>
@@ -101,7 +97,7 @@ export default function AboutPage() {
                 <p className='max-w-4xl mx-auto text-xl text-neutral-600 mb-10'>
                     A dedicated group of experts driving innovation at the intersection of AI, creativity, and engineering.
                 </p>
-
+                
                 {/* Team Grid Placeholder */}
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
                     <div className='p-4'>
@@ -126,7 +122,7 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
-
+            
             {/* 4. Contact CTA */}
             <section className='text-center bg-white p-10 rounded-xl shadow-xl'>
                 <h2 className='text-3xl font-extrabold text-gray-900 mb-4'>
@@ -139,7 +135,9 @@ export default function AboutPage() {
                     Start Generating Images
                 </a>
             </section>
-
         </div>
     </main>
 </div>
+    </div>
+  )
+}
