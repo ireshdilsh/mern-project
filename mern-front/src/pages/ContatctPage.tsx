@@ -77,7 +77,7 @@ export default function ContatctPage() {
 
                             {/* Right Column: Contact Form */}
                             <div className='lg:col-span-2 bg-white p-8 sm:p-10 rounded-xl border border-neutral-100'>
-                                <h2 className='text-3xl font-extrabold text-gray-900 mb-6'>
+                                <h2 className='text-2xl font-semibold text-gray-900 mb-6'>
                                     Send Us a Message
                                 </h2>
                                 <form className='space-y-6'>
