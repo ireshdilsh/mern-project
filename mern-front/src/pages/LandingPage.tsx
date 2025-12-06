@@ -10,7 +10,7 @@ export default function LandingPage() {
             <h1 className='text-6xl text-white absolute bottom-30 left-20 font-medium tracking-tight' id='hero-title'>Create Stunning AI Images <br/> in Seconds.</h1>
             <p className='text-neutral-200 text-sm w-70 absolute bottom-30 right-20 text-justify'>Turn your ideas into high-quality, visually striking images with powerful AI.
                 Simply type your prompt, pick a style, and watch your imagination come to life—instantly.</p>
-            <hr className='h-10/4000 bg-neutral-50 w-340 absolute bottom-15 left-20'/>
+            <hr className='h-10/4000 bg-neutral-50 w-340 absolute bottom-15 left-20 border-none'/>
         </div>
         <nav className='flex justify-between items-center w-380 absolute top-5 left-0 px-20'>
             <div className='flex items-center justify-center gap-2'>
@@ -31,7 +31,7 @@ export default function LandingPage() {
                 <button className='font-semibold text-sm cursor-pointer bg-neutral-50 px-6 py-2.5 hover:opacity-85'>Create Now</button>
             </div>
         </nav>
-        <hr className='h-10/4000 bg-neutral-50 w-340 absolute top-20 left-20'/>
+        <hr className='h-10/4000 bg-neutral-50 w-340 absolute top-20 left-20 border-none'/>
     </div>
   )
 }
