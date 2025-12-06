@@ -123,7 +123,7 @@ export default function Landing() {
             {/* hero */}
             <div className='flex flex-col items-center text-center px-4 sm:px-6 mt-20 md:mt-28 lg:mt-36'>
                 {/* Hero Title */}
-                <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black max-w-4xl' id='hero-title'>
+                <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tighter text-black max-w-4xl' id='hero-title'>
                     Create Stunning AI Images Instantly With  the Power of Smart Imagination.
                 </h1>
 
@@ -132,18 +132,6 @@ export default function Landing() {
                     Turn your ideas into high-quality, visually striking images with powerful AI.
                     Simply type your prompt, pick a style, and watch your imagination come to life—instantly.
                 </p>
-
-                {/* Action Buttons */}
-                <div className='flex justify-center items-center gap-3 mt-8 md:mt-10'>
-                    <button
-                        className='font-semibold text-white bg-black px-8 sm:px-10 py-2.5 rounded-md cursor-pointer transition duration-150 hover:opacity-80'>
-                        Get Started
-                    </button>
-                    <button
-                        className='font-semibold px-8 sm:px-10 py-2.5 rounded-md cursor-pointer border border-black transition duration-150'>
-                        Start Create
-                    </button>
-                </div>
             </div>
 
             {/* stats */}
