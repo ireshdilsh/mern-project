@@ -70,82 +70,101 @@ export default function Landing() {
                     </button>
                 </div>
             </div>
-            <div className='flex justify-center items-center flex-col mt-25 bg-neutral-50 py-16'>
-                <div className='flex justify-center items-center gap-25 mt-10'>
-                    <div className='flex flex-col justify-center items-center gap-2'>
-                        <p className='text-4xl font-semibold'>12 million</p>
-                        <p className='text-sm text-neutral-600 font-semibold'>AI Images Generated</p>
-                    </div>
-                    <div className='flex flex-col justify-center items-center gap-2'>
-                        <p className='text-4xl font-semibold'>4.8 million</p>
-                        <p className='text-sm text-neutral-600 font-semibold'>Active Creators Worldwide</p>
-                    </div>
-                    <div className='flex flex-col justify-center items-center gap-2'>
-                        <p className='text-4xl font-semibold'>96 million</p>
-                        <p className='text-sm text-neutral-600 font-semibold'>Prompts Processed</p>
+
+            {/* stats */}
+            <div className='flex flex-col items-center bg-neutral-50 py-16 px-4 sm:px-6 lg:px-8 mt-16 md:mt-20'>
+                {/* Statistics Container Grid */}
+                <div className='max-w-7xl w-full'>
+                    {/* We use a grid to handle wrapping and spacing responsively */}
+                    <div className='grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8 sm:gap-x-12 lg:gap-x-24 text-center mt-10'>
+
+                        {/* Stat 1: AI Images Generated */}
+                        <div className='flex flex-col items-center justify-center gap-2'>
+                            <p className='text-3xl sm:text-4xl font-extrabold text-gray-900'>12 million</p>
+                            <p className='text-xs sm:text-sm text-neutral-600 font-semibold uppercase tracking-wider'>AI Images Generated</p>
+                        </div>
+
+                        {/* Stat 2: Active Creators Worldwide */}
+                        <div className='flex flex-col items-center justify-center gap-2'>
+                            <p className='text-3xl sm:text-4xl font-extrabold text-gray-900'>4.8 million</p>
+                            <p className='text-xs sm:text-sm text-neutral-600 font-semibold uppercase tracking-wider'>Active Creators Worldwide</p>
+                        </div>
+
+                        {/* Stat 3: Prompts Processed */}
+                        <div className='flex flex-col items-center justify-center gap-2'>
+                            <p className='text-3xl sm:text-4xl font-extrabold text-gray-900'>96 million</p>
+                            <p className='text-xs sm:text-sm text-neutral-600 font-semibold uppercase tracking-wider'>Prompts Processed</p>
+                        </div>
+
+                        {/* Stat 4: New Users Every Month */}
+                        <div className='flex flex-col items-center justify-center gap-2'>
+                            <p className='text-3xl sm:text-4xl font-extrabold text-gray-900'>320 000</p>
+                            <p className='text-xs sm:text-sm text-neutral-600 font-semibold uppercase tracking-wider'>New Users Every Month</p>
+                        </div>
+
+                        {/* Stat 5: Custom Styles & Models Available */}
+                        <div className='flex flex-col items-center justify-center gap-2'>
+                            <p className='text-3xl sm:text-4xl font-extrabold text-gray-900'>8500+</p>
+                            <p className='text-xs sm:text-sm text-neutral-600 font-semibold uppercase tracking-wider'>Custom Styles & Models Available</p>
+                        </div>
+
+                        {/* Stat 6: Uptime & System Reliability */}
+                        <div className='flex flex-col items-center justify-center gap-2'>
+                            <p className='text-3xl sm:text-4xl font-extrabold text-gray-900'>99.9%</p>
+                            <p className='text-xs sm:text-sm text-neutral-600 font-semibold uppercase tracking-wider'>Uptime & System Reliability</p>
+                        </div>
                     </div>
                 </div>
 
-                <div className='flex justify-center items-center gap-25 mt-10'>
-                    <div className='flex flex-col justify-center items-center gap-2'>
-                        <p className='text-4xl font-semibold'>320 000</p>
-                        <p className='text-sm text-neutral-600 font-semibold'>New Users Every Month</p>
-                    </div>
-                    <div className='flex flex-col justify-center items-center gap-2'>
-                        <p className='text-4xl font-semibold'>8500+</p>
-                        <p className='text-sm text-neutral-600 font-semibold'>Custom Styles & Models Available</p>
-                    </div>
-                    <div className='flex flex-col justify-center items-center gap-2'>
-                        <p className='text-4xl font-semibold'>99.9%</p>
-                        <p className='text-sm text-neutral-600 font-semibold'>Uptime & System Reliability</p>
-                    </div>
-                </div>
-                <p className='text-neutral-600 w-220 mt-15 text-sm text-center'>Our AI platform empowers millions of creators worldwide. Generate high-quality images instantly, explore thousands of unique styles, and bring your imagination to life—effortlessly and reliably.</p>
+                {/* Description Paragraph */}
+                <p className='text-neutral-600 max-w-prose mt-16 text-base text-center px-4'>
+                    Our AI platform empowers millions of creators worldwide. Generate high-quality images instantly, explore thousands of unique styles, and bring your imagination to life—effortlessly and reliably.
+                </p>
             </div>
 
-          <section className='py-20 bg-white' id='features'>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <section className='py-20 bg-white' id='features'>
+                <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 
-                {/* Section Header */}
-                <div className='text-center'>
-                    <p className='text-sm font-semibold text-indigo-600 uppercase tracking-wide'>
-                        Unleash Your Imagination
-                    </p>
-                    <h2 className='mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900'>
-                        Features Built for Creators
-                    </h2>
-                    <p className='mt-4 max-w-2xl text-xl text-neutral-600 mx-auto'>
-                        Everything you need to turn simple text into world-class digital art.
-                    </p>
-                </div>
+                    {/* Section Header */}
+                    <div className='text-center'>
+                        <p className='text-sm font-semibold text-indigo-600 uppercase tracking-wide'>
+                            Unleash Your Imagination
+                        </p>
+                        <h2 className='mt-2 text-2xl sm:text-3xl lg:text-4xl font-semibold '>
+                            Features Built for Creators
+                        </h2>
+                        <p className='mt-2.5 max-w-2xl text-neutral-600 mx-auto'>
+                            Everything you need to turn simple text into world-class digital art.
+                        </p>
+                    </div>
 
-                {/* Features Grid - Adjusted for 6 cards */}
-                <div className='mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
-                    {features.map((feature) => (
-                        <div key={feature.title} className='pt-6'>
-                            <div className='flow-root bg-neutral-50 rounded-lg px-6 pb-8 h-full transition duration-300 ease-in-out hover:shadow-xl'>
-                                <div className='-mt-6'>
-                                    <div>
-                                        {/* Icon Container */}
-                                        <span className='inline-flex items-center justify-center p-3 bg-black rounded-md shadow-lg'>
-                                            <svg className='h-6 w-6 text-white' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={feature.icon} />
-                                            </svg>
-                                        </span>
+                    {/* Features Grid - Adjusted for 6 cards */}
+                    <div className='mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
+                        {features.map((feature) => (
+                            <div key={feature.title} className='pt-6'>
+                                <div className='flow-root border border-neutral-200 rounded-lg px-6 pb-8 h-full transition duration-300 ease-in-out hover:shadow-xl'>
+                                    <div className='-mt-6'>
+                                        <div>
+                                            {/* Icon Container */}
+                                            <span className='inline-flex items-center justify-center p-3 bg-black rounded-md shadow-lg'>
+                                                <svg className='h-6 w-6 text-white' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={feature.icon} />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <h3 className='mt-8 text-xl font-extrabold tracking-tight text-gray-900'>
+                                            {feature.title}
+                                        </h3>
+                                        <p className='mt-5 text-base text-neutral-600'>
+                                            {feature.description}
+                                        </p>
                                     </div>
-                                    <h3 className='mt-8 text-xl font-extrabold tracking-tight text-gray-900'>
-                                        {feature.title}
-                                    </h3>
-                                    <p className='mt-5 text-base text-neutral-600'>
-                                        {feature.description}
-                                    </p>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
         </div>
     )
