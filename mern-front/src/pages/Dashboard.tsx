@@ -9,7 +9,7 @@ export default function Dashboard() {
           <img src={logo} alt="logo" className='h-6'/>
           <h1 className='font-semibold text-lg'>stability.ai</h1>
         </div>
-        <div className='flex justify-center gap-4'>
+        <div className='flex justify-center gap-4 hover:cursor-pointer'>
           <div className='bg-pink-600 font-bold h-8 w-8 p-5 text-sm rounded-full text-white flex justify-center items-center'>ID</div>
           <div>
             <p className='font-medium'>Iresh Dilshan</p>
