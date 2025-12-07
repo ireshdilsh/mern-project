@@ -15,24 +15,25 @@ export default function Signup() {
         </p>
       </div>
 
-      <div className='flex justify-center items-center flex-col mt-10 gap-4'>
+      <div className='flex justify-center items-center flex-col mt-8 gap-4'>
         <div className='flex flex-col'>
           <label htmlFor="">Email address</label>
           <input type="text" className='border border-gray-300 rounded-md p-2 outline-none w-90' />
         </div>
         <div className='flex flex-col'>
-          <label htmlFor="">Password</label>
-          <input type="text" className='border border-gray-300 rounded-md p-2 outline-none w-90' />
+          <label htmlFor="">Create Password</label>
+          <input type="password" className='border border-gray-300 rounded-md p-2 outline-none w-90' />
         </div>
-        <div className='flex justify-center items-center gap-27'>
-          <div className='flex justify-center items-center gap-2.5'>
+         <div className='flex flex-col'>
+          <label htmlFor="">Confirm Password</label>
+          <input type="password" className='border border-gray-300 rounded-md p-2 outline-none w-90' />
+        </div>
+        <div className='flex justify-center items-center gap-10'>
             <input type="checkbox" />
-            <p className=' text-neutral-600 font-semibold'>remember me</p>
-          </div>
-          <p className=' text-blue-600 font-semibold hover:underline cursor-pointer underline-offset-4'>forget password?</p>
+            <p className=' text-neutral-600 font-semibold'>I agree terms and conditions in stability.ai</p>
         </div>
         <button className='bg-black text-white font-semibold w-90 py-2.5 rounded-md cursor-pointer hover:opacity-80'>
-          Authenticate me
+          Create Account
         </button>
         <p>or</p>
         <button className='flex justify-center items-center gap-4 text-neutral-700 font-semibold w-90 py-2.5 rounded-md cursor-pointer border border-neutral-200'>
