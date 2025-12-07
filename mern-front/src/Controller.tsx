@@ -5,6 +5,8 @@ import LegalPage from './pages/LegalPage.tsx';
 import ContatctPage from './pages/ContatctPage.tsx';
 import AboutPage from './pages/AboutPage.tsx';
 import Dashboard from './pages/Dashboard.tsx';
+import Signup from './pages/Signup.tsx';
+import Signin from './pages/Signin.tsx';
 
 export default function Controller() {
   return (
@@ -17,6 +19,8 @@ export default function Controller() {
             <Route path='/contact' element = {<ContatctPage/>}></Route>
             <Route path='/about' element = {<AboutPage/>}></Route>
             <Route path = '/dashboard' element={<Dashboard/>}></Route>
+            <Route path = '/signin' element={<Signin/>}></Route>
+            <Route path = '/signup' element={<Signup/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

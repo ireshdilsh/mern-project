@@ -3,7 +3,7 @@ import logo from '../assets/CTRMaker__1_-removebg-preview.png'
 import img1 from '../assets/login.jpeg'
 import img2 from '../assets/gallery/coding-3.jpg'
 import '../styles/landing.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, type NavigateFunction } from 'react-router-dom';
 
 const MenuIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
@@ -62,6 +62,16 @@ export default function Landing() {
         }
     ]
 
+    const navigate : NavigateFunction = useNavigate()
+
+    const gotoSignIn = () => {
+        navigate('/signin')
+    }
+
+    const gotoSignUp = () => {
+        navigate('/signup')
+    }
+
     return (
         <div>
             <nav className='sticky top-1 z-50 bg-transparent backdrop-blur-md'>
@@ -84,8 +94,8 @@ export default function Landing() {
                                     {item.name}
                                 </a>
                             ))}
-                            <button className='text-sm text-neutral-700 font-semibold'>Sign in</button>
-                            <button className='text-sm text-white font-semibold bg-black px-4 py-2.5 rounded-md cursor-pointer hover:opacity-80'>Create Account</button>
+                            <button onClick={gotoSignIn} className='text-sm text-neutral-700 font-semibold cursor-pointer'>Sign in</button>
+                            <button onClick={gotoSignUp} className='text-sm text-white font-semibold bg-black px-4 py-2.5 rounded-md cursor-pointer hover:opacity-80'>Create Account</button>
                         </div>
 
                         {/* Right Side: Menu Button (Hidden on Desktop) */}
@@ -120,8 +130,8 @@ export default function Landing() {
                             </a>
                         ))}
                         <div className='flex flex-col'>
-                            <button className='text-sm text-neutral-700 font-semibold cursor-pointer'>Sign in</button>
-                            <button className='text-sm text-white font-semibold bg-black px-4 py-2.5 rounded-md cursor-pointer hover:opacity-80 mt-2'>Create Account</button>
+                            <button onClick={gotoSignIn} className='text-sm text-neutral-700 font-semibold cursor-pointer'>Sign in</button>
+                            <button onClick={gotoSignUp} className='text-sm text-white font-semibold bg-black px-4 py-2.5 rounded-md cursor-pointer hover:opacity-80 mt-2'>Create Account</button>
                         </div>
                     </div>
                 </div>
