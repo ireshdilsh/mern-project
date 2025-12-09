@@ -1,13 +1,13 @@
-import './App.css'
-import Controller from './Controller'
+import './App.css';
+import LandingPage from './pages/LandingPage';
 
 function App() {
-
   return (
-    <div> 
-      <Controller/>
+    <div>
+      <LandingPage />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
