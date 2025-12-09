@@ -1,13 +1,11 @@
 import NavBar from "../components/NavBar.tsx";
+import HeroSection from "./HeroSection.tsx";
 
-const LandingPage = () => {
-  return (
-    <div>
-        <NavBar/>
-       
-    </div>
-  );
-};
-
-export default LandingPage;
-
+export default function LandingPage() {
+    return (
+        <div>
+            <NavBar/>
+            <HeroSection/>
+        </div>
+    )
+}

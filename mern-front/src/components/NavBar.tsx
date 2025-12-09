@@ -14,7 +14,7 @@ export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <div className='px-15 sm:px-20 lg:px-20 pt-5'>
+        <div className='px-15 sm:px-25 lg:px-25 pt-5'>
             <nav className='relative flex justify-between items-center w-full'>
                 <div className="logo">
                     <img src={logo} alt="logo" className='h-8'/>

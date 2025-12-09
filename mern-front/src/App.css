@@ -1,3 +1,11 @@
-h1,a{
+a{
     font-family: "Roboto";
+}
+
+h1{
+    font-family: 'sans-serif';
+}
+
+button,p{
+    font-family: 'Gabarito';
 }
