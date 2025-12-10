@@ -10,6 +10,6 @@ button,p{
     font-family: 'Gabarito';
 }
 
-#write-title{
+#write-title,.write-content{
     font-family: 'sans-serif';   
 }
