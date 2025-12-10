@@ -56,9 +56,9 @@ export default function HeroSection() {
                                     <label htmlFor="" className='text-sm font-normal'>Create Password</label>
                                     <input type="password" placeholder='Password' className='border py-2 px-2 border-neutral-200 rounded-sm' />
                                 </div>
-                                <button className='bg-black text-white w-90 cursor-pointer py-2 rounded-sm hover:opacity-80'>Create Account</button>
+                                <button className='bg-black text-white w-90 cursor-pointer py-2.5 rounded-sm hover:opacity-80'>Create Account</button>
                             </div>
-                            <button className='w-90 border border-neutral-200 rounded-sm mt-2 flex justify-center items-center gap-2 py-2 cursor-pointer'>
+                            <button className='w-90 border border-neutral-200 rounded-sm mt-2 flex justify-center items-center gap-2 py-2.5 cursor-pointer'>
                                 <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="google-icn" className='h-5.5' />continue with google</button>
                         </div>
                     </div>
