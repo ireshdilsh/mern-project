@@ -1,4 +1,5 @@
 import {Article} from "../model/article.js";
+import cloudinary from "../config/cloudinary.js"
 
 export const saveArticle = async (req: any, res: any) => {
     try {
@@ -41,3 +42,54 @@ export const getArticleById = async (req: any, res: any) => {
         res.status(500).json({ message: "Error retrieving article", error: e });
     }
 }
+
+export const saveArticleWithImage = async (req: any, res: any) => {
+    try {
+        const { email, name, title, content } = req.body;
+        const reading_time = Math.ceil(content.split(" ").length / 25);
+        let imageURL = "";
+
+        // Define result outside
+        let uploadResult: any = null;
+
+        if (req.file) {
+            uploadResult = await new Promise((resolve, reject) => {
+                const uploadStream = cloudinary.uploader.upload_stream(
+                    { folder: "posts" },
+                    (error: any, result: any) => {
+                        if (error) {
+                            console.error("Cloudinary error:", error);
+                            return reject(error);
+                        }
+                        resolve(result);
+                    }
+                );
+                uploadStream.end(req.file.buffer);
+            });
+
+            imageURL = uploadResult.secure_url;  // ✔ Now safe
+        }
+
+        const newArticle = new Article({
+            email,
+            name,
+            title,
+            content,
+            reading_time,
+            imageURL,
+        });
+
+        await newArticle.save();
+
+        res.status(201).json({
+            message: "Article saved successfully",
+            article: newArticle,
+        });
+    } catch (e) {
+        console.error("SAVE ARTICLE ERROR:", e); // Add this for debugging
+        res.status(500).json({
+            message: "Error saving article with image",
+            error: e,
+        });
+    }
+};

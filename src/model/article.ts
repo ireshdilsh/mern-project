@@ -6,7 +6,8 @@ interface IArticle extends mongoose.Document{
     name: String,
     title: String,
     content: String,
-    reading_time: number
+    reading_time: number,
+    imageURL: string
 }
 
 const articleSchema = new mongoose.Schema({
@@ -30,6 +31,9 @@ const articleSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
+    imageURL: {
+        type: String
+    }
 },{timestamps:true})
 
 export const Article = mongoose.model<IArticle>("Article", articleSchema);
