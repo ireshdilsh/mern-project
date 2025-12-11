@@ -29,7 +29,7 @@ const articleSchema = new mongoose.Schema({
     reading_time:{
         type:Number,
         required:true
-    }
-})
+    },
+},{timestamps:true})
 
 export const Article = mongoose.model<IArticle>("Article", articleSchema);
