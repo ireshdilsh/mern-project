@@ -93,3 +93,34 @@ export const saveArticleWithImage = async (req: any, res: any) => {
         });
     }
 };
+
+export const searchArticle = async (req: any, res: any) => {
+    try {
+        const raw = (req.query?.search ?? req.params?.search ?? "")
+            .toString()
+            .trim();
+
+        if (!raw) {
+            return res.status(400).json({ error: "search parameter required" });
+        }
+
+        // Escape regex special chars
+        const escapeRegExp = (s: string) =>
+            s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+        const pattern = escapeRegExp(raw);
+
+        const articles = await Article.find({
+            $or: [
+                { title: { $regex: pattern, $options: "i" } },
+                { content: { $regex: pattern, $options: "i" } },
+                { name: { $regex: pattern, $options: "i" } },
+            ],
+        }).limit(100);
+
+        return res.status(200).json({ articles });
+    } catch (e) {
+        console.error(e);
+        return res.status(500).json({ message: "Error searching article", error: e });
+    }
+};
