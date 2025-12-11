@@ -1,13 +1,22 @@
 import React, { useState } from 'react'
 import UserNavbar from '../components/UserNavbar'
+import axios from "axios";
 
+interface Article{
+  title:string
+  content:string
+  imageUrl:string
+}
 export default function ArticlePage() {
 
   const [imagePreview, setImagePreview] = useState<string | undefined>();
 
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
-  const [image, setImage] = useState<File | null>(null);
+
+  const postNewArticle = async () => {
+
+  }
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -43,7 +52,7 @@ export default function ArticlePage() {
           <input type="file" id="file-input" onChange={handleImageChange} style={{ display: 'none' }} />
           <textarea onChange={handleContentChange} value={content} name="" id="" className='write-content text-2xl w-212 h-90 outline-none' placeholder='Tell your story ....'></textarea>
         </div>
-        <button className='bg-green-700 text-white font-medium text-sm px-2.5 py-1 rounded-4xl cursor-pointer absolute right-54 top-5'>Publish</button>
+        <button onClick={postNewArticle} className='bg-green-700 text-white font-medium text-sm px-2.5 py-1 rounded-4xl cursor-pointer absolute right-54 top-5'>Publish</button>
       </div>
     </div>
   )
