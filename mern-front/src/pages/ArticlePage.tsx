@@ -23,7 +23,7 @@ export default function ArticlePage() {
       formData.append("content", content)
 
       if (imageFile) {
-        formData.append("file", imageFile)  
+        formData.append("file", imageFile)
       }
 
       console.log('Sending with field name: "file"')
