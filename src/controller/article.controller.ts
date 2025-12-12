@@ -138,9 +138,11 @@ export const deleteArticleByID = async (req: any, res: any) => {
     }
 }
 
-export const getArticleByAuthorEmail = async (req: any, res: any) => {
+export const getArticlesByAuthorEmail = async (req: any, res: any) => {
     try {
-        
+      const { email } = req.params;
+      const articles = await Article.find({ email });
+      res.status(200).json({ articles });
     } catch (error) {
         res.status(500).json({ message: "Error retrieving articles by author email", error });
     }
