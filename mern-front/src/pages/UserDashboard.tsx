@@ -42,7 +42,7 @@ export default function UserDashboard() {
             <UserNavbar />
             <div className='w-280 border-r border-r-neutral-200 h-full'>
                 {articles && articles.map((article) => (
-                    <div className='flex justify-between items-center'>
+                    <div className='flex justify-between items-center pr-4'>
                         <div className='w-280 h-full flex flex-col justify-start items-start py-8 px-25 border-b border-b-neutral-200 ' key={article._id}>
                             <h1 className='text-sm bg-amber-100 px-2 rounded-3xl mb-2'>{article.name}</h1>
                             <p className='text-2xl font-medium tracking-tighter hover:underline cursor-pointer' onClick={() => gotoArticleByIdPage(article._id)}>{article.title}</p>
