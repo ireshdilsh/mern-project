@@ -142,7 +142,10 @@ export const getArticlesByAuthorEmail = async (req: any, res: any) => {
     try {
       const { email } = req.params;
       const articles = await Article.find({ email });
-      res.status(200).json({ articles });
+      if (articles) {
+        res.status(200).json({ articles });
+      }
+      res.status(500).json({message:'Cant find articles'})
     } catch (error) {
         res.status(500).json({ message: "Error retrieving articles by author email", error });
     }
