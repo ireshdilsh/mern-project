@@ -37,9 +37,9 @@ export default function ArticleById() {
             <UserNavbar/>
            <div className='mx-100 flex justify-start items-start flex-col w-200'>
                <p className='border border-neutral-200 text-sm px-2 text-neutral-500 rounded-sm mt-15'>{article?.name}</p>
-               {article?.imageURL && <img src={article.imageURL} className='h-28' alt="articles-image" />}
               <div className='flex flex-col border-b border-b-neutral-200 pb-4'>
                   <p className='text-4xl tracking-tighter mt-2'>{article?.title}</p>
+                    {article?.imageURL && <img src={article.imageURL} className='py-5' alt="articles-image" />}
                   <h2 className='text-lg text-neutral-500 mt-1'>{article?.reading_time} min reading time</h2>
               </div>
                <h1 className='text-xl mt-8 text-justify'>{article?.content}</h1>
