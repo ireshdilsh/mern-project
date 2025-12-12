@@ -124,3 +124,24 @@ export const searchArticle = async (req: any, res: any) => {
         return res.status(500).json({ message: "Error searching article", error: e });
     }
 };
+
+export const deleteArticleByID = async (req: any, res: any) => {
+    try {
+        const {id} = req.params;
+        const deletedArticle = await Article.findByIdAndDelete(id);
+        if (!deletedArticle) {
+            return res.status(404).json({ message: "Article not found" });
+        }
+        res.status(200).json({ message: "Article deleted successfully", deletedArticle });
+    }catch (e) {
+        res.status(500).json({ message: "Error deleting article", error: e });
+    }
+}
+
+export const getArticleByAuthorEmail = async (req: any, res: any) => {
+    try {
+        
+    } catch (error) {
+        res.status(500).json({ message: "Error retrieving articles by author email", error });
+    }
+}
