@@ -13,11 +13,18 @@ interface ArticleById{
     imageURL?: string
 }
 
+interface Comments{
+    article_id:string
+    name:string
+    comment:string
+}
+
 export default function ArticleById() {
 
     const {id} = useParams()
     useEffect(() => {
         getArticleByID()
+        loadCommets()
     }, [id]);
 
     const [article, setArticle] = useState<ArticleById>()
@@ -29,6 +36,42 @@ export default function ArticleById() {
             console.log(resp.data.article)
         }catch (e) {
             console.error(e)
+        }
+    }
+
+    const [comment, setcomment] = useState('');
+
+    const handleCommentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setcomment(e.target.value);
+    }
+
+    const [comments, setComments] = useState<Comments[]>([])
+
+    const loadCommets = async () => {
+        try {
+            const resp = await axios.get<{comments: Comments[]}>(`http://localhost:5000/api/v1/comments/get/comments/by/article/${id}`)
+            setComments(resp.data.comments)
+            console.log(resp.data.comments)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    const addNewComments = async () => {
+        try {
+            const datas :Comments = {
+                article_id: id || '',
+                name: 'John Doe',
+                comment
+            }
+            const resp = await axios.post<Comments>('http://localhost:5000/api/v1/comments/add/new/comment', datas)
+            console.log(resp.data.comment)
+            setcomment('')
+            alert('Success Comment !')
+            loadCommets()
+        } catch (error) {
+            console.error(error)
+            alert('Something went wrong')
         }
     }
 
@@ -47,8 +90,16 @@ export default function ArticleById() {
            <p className="text-4xl tracking-tighter mx-100 mt-15">Comments</p>
            <div className="w-200 mx-100 mb-10">
             <div className="w-full flex justify-center items-center gap-3 mt-5">
-                <input type="text" className="bg-neutral-100 w-full rounded-md h-9 px-4 text-sm" placeholder="write comments here ...."/>
-                <button className="bg-black text-white px-4 h-9 text-sm rounded-sm cursor-pointer hover:opacity-85">Submit</button>
+                <input value={comment} onChange={handleCommentChange} type="text" className="bg-neutral-100 w-full rounded-md h-9 px-4 text-sm" placeholder="write comments here ...."/>
+                <button onClick={addNewComments} className="bg-black text-white px-4 h-9 text-sm rounded-sm cursor-pointer hover:opacity-85">Submit</button>
+            </div>
+            <div className="mt-5">
+                {comments.map((comm, index) => (
+                    <div key={index} className="border-b border-b-neutral-200 py-4">
+                        <p className="text-sm font-semibold">{comm.name}</p>            
+                        <p className="text-sm text-neutral-600 mt-1">{comm.comment}</p>
+                    </div>
+                ))}
             </div>
            </div>
         </div>
