@@ -84,7 +84,13 @@ export default function ArticleById() {
               <div className='flex flex-col border-b border-b-neutral-200 pb-4'>
                   <p className='text-4xl tracking-tighter mt-2'>{article?.title}</p>
                     {article?.imageURL && <img src={article.imageURL} className='py-5' alt="articles-image" />}
-                  <h2 className='text-lg text-neutral-500 mt-1'>{article?.reading_time} min reading time</h2>
+                 <div className='w-full flex justify-between items-center'>
+                     <div className='flex gap-4 mt-2 items-center'>
+                         <img src="https://img.icons8.com/?size=100&id=82768&format=png&color=999999" alt="comment-icn" className='h-6'/>
+                         <p className=' text-neutral-500'>{comments.length}</p>
+                     </div>
+                     <h2 className='text-lg text-neutral-500 mt-1'>{article?.reading_time} min reading time</h2>
+                 </div>
               </div>
                <h1 className='text-xl mt-8 text-justify'>{article?.content}</h1>
            </div>
