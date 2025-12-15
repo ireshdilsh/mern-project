@@ -40,10 +40,9 @@ export default function ArticlePage() {
       setContent('')
       setImagePreview(undefined)
       setImageFile(null)
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error('Full error:', e);
-      console.error('Error response:', e.response?.data);
-      alert('Error: ' + (e.response?.data?.message || 'something went wrong while posting the article'))
+      alert('Error: ' + ('something went wrong while posting the article'))
     }
   }
 
