@@ -15,7 +15,7 @@ export const addNewComment = async (req: Request, res: Response) => {
           console.error("Error adding comment", error);
           return res.status(500).json({ message: "Error adding comment" });
      }
-};
+}
 
 export const getCommentsByArticleId = async (req: Request, res: Response) => {
      try {
@@ -26,4 +26,4 @@ export const getCommentsByArticleId = async (req: Request, res: Response) => {
           console.error("Error retrieving comments", error);
           return res.status(500).json({ message: "Error retrieving comments" });
      }
-};
+}
