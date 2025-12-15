@@ -1,4 +1,3 @@
-import React from 'react'
 import logo from '../assets/logo.png';
 import { useNavigate, type NavigateFunction } from 'react-router-dom';
 
@@ -30,7 +29,7 @@ export default function UserNavbar() {
                             alt="" />
                     </button>
                     <button className='bg-pink-600 text-white h-9 w-9 rounded-full text-sm flex justify-center items-center gap-2.5 hover:opacity-80 cursor-pointer'>
-                        ID
+                        <p className='font-medium'>ID</p>
                     </button>
                 </div>
                 

@@ -17,6 +17,7 @@ interface Comments{
     article_id:string
     name:string
     comment:string
+    createdAt?:string
 }
 
 export default function ArticleById() {
@@ -79,7 +80,7 @@ export default function ArticleById() {
         <div>
             <UserNavbar/>
            <div className='mx-100 flex justify-start items-start flex-col w-200 border-b border-b-neutral-200 pb-10'>
-               <p className='border border-neutral-200 text-sm px-2 text-neutral-500 rounded-sm mt-15'>{article?.name}</p>
+               <p className='border border-neutral-200 text-sm px-2 text-neutral-500 rounded-sm mt-15'>{article?.name} with {article?.title.substring(0,50)}...</p>
               <div className='flex flex-col border-b border-b-neutral-200 pb-4'>
                   <p className='text-4xl tracking-tighter mt-2'>{article?.title}</p>
                     {article?.imageURL && <img src={article.imageURL} className='py-5' alt="articles-image" />}
@@ -96,8 +97,16 @@ export default function ArticleById() {
             <div className="mt-5">
                 {comments.map((comm, index) => (
                     <div key={index} className="border-b border-b-neutral-200 py-4">
-                        <p className="text-sm font-semibold">{comm.name}</p>            
-                        <p className="text-sm text-neutral-600 mt-1">{comm.comment}</p>
+                        <div className={'flex'}>
+                            <div className='flex justify-center items-center w-8 h-8 bg-pink-600 rounded-full mr-3'>
+                                <p className='text-white font-medium'>{comm.name.substring(0,2)}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm font-semibold">{comm.name}</p>
+                                <p className='text-sm text-neutral-400'>{comm?.createdAt?.substring(0,10)}</p>
+                            </div>
+                        </div>
+                        <p className="text-neutral-600 mt-1">{comm.comment}</p>
                     </div>
                 ))}
             </div>
