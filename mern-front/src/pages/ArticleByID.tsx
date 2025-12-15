@@ -87,7 +87,7 @@ export default function ArticleById() {
               </div>
                <h1 className='text-xl mt-8 text-justify'>{article?.content}</h1>
            </div>
-           <p className="text-4xl tracking-tighter mx-100 mt-15">Comments</p>
+           <p className="text-4xl tracking-tighter mx-100 mt-15">Comments ({comments.length})</p>
            <div className="w-200 mx-100 mb-10">
             <div className="w-full flex justify-center items-center gap-3 mt-5">
                 <input value={comment} onChange={handleCommentChange} type="text" className="bg-neutral-100 w-full rounded-md h-9 px-4 text-sm" placeholder="write comments here ...."/>
