@@ -35,7 +35,7 @@ export default function ArticleById() {
     return (
         <div>
             <UserNavbar/>
-           <div className='mx-100 flex justify-start items-start flex-col w-200'>
+           <div className='mx-100 flex justify-start items-start flex-col w-200 border-b border-b-neutral-200 pb-10'>
                <p className='border border-neutral-200 text-sm px-2 text-neutral-500 rounded-sm mt-15'>{article?.name}</p>
               <div className='flex flex-col border-b border-b-neutral-200 pb-4'>
                   <p className='text-4xl tracking-tighter mt-2'>{article?.title}</p>
@@ -43,6 +43,13 @@ export default function ArticleById() {
                   <h2 className='text-lg text-neutral-500 mt-1'>{article?.reading_time} min reading time</h2>
               </div>
                <h1 className='text-xl mt-8 text-justify'>{article?.content}</h1>
+           </div>
+           <p className="text-4xl tracking-tighter mx-100 mt-15">Comments</p>
+           <div className="w-200 mx-100 mb-10">
+            <div className="w-full flex justify-center items-center gap-3 mt-5">
+                <input type="text" className="bg-neutral-100 w-full rounded-md h-9 px-4 text-sm" placeholder="write comments here ...."/>
+                <button className="bg-black text-white px-4 h-9 text-sm rounded-sm cursor-pointer hover:opacity-85">Submit</button>
+            </div>
            </div>
         </div>
     )
