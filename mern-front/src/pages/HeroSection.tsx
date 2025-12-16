@@ -1,76 +1,38 @@
 import { useState } from "react";
-import { useNavigate, type NavigateFunction } from "react-router-dom";
-import { type TokenResponse, useGoogleLogin } from "@react-oauth/google";
-import axios from "axios";
+import { useGoogleAuth } from "../hooks/useGoogleAuth";
 
 export default function HeroSection() {
-
-    const [signin, setSignin] = useState(false)
-    const [signup, setSignup] = useState(false)
-    const [isGoogleLoading, setIsGoogleLoading] = useState(false)
-    const [authError, setAuthError] = useState<string | null>(null)
-
-    const navigate: NavigateFunction = useNavigate()
+    const [signin, setSignin] = useState(false);
+    const [signup, setSignup] = useState(false);
+    const { signInWithGoogle, isLoading, error } = useGoogleAuth();
 
     const openSigninModal = () => {
-        setSignin(true)
-        setSignup(false)
-    }
+        setSignin(true);
+        setSignup(false);
+    };
 
     const openSignupModal = () => {
-        setSignup(true)
-        // setSignin(false)
-    }
+        setSignup(true);
+    };
 
     const closeModals = () => {
-        setSignin(false)
-        setSignup(false)
-    }
+        setSignin(false);
+        setSignup(false);
+    };
 
-    const handleGoogleSuccess = async (tokenResponse: TokenResponse) => {
-        try {
-            setAuthError(null)
-            setIsGoogleLoading(true)
-
-            const { access_token } = tokenResponse
-            const profileResp = await axios.get<{ name: string; email: string; picture?: string }>(
-                "https://www.googleapis.com/oauth2/v1/userinfo",
-                {
-                    params: { alt: "json" },
-                    headers: { Authorization: `Bearer ${access_token}` },
-                },
-            )
-
-            const profile = profileResp.data
-            localStorage.setItem(
-                "auth:user",
-                JSON.stringify({ ...profile, accessToken: access_token }),
-            )
-            console.log("Google profile data:", profile)
-            closeModals()
-            navigate("/dashboard")
-        } catch (error) {
-            console.error("Google sign-in error", error)
-            setAuthError("Could not sign in with Google. Please try again.")
-        } finally {
-            setIsGoogleLoading(false)
-        }
-    }
-
-    const startGoogleLogin = useGoogleLogin({
-        onSuccess: handleGoogleSuccess,
-        onError: () => {
-            setIsGoogleLoading(false)
-            setAuthError("Google sign-in was cancelled or failed.")
-        },
-        scope: "openid profile email",
-    })
-
-    const handleGoogleButtonClick = () => {
-        setAuthError(null)
-        setIsGoogleLoading(true)
-        startGoogleLogin()
-    }
+    const GoogleButton = () => (
+        <>
+            <button
+                className='w-90 border border-neutral-200 rounded-sm mt-2 flex justify-center items-center gap-2 py-2.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed hover:bg-neutral-50'
+                onClick={signInWithGoogle}
+                disabled={isLoading}
+            >
+                <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="google-icn" className='h-5.5' />
+                {isLoading ? "Loading..." : "Continue with Google"}
+            </button>
+            {error && <p className='text-sm text-red-600 text-center w-90 mt-2'>{error}</p>}
+        </>
+    );
 
     return (
         <div className='px-15 w-full sm:px-25 lg:px-25'>
@@ -110,15 +72,7 @@ export default function HeroSection() {
                                 </div>
                                 <button className='bg-black text-white w-90 cursor-pointer py-2.5 rounded-sm hover:opacity-80'>Create Account</button>
                             </div>
-                            <button
-                                className='w-90 border border-neutral-200 rounded-sm mt-2 flex justify-center items-center gap-2 py-2.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed'
-                                onClick={handleGoogleButtonClick}
-                                disabled={isGoogleLoading}
-                            >
-                                <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="google-icn" className='h-5.5' />
-                                {isGoogleLoading ? "Loading..." : "continue with google"}
-                            </button>
-                            {authError && <p className='text-sm text-red-600 text-center w-90'>{authError}</p>}
+                            <GoogleButton />
                         </div>
                     </div>
                 </div>
@@ -143,15 +97,7 @@ export default function HeroSection() {
                                 </div>
                                 <button className='bg-black text-white w-90 cursor-pointer py-2.5 rounded-sm hover:opacity-80'>Authenticate Now</button>
                             </div>
-                            <button
-                                className='w-90 border border-neutral-200 rounded-sm mt-2 flex justify-center items-center gap-2 py-2.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed'
-                                onClick={handleGoogleButtonClick}
-                                disabled={isGoogleLoading}
-                            >
-                                <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="google-icn" className='h-5.5' />
-                                {isGoogleLoading ? "Loading..." : "continue with google"}
-                            </button>
-                            {authError && <p className='text-sm text-red-600 text-center w-90'>{authError}</p>}
+                            <GoogleButton />
                         </div>
                     </div>
                 </div>

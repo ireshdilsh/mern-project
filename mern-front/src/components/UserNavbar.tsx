@@ -13,6 +13,8 @@ export default function UserNavbar() {
         navigate('/dashboard');    
     }
 
+
+
     return (
         <div>
             <nav className='flex justify-between items-center px-25 py-4 border-b border-b-neutral-100'>
