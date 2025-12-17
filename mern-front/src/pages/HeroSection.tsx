@@ -38,7 +38,7 @@ export default function HeroSection() {
         <div className='px-15 w-full sm:px-25 lg:px-25'>
             <div className='flex justify-between items-center w-full mt-20'>
                 <div className='flex flex-col gap-5 w-200'>
-                    <h1 className='text-7xl font-normal tracking-tighter'>Turn Your Thoughts into Powerful Stories</h1>
+                    <h1 className='text-7xl font-medium tracking-tighter'>Turn Your Thoughts into Powerful Stories</h1>
                     <p className='text-neutral-500 text-lg'>Whether you're a beginner or a pro, our platform helps you craft engaging blog posts and grow your online presence effortlessly.</p>
                     <div className='flex justify-start items-center gap-2'>
                         <button onClick={openSignupModal} className='bg-black text-white px-5 py-2 cursor-pointer rounded-sm hover:opacity-80'>Create Account</button>

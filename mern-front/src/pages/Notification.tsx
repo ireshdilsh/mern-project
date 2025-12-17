@@ -1,7 +1,10 @@
 import React from 'react'
+import UserNavbar from '../components/UserNavbar'
 
 export default function Notification() {
   return (
-    <div>Notification</div>
+    <div>
+      <UserNavbar/>
+    </div>
   )
 }
