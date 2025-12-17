@@ -28,6 +28,19 @@ export default function ArticleById() {
         loadCommets()
     }, [id]);
 
+      const [name, setName] = useState('');
+    
+      useEffect(() => {
+        const authUser = localStorage.getItem('auth:user');
+        if (authUser) {
+          const userData = JSON.parse(authUser);
+          if (userData.name) {
+            setName(userData.name);
+            localStorage.setItem('name', userData.name);
+          }
+        }
+      }, []);
+
     const [article, setArticle] = useState<ArticleById>()
 
     const getArticleByID = async () => {
@@ -62,7 +75,7 @@ export default function ArticleById() {
         try {
             const datas :Comments = {
                 article_id: id || '',
-                name: 'John Doe',
+                name: name,
                 comment
             }
             const resp = await axios.post<Comments>('http://localhost:5000/api/v1/comments/add/new/comment', datas)

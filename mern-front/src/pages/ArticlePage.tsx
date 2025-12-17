@@ -1,4 +1,4 @@
-import React, { type FormEvent, useState } from 'react'
+import React, { type FormEvent, useEffect, useState } from 'react'
 import UserNavbar from '../components/UserNavbar'
 import axios from "axios";
 
@@ -9,14 +9,32 @@ export default function ArticlePage() {
 
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  useEffect(() => {
+    const authUser = localStorage.getItem('auth:user');
+    if (authUser) {
+      const userData = JSON.parse(authUser);
+      if (userData.name) {
+        setName(userData.name);
+        localStorage.setItem('name', userData.name);
+      }
+      if (userData.email) {
+        setEmail(userData.email);
+        localStorage.setItem('email', userData.email);
+      }
+    }
+  }, []);
+
 
   const postNewArticle = async (e: FormEvent) => {
     e.preventDefault();
 
     try {
       const formData = new FormData()
-      const name: string = 'iresh dilshan'
-      const email: string = 'iresh@example.com'
+      // const name: string = name
+      // const email: string = 'iresh@example.com'
       formData.append('name', name)
       formData.append('email', email)
       formData.append("title", title)
