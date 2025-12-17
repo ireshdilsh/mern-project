@@ -1,6 +1,7 @@
 import React, { type FormEvent, useEffect, useState } from 'react'
 import UserNavbar from '../components/UserNavbar'
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 export default function ArticlePage() {
 
@@ -11,6 +12,7 @@ export default function ArticlePage() {
   const [content, setContent] = useState<string>('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const authUser = localStorage.getItem('auth:user');
@@ -30,11 +32,11 @@ export default function ArticlePage() {
 
   const postNewArticle = async (e: FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
     try {
       const formData = new FormData()
-      // const name: string = name
-      // const email: string = 'iresh@example.com'
+
       formData.append('name', name)
       formData.append('email', email)
       formData.append("title", title)
@@ -52,7 +54,7 @@ export default function ArticlePage() {
         { headers: { "Content-Type": "multipart/form-data" } }
       );
       console.log('Response data:', resp.data);
-      alert('Article posted successfully!')
+      successMsg()
 
       setTitle('')
       setContent('')
@@ -61,7 +63,17 @@ export default function ArticlePage() {
     } catch (e: unknown) {
       console.error('Full error:', e);
       alert('Error: ' + ('something went wrong while posting the article'))
+    } finally {
+      setIsLoading(false);
     }
+  }
+
+  const successMsg = () => {
+    Swal.fire({
+      title: "Good job!",
+      text: "You clicked the button!",
+      icon: "success"
+    });
   }
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,7 +111,23 @@ export default function ArticlePage() {
           <input type="file" id="file-input" accept="image/*" onChange={handleImageChange} style={{ display: 'none' }} />
           <textarea onChange={handleContentChange} value={content} name="" id="" className='write-content text-2xl w-212 h-90 outline-none' placeholder='Tell your story ....'></textarea>
         </div>
-        <button onClick={postNewArticle} className='bg-green-700 text-white font-medium text-sm px-2.5 py-1 rounded-4xl cursor-pointer absolute right-54 top-5'>Publish</button>
+        <button
+          onClick={postNewArticle}
+          disabled={isLoading}
+          className='bg-green-700 text-white font-medium text-sm px-2.5 py-1 rounded-4xl cursor-pointer absolute right-54 top-5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2'
+        >
+          {isLoading ? (
+            <>
+              <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Publishing...
+            </>
+          ) : (
+            'Publish'
+          )}
+        </button>
       </div>
     </div>
   )
