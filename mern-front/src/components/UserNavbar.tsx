@@ -38,6 +38,10 @@ export default function UserNavbar() {
         navigate('/dashboard');    
     }
 
+    const gotoNotificationPage = () => {
+        navigate('/user/notifications')
+    }
+
     const openModal = () => {
         setModal(true)
     }   
@@ -56,7 +60,7 @@ export default function UserNavbar() {
                             className='h-5.5' alt="write-icn" />
                         Write
                     </button>
-                    <button>
+                    <button onClick={gotoNotificationPage}>
                         <img src="https://img.icons8.com/?size=100&id=S3ioWPXeIIPb&format=png&color=999999"
                             className='h-6 cursor-pointer'
                             alt="" />
