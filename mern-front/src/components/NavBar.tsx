@@ -5,35 +5,45 @@ const navLinks = [
     { href: "#home", label: "Home" },
     { href: "#features", label: "Features" },
     { href: "#about", label: "About" },
-    { href: "#gallery", label: "Gallery" },
-    { href: "#pricing", label: "Pricing" },
-    { href: "#terms", label: "Terms & Conditions" },
+    { href: "#stories", label: "Stories" },
+    { href: "#community", label: "Community" },
+    { href: "#resources", label: "Resources" },
 ];
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <div className='px-15 sm:px-25 lg:px-25 pt-5'>
-            <nav className='relative flex justify-between items-center w-full'>
-                <div className="logo">
-                    <img src={logo} alt="logo" className='h-8'/>
+        <div className='px-6 sm:px-12 lg:px-24 py-4 bg-white border-b border-neutral-100 sticky top-0 z-50'>
+            <nav className='relative flex justify-between items-center w-full max-w-7xl mx-auto'>
+                <div className="logo flex items-center cursor-pointer">
+                    <img src={logo} alt="logo" className='h-9 w-auto'/>
                 </div>
 
                 {/* Desktop Menu */}
-                <div className='hidden md:flex justify-center items-center gap-5'>
+                <div className='hidden lg:flex justify-center items-center gap-8'>
                     {navLinks.map((link) => (
-                        <a key={link.label} href={link.href} className='text-sm font-normal hover:text-gray-700'>
+                        <a key={link.label} href={link.href} className='text-sm font-medium text-neutral-700 hover:text-black transition-colors duration-200 cursor-pointer'>
                             {link.label}
                         </a>
                     ))}
                 </div>
 
+                {/* Desktop CTA Buttons */}
+                <div className='hidden lg:flex items-center gap-3'>
+                    <button className='px-5 py-2 text-sm font-medium text-neutral-700 hover:text-black transition-colors duration-200 cursor-pointer'>
+                        Sign In
+                    </button>
+                    <button className='px-6 py-2.5 text-sm font-medium bg-black text-white rounded-md hover:bg-neutral-800 transition-all duration-200 cursor-pointer'>
+                        Get Started
+                    </button>
+                </div>
+
                 {/* Mobile Menu Button */}
-                <div className="md:hidden">
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-800 hover:text-gray-600 focus:outline-none">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
+                <div className="lg:hidden">
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-neutral-800 hover:text-black transition-colors cursor-pointer focus:outline-none">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
                         </svg>
                     </button>
                 </div>
@@ -41,13 +51,20 @@ export default function NavBar() {
 
             {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg">
-                    <div className='flex flex-col items-start p-5 gap-4'>
+                <div className="lg:hidden mt-4 bg-white rounded-lg shadow-xl border border-neutral-100 absolute left-4 right-4 top-16">
+                    <div className='flex flex-col items-start p-6 gap-1'>
                         {navLinks.map((link) => (
-                            <a key={link.label} href={link.href} className='text-sm font-normal w-full pb-2 border-b border-gray-100' onClick={() => setIsMenuOpen(false)}>
+                            <a key={link.label} href={link.href} className='text-sm font-medium text-neutral-700 hover:text-black w-full py-3 transition-colors cursor-pointer' onClick={() => setIsMenuOpen(false)}>
                                 {link.label}
                             </a>
                         ))}
+                        <div className='w-full border-t border-neutral-100 my-2'></div>
+                        <button className='w-full text-left py-3 text-sm font-medium text-neutral-700 hover:text-black transition-colors cursor-pointer'>
+                            Sign In
+                        </button>
+                        <button className='w-full mt-2 px-6 py-3 text-sm font-medium bg-black text-white rounded-md hover:bg-neutral-800 transition-all cursor-pointer'>
+                            Get Started
+                        </button>
                     </div>
                 </div>
             )}
