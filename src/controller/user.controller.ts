@@ -5,8 +5,8 @@ export const saveUser = async(res:any,req:any) => {
         const {name,email,password} = req.body;
         const newUser = new User({name,email,password});
         await newUser.save();
-        res.status(201).send({message:"User saved successfully",newUser})
+        return res.status(201).send({message:"User saved successfully",newUser})
     }catch (e) {
-        res.status(400).send({message:"Error saving user",error:e})
+        return res.status(400).send({message:"Error saving user",error:e})
     }
 }
