@@ -1,4 +1,4 @@
-import {Article} from "../model/article.js";
+import { Article } from "../model/article.js";
 import cloudinary from "../config/cloudinary.js"
 
 export const saveArticle = async (req: any, res: any) => {
@@ -25,20 +25,20 @@ export const getAllSavedArticles = async (req: any, res: any) => {
     try {
         const allArticles = await Article.find();
         res.status(200).json({ articles: allArticles });
-    }catch (e) {
+    } catch (e) {
         res.status(500).json({ message: "Error retrieving articles", error: e });
     }
 }
 
 export const getArticleById = async (req: any, res: any) => {
     try {
-        const {id} = req.params;
+        const { id } = req.params;
         const article = await Article.findById(id);
         if (!article) {
             return res.status(404).json({ message: "Article not found" });
         }
         res.status(200).json({ article });
-    }catch (e) {
+    } catch (e) {
         res.status(500).json({ message: "Error retrieving article", error: e });
     }
 }
@@ -127,26 +127,26 @@ export const searchArticle = async (req: any, res: any) => {
 
 export const deleteArticleByID = async (req: any, res: any) => {
     try {
-        const {id} = req.params;
+        const { id } = req.params;
         const deletedArticle = await Article.findByIdAndDelete(id);
         if (!deletedArticle) {
             return res.status(404).json({ message: "Article not found" });
         }
-        res.status(200).json({ message: "Article deleted successfully", deletedArticle });
-    }catch (e) {
-        res.status(500).json({ message: "Error deleting article", error: e });
+        return res.status(200).json({ message: "Article deleted successfully", deletedArticle });
+    } catch (e) {
+        return res.status(500).json({ message: "Error deleting article", error: e });
     }
 }
 
 export const getArticlesByAuthorEmail = async (req: any, res: any) => {
     try {
-      const { email } = req.params;
-      const articles = await Article.find({ email });
-      if (articles) {
-        res.status(200).json({ articles });
-      }
-      res.status(500).json({message:'Cant find articles'})
+        const { email } = req.params;
+        const articles = await Article.find({ email });
+        if (articles.length > 0) {
+            return res.status(200).json({ articles });
+        }
+        return res.status(404).json({ message: 'No articles found for this email' })
     } catch (error) {
-        res.status(500).json({ message: "Error retrieving articles by author email", error });
+        return res.status(500).json({ message: "Error retrieving articles by author email", error });
     }
 }
