@@ -40,18 +40,60 @@ export default function UserDashboard() {
     return (
         <div>
             <UserNavbar />
-            <div className='w-280 border-r border-r-neutral-200 h-full'>
-                {articles && articles.map((article) => (
-                    <div className='flex justify-between items-center pr-4'>
-                        <div className='w-280 h-full flex flex-col justify-start items-start py-8 px-25 border-b border-b-neutral-200 ' key={article._id}>
-                            <h1 className='text-sm bg-amber-100 px-2 rounded-3xl mb-2'>{article.name}</h1>
-                            <p className='text-2xl font-medium tracking-tighter hover:underline cursor-pointer' onClick={() => gotoArticleByIdPage(article._id)}>{article.title}</p>
-                            <h3 className='mt-2.5'>{article.content.substring(0, 250)}...</h3>
-                        </div>
-                        {article.imageURL && <img src={article.imageURL} className='h-28' alt="articles-image" />}
-                    </div>
-                ))}
-                <div>
+            <div className='w-full px-25 py-10'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+                    {articles && articles.map((article) => (
+                        <article 
+                            key={article._id}
+                            className='bg-white border border-neutral-200 rounded-xl overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col'
+                            onClick={() => gotoArticleByIdPage(article._id)}
+                        >
+                            {article.imageURL && (
+                                <div className='w-full h-48 overflow-hidden'>
+                                    <img 
+                                        src={article.imageURL} 
+                                        alt={article.title}
+                                        className='w-full h-full object-cover hover:scale-105 transition-transform duration-300'
+                                    />
+                                </div>
+                            )}
+                            
+                            <div className='p-5 flex-1 flex flex-col'>
+                                <div className='flex items-center gap-2 mb-3'>
+                                    <div className='w-7 h-7 bg-amber-100 rounded-full flex items-center justify-center'>
+                                        <span className='text-xs font-semibold text-amber-800'>
+                                            {article.name.substring(0, 2).toUpperCase()}
+                                        </span>
+                                    </div>
+                                    <span className='text-xs font-medium text-neutral-700'>{article.name}</span>
+                                </div>
+                                
+                                <h2 className='text-lg font-semibold tracking-tight text-neutral-900 mb-2 line-clamp-2 hover:text-neutral-700 transition-colors'>
+                                    {article.title}
+                                </h2>
+                                
+                                <p className='text-sm text-neutral-600 leading-relaxed mb-4 line-clamp-3 flex-1'>
+                                    {article.content.substring(0, 120)}...
+                                </p>
+                                
+                                <div className='flex items-center justify-between text-xs text-neutral-500 pt-3 border-t border-neutral-100'>
+                                    <span className='flex items-center gap-1'>
+                                        <svg className='w-3.5 h-3.5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' />
+                                        </svg>
+                                        {article.reading_time} min
+                                    </span>
+                                    <span className='flex items-center gap-1'>
+                                        <svg className='w-3.5 h-3.5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 12a3 3 0 11-6 0 3 3 0 016 0z' />
+                                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z' />
+                                        </svg>
+                                        {Math.floor(Math.random() * 500) + 50}
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    ))}
                 </div>
             </div>
         </div>
