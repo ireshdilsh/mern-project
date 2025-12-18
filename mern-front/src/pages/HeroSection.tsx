@@ -15,6 +15,11 @@ export default function HeroSection() {
         setSignup(true);
     };
 
+    const openModal = () => {
+        setSignup(true)
+        setSignin(false);
+    }
+
     const closeModals = () => {
         setSignin(false);
         setSignup(false);
@@ -45,12 +50,12 @@ export default function HeroSection() {
                             <span className='text-sm font-medium text-neutral-700'>Join 10,000+ Writers Worldwide</span>
                         </div>
                         
-                        <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-neutral-900'>
+                        <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-neutral-900'>
                             Turn Your Ideas Into 
                             <span className='block mt-2 text-neutral-700'>Compelling Stories</span>
                         </h1>
                         
-                        <p className='text-lg sm:text-xl text-neutral-600 leading-relaxed'>
+                        <p className='text-lg sm:text-lg text-neutral-600 leading-relaxed'>
                             A modern platform built for creators who want to write, publish, and grow their audience. No complexity, just pure creativity.
                         </p>
                         
@@ -127,7 +132,7 @@ export default function HeroSection() {
 
             {/* Signup Modal */}
             {signup && (
-                <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50 px-4'>
+                <div className='fixed inset-0 flex justify-center items-center bg-[rgb(0,0,0,0.5)] bg-opacity-50 backdrop-blur-sm z-50 px-4'>
                     <div className='bg-white w-full max-w-md rounded-2xl shadow-2xl relative p-8 sm:p-10'>
                         <button 
                             onClick={closeModals}
@@ -195,7 +200,7 @@ export default function HeroSection() {
 
             {/* Signin Modal */}
             {signin && (
-                <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50 px-4'>
+                <div className='fixed inset-0 flex justify-center items-center bg-[rgb(0,0,0,0.5)] bg-opacity-50 backdrop-blur-sm z-50 px-4'>
                     <div className='bg-white w-full max-w-md rounded-2xl shadow-2xl relative p-8 sm:p-10'>
                         <button 
                             onClick={closeModals}
@@ -246,7 +251,7 @@ export default function HeroSection() {
                             
                             <p className='text-center text-sm text-neutral-600'>
                                 Don't have an account? 
-                                <button onClick={openSignupModal} className='ml-1 font-semibold text-black hover:underline cursor-pointer'>
+                                <button onClick={openModal} className='ml-1 font-semibold text-black hover:underline cursor-pointer'>
                                     Sign Up
                                 </button>
                             </p>
