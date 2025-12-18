@@ -29,16 +29,6 @@ export default function NavBar() {
                     ))}
                 </div>
 
-                {/* Desktop CTA Buttons */}
-                <div className='hidden lg:flex items-center gap-3'>
-                    <button className='px-5 py-2 text-sm font-medium text-neutral-700 hover:text-black transition-colors duration-200 cursor-pointer'>
-                        Sign In
-                    </button>
-                    <button className='px-6 py-2.5 text-sm font-medium bg-black text-white rounded-md hover:bg-neutral-800 transition-all duration-200 cursor-pointer'>
-                        Get Started
-                    </button>
-                </div>
-
                 {/* Mobile Menu Button */}
                 <div className="lg:hidden">
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-neutral-800 hover:text-black transition-colors cursor-pointer focus:outline-none">
