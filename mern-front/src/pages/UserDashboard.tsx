@@ -41,23 +41,25 @@ export default function UserDashboard() {
         <div>
             <UserNavbar />
             <div className='w-full px-25 py-10'>
+                <p className='text-3xl tracking-tighter mt-8'>Dashboard ({articles?.length})</p>
+                <p className='text-lg text-neutral-500 mt-2'>Your creative hub for writing, publishing, and managing articles. <br /> Stay in control of your content, monitor engagement, and grow your audience effortlessly.</p>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {articles && articles.map((article) => (
-                        <article 
+                        <article
                             key={article._id}
                             className='bg-white border border-neutral-200 rounded-xl overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col'
                             onClick={() => gotoArticleByIdPage(article._id)}
                         >
                             {article.imageURL && (
                                 <div className='w-full h-48 overflow-hidden'>
-                                    <img 
-                                        src={article.imageURL} 
+                                    <img
+                                        src={article.imageURL}
                                         alt={article.title}
                                         className='w-full h-full object-cover hover:scale-105 transition-transform duration-300'
                                     />
                                 </div>
                             )}
-                            
+
                             <div className='p-5 flex-1 flex flex-col'>
                                 <div className='flex items-center gap-2 mb-3'>
                                     <div className='w-7 h-7 bg-amber-100 rounded-full flex items-center justify-center'>
@@ -67,15 +69,15 @@ export default function UserDashboard() {
                                     </div>
                                     <span className='text-xs font-medium text-neutral-700'>{article.name}</span>
                                 </div>
-                                
+
                                 <h2 className='text-lg font-semibold tracking-tight text-neutral-900 mb-2 line-clamp-2 hover:text-neutral-700 transition-colors'>
                                     {article.title}
                                 </h2>
-                                
+
                                 <p className='text-sm text-neutral-600 leading-relaxed mb-4 line-clamp-3 flex-1'>
                                     {article.content.substring(0, 120)}...
                                 </p>
-                                
+
                                 <div className='flex items-center justify-between text-xs text-neutral-500 pt-3 border-t border-neutral-100'>
                                     <span className='flex items-center gap-1'>
                                         <svg className='w-3.5 h-3.5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
