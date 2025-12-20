@@ -46,10 +46,6 @@ export default function UserDashboard() {
 
     const searchArticles = async() => {
         try {
-            if (search === '') {
-                getAllArticles()
-                return
-            }
 
             const resp = await axios.get(`http://localhost:5000/api/v1/articles/find/article/${search}`)
             console.log(resp.data)
@@ -72,7 +68,11 @@ export default function UserDashboard() {
                 <p className='text-lg text-neutral-500 mt-2 mb-8'>Your creative hub for writing, publishing, and managing articles. <br /> Stay in control of your content, monitor engagement, and grow your audience effortlessly.</p>
                 <div className='flex gap-2.5 mb-12'>
                     <input onChange={(e)=>{setsearch(e.target.value)}} value={search} style={{fontFamily:'Gabarito'}} type="text" className='h-11 rounded-3xl px-5 bg-neutral-50 w-120' placeholder='Search here ...'/>
-                    <button onClick={searchArticles} className='bg-black text-white rounded-3xl px-5 text-sm hover:opacity-80 cursor-pointer'>Search</button>
+                    <button onClick={searchArticles} className='bg-black text-white rounded-3xl px-5 text-sm hover:opacity-80 cursor-pointer flex items-center gap-2'>
+                        <svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={3} d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' />
+                        </svg>
+                    </button>
                 </div>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {articles && articles.map((article) => (
