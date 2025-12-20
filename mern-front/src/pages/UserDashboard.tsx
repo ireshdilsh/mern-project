@@ -20,6 +20,13 @@ export default function UserDashboard() {
     }, []);
 
     const [articles, setArticles] = useState<Article[] | null>(null);
+    const [search, setsearch] = useState<string>('');
+
+    useEffect(() => {
+        if (search === '') {
+            getAllArticles()
+        }
+    }, [search]);
 
     const getAllArticles = async () => {
         try {
@@ -37,12 +44,36 @@ export default function UserDashboard() {
         navigate(`/get/article/by/${id}`)
     }
 
+    const searchArticles = async() => {
+        try {
+            if (search === '') {
+                getAllArticles()
+                return
+            }
+
+            const resp = await axios.get(`http://localhost:5000/api/v1/articles/find/article/${search}`)
+            console.log(resp.data)
+            setArticles(resp.data.articles)
+
+            if (resp.data.articles.length === 0) {
+                alert('No articles found')
+            }
+
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     return (
         <div>
             <UserNavbar />
             <div className='w-full px-25 py-10'>
-                <p className='text-3xl tracking-tighter mt-8'>Dashboard ({articles?.length})</p>
-                <p className='text-lg text-neutral-500 mt-2'>Your creative hub for writing, publishing, and managing articles. <br /> Stay in control of your content, monitor engagement, and grow your audience effortlessly.</p>
+                <p className='text-3xl tracking-tighter mt-4'>Dashboard ({articles?.length})</p>
+                <p className='text-lg text-neutral-500 mt-2 mb-8'>Your creative hub for writing, publishing, and managing articles. <br /> Stay in control of your content, monitor engagement, and grow your audience effortlessly.</p>
+                <div className='flex gap-2.5 mb-12'>
+                    <input onChange={(e)=>{setsearch(e.target.value)}} value={search} style={{fontFamily:'Gabarito'}} type="text" className='h-11 rounded-3xl px-5 bg-neutral-50 w-120' placeholder='Search here ...'/>
+                    <button onClick={searchArticles} className='bg-black text-white rounded-3xl px-5 text-sm hover:opacity-80 cursor-pointer'>Search</button>
+                </div>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {articles && articles.map((article) => (
                         <article
