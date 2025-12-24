@@ -1,5 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useGoogleAuth } from "../hooks/useGoogleAuth";
+import axios from "axios";
+import { useNavigate, type NavigateFunction } from "react-router-dom";
+
+interface User{
+    name:string
+    email:string
+    password:string
+}
 
 export default function HeroSection() {
     const [signin, setSignin] = useState(false);
@@ -24,6 +32,30 @@ export default function HeroSection() {
         setSignin(false);
         setSignup(false);
     };
+
+    const navigate : NavigateFunction = useNavigate()
+
+    const [name, setName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+
+    const data:User = {
+        name:name,
+        email:email,
+        password:password
+    }
+
+    const postNewUser = async(e:React.FormEvent) => {
+        e.preventDefault()
+
+        try {
+            const resp = await axios.post<User>("",data)
+            console.log(resp.data);
+            navigate('/dashboard')
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
     const GoogleButton = () => (
         <>
@@ -153,6 +185,7 @@ export default function HeroSection() {
                                 <div className='flex flex-col gap-2'>
                                     <label htmlFor="fullname" className='text-sm font-medium text-neutral-700'>Full Name</label>
                                     <input 
+                                    onChange={(e)=>{setName(e.target.value)}}
                                         type="text" 
                                         id="fullname"
                                         placeholder='John Doe' 
@@ -162,6 +195,7 @@ export default function HeroSection() {
                                 <div className='flex flex-col gap-2'>
                                     <label htmlFor="email" className='text-sm font-medium text-neutral-700'>Email Address</label>
                                     <input 
+                                    onChange={(e)=>{setEmail(e.target.value)}}
                                         type="email" 
                                         id="email"
                                         placeholder='you@example.com' 
@@ -171,6 +205,7 @@ export default function HeroSection() {
                                 <div className='flex flex-col gap-2'>
                                     <label htmlFor="password" className='text-sm font-medium text-neutral-700'>Password</label>
                                     <input 
+                                    onChange={(e)=>{setPassword(e.target.value)}}
                                         type="password" 
                                         id="password"
                                         placeholder='••••••••' 
