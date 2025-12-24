@@ -186,6 +186,7 @@ export default function HeroSection() {
                                     <label htmlFor="fullname" className='text-sm font-medium text-neutral-700'>Full Name</label>
                                     <input 
                                     onChange={(e)=>{setName(e.target.value)}}
+                                    value={name}
                                         type="text" 
                                         id="fullname"
                                         placeholder='John Doe' 
@@ -196,6 +197,7 @@ export default function HeroSection() {
                                     <label htmlFor="email" className='text-sm font-medium text-neutral-700'>Email Address</label>
                                     <input 
                                     onChange={(e)=>{setEmail(e.target.value)}}
+                                    value={email}
                                         type="email" 
                                         id="email"
                                         placeholder='you@example.com' 
@@ -206,13 +208,14 @@ export default function HeroSection() {
                                     <label htmlFor="password" className='text-sm font-medium text-neutral-700'>Password</label>
                                     <input 
                                     onChange={(e)=>{setPassword(e.target.value)}}
+                                    value={password}
                                         type="password" 
                                         id="password"
                                         placeholder='••••••••' 
                                         className='border border-neutral-300 py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-400 transition-all cursor-text' 
                                     />
                                 </div>
-                                <button className='bg-black text-white w-full cursor-pointer py-3 rounded-lg hover:bg-neutral-800 transition-all duration-200 font-semibold mt-2'>
+                                <button onClick={postNewUser} className='bg-black text-white w-full cursor-pointer py-3 rounded-lg hover:bg-neutral-800 transition-all duration-200 font-semibold mt-2'>
                                     Create Account
                                 </button>
                             </div>
