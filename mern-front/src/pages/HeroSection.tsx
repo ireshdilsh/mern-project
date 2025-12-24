@@ -39,6 +39,12 @@ export default function HeroSection() {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
+    const clearform = () => {
+        setName("");
+        setEmail("");
+        setPassword("");
+    }
+
     const postNewUser = async (e: React.FormEvent) => {
         e.preventDefault()
 
@@ -48,8 +54,9 @@ export default function HeroSection() {
             password: password
         }
         try {
-            const resp = await axios.post<User>("", data)
-            console.log(resp.data);
+            const resp = await axios.post<User>("http://localhost:5000/api/users/create/user/account", data)
+            console.log(resp.data)
+            clearform()
             navigate('/dashboard')
         } catch (error) {
             console.error(error)
