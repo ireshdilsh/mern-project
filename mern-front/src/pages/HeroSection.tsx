@@ -75,7 +75,7 @@ export default function HeroSection() {
             </button>
             {error && <p className='text-sm text-red-600 text-center mt-2'>{error}</p>}
         </>
-    );
+    )
 
     return (
         <div id="home" className='px-6 sm:px-12 lg:px-24 py-20 bg-white'>
