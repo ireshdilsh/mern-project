@@ -43,10 +43,17 @@ export default function MyArticles() {
           setOpenMenuId(openMenuId === articleId ? null : articleId);
      }
 
-     const handleDelete = (e: React.MouseEvent, articleId: string) => {
-          e.stopPropagation();
-          // Delete function will be implemented here
-          console.log('Delete article:', articleId);
+     const handleDelete = async(articleId: string) => {
+          try {
+               const resp = await axios.delete(`http://localhost:5000/api/v1/articles/delete/article/${articleId}`)
+               console.log(resp);
+               alert('aericle deleted success !')
+               getAllArticlesByEmail()
+               navigate(`/my/articles/${email}`)
+          } catch (error) {
+               console.error(error)
+               alert('article delete failed')
+          }
      }
 
      const handleUpdate = (e: React.MouseEvent, articleId: string) => {
@@ -109,7 +116,7 @@ export default function MyArticles() {
                                                                  Update
                                                             </button>
                                                             <button
-                                                                 onClick={(e) => handleDelete(e, article._id)}
+                                                                 onClick={() => handleDelete(article._id)}
                                                                  className='w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-red-50 flex items-center gap-2 rounded-b-lg'
                                                             >
                                                                  <svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
