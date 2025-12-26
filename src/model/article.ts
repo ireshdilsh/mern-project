@@ -32,7 +32,8 @@ const articleSchema = new mongoose.Schema({
         required:true
     },
     imageURL: {
-        type: String
+        type: String,
+        required:false
     }
 },{timestamps:true})
 
