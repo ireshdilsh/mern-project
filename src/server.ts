@@ -7,7 +7,6 @@ import { commentRouter } from "./routes/comment.route.js";
 import { user_router } from "./routes/user.route.js";
 
 dotenv.config();
-
 const server = express();
 
 server.use(express.json());
