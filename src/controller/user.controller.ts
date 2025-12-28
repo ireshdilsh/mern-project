@@ -1,6 +1,8 @@
 import { User } from "../model/user.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const saveUser = async (req: any, res: any) => {
     try {
@@ -35,26 +37,22 @@ export const loginUser = async (req: any, res: any) => {
     try {
         const { email, password } = req.body;
         
-        // Find user by email
         const user = await User.findOne({ email });
         if (!user) {
             return res.status(401).send({ message: "Invalid email or password" });
         }
         
-        // Compare password
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
             return res.status(401).send({ message: "Invalid email or password" });
         }
         
-        // Generate JWT token
         const token = jwt.sign(
             { userId: user._id, email: user.email },
             process.env.JWT_SECRET_KEY as string,
             { expiresIn: "24h" }
         );
         
-        // Return user data and token
         return res.status(200).send({ 
             message: "User logged in successfully", 
             token,
