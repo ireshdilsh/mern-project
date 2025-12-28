@@ -46,9 +46,29 @@ export default function HeroSection({ signin, signup, openSigninModal, openSignu
         }
         try {
             const resp = await axios.post<User>("http://localhost:5000/api/v1/users/save/user", data)
-            console.log(resp.data)
+            console.log(resp);
             clearform()
-            localStorage.setItem("auth:user", JSON.stringify({ ...data}));
+            localStorage.setItem("auth:user", JSON.stringify({ ...data }));
+            navigate('/dashboard')
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    const autheticationUser = async (e: React.FormEvent) => {
+        e.preventDefault()
+        const data = {
+            email: email,
+            password: password
+        }
+        try {
+            const resp = await axios.post("http://localhost:5000/api/v1/users/auth/user", data)
+            console.log(resp)
+            clearform()
+
+            localStorage.setItem("auth:token", resp.data);
+            localStorage.setItem("auth:user", JSON.stringify(resp.data.user));
+
             navigate('/dashboard')
         } catch (error) {
             console.error(error)
@@ -257,6 +277,8 @@ export default function HeroSection({ signin, signup, openSigninModal, openSignu
                                 <div className='flex flex-col gap-2'>
                                     <label htmlFor="signin-email" className='text-sm font-medium text-neutral-700'>Email Address</label>
                                     <input
+                                        onChange={(e) => { setEmail(e.target.value) }}
+                                        value={email}
                                         type="email"
                                         id="signin-email"
                                         placeholder='you@example.com'
@@ -269,13 +291,15 @@ export default function HeroSection({ signin, signup, openSigninModal, openSignu
                                         <a href="#" className='text-xs text-neutral-600 hover:text-black cursor-pointer'>Forgot?</a>
                                     </div>
                                     <input
+                                        onChange={(e) => { setPassword(e.target.value) }}
+                                        value={password}
                                         type="password"
                                         id="signin-password"
                                         placeholder='••••••••'
                                         className='border border-neutral-300 py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-400 transition-all cursor-text'
                                     />
                                 </div>
-                                <button className='bg-black text-white w-full cursor-pointer py-3 rounded-lg hover:bg-neutral-800 transition-all duration-200 font-semibold mt-2'>
+                                <button onClick={autheticationUser} className='bg-black text-white w-full cursor-pointer py-3 rounded-lg hover:bg-neutral-800 transition-all duration-200 font-semibold mt-2'>
                                     Sign In
                                 </button>
                             </div>
