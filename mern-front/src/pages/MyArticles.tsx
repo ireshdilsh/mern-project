@@ -47,8 +47,7 @@ export default function MyArticles() {
           try {
                const resp = await axios.delete(`http://localhost:5000/api/v1/articles/delete/article/${articleId}`)
                console.log(resp);
-               alert('aericle deleted success !')
-               getAllArticlesByEmail()
+               alert('article deleted successfully!')
                navigate(`/my/articles/${email}`)
           } catch (error) {
                console.error(error)
