@@ -9,29 +9,20 @@ interface User {
     password: string
 }
 
-export default function HeroSection() {
-    const [signin, setSignin] = useState(false);
-    const [signup, setSignup] = useState(false);
+interface HeroSectionProps {
+    signin: boolean;
+    signup: boolean;
+    openSigninModal: () => void;
+    openSignupModal: () => void;
+    closeModals: () => void;
+}
+
+export default function HeroSection({ signin, signup, openSigninModal, openSignupModal, closeModals }: HeroSectionProps) {
     const { signInWithGoogle, isLoading, error } = useGoogleAuth();
 
-    const openSigninModal = () => {
-        setSignin(true);
-        setSignup(false);
-    };
-
-    const openSignupModal = () => {
-        setSignup(true);
-    };
-
     const openModal = () => {
-        setSignup(true)
-        setSignin(false);
+        openSignupModal();
     }
-
-    const closeModals = () => {
-        setSignin(false);
-        setSignup(false);
-    };
 
     const navigate: NavigateFunction = useNavigate()
 
@@ -54,9 +45,10 @@ export default function HeroSection() {
             password: password
         }
         try {
-            const resp = await axios.post<User>("http://localhost:5000/api/users/create/user/account", data)
+            const resp = await axios.post<User>("http://localhost:5000/api/v1/users/save/user", data)
             console.log(resp.data)
             clearform()
+            localStorage.setItem("auth:user", JSON.stringify({ ...data}));
             navigate('/dashboard')
         } catch (error) {
             console.error(error)

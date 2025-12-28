@@ -1,6 +1,10 @@
 import React from 'react'
 
-export default function About() {
+interface AboutProps {
+  openSigninModal: () => void;
+}
+
+export default function About({ openSigninModal }: AboutProps) {
   return (
     <div className='bg-white py-20 lg:py-24'>
      <section id='about' className='px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto'>
@@ -42,7 +46,9 @@ export default function About() {
                          </div>
                     </div>
 
-                    <button className='mt-6 px-8 py-4 bg-black text-white font-semibold rounded-lg hover:bg-neutral-800 transition-all duration-200 cursor-pointer'>
+                    <button 
+                         onClick={openSigninModal}
+                         className='mt-6 px-8 py-4 bg-black text-white font-semibold rounded-lg hover:bg-neutral-800 transition-all duration-200 cursor-pointer'>
                          Join Our Community
                     </button>
                </div>

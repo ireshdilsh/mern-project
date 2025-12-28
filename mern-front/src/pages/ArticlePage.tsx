@@ -71,7 +71,7 @@ export default function ArticlePage() {
   const successMsg = () => {
     Swal.fire({
       title: "Good job!",
-      text: "You clicked the button!",
+      text: "Your Article Published!",
       icon: "success"
     });
   }

@@ -1,15 +1,40 @@
+import { useState } from "react";
 import NavBar from "../components/NavBar.tsx";
 import About from "./About.tsx";
 import Features from "./Features.tsx";
 import HeroSection from "./HeroSection.tsx";
 
 export default function LandingPage() {
+    const [signin, setSignin] = useState(false);
+    const [signup, setSignup] = useState(false);
+
+    const openSigninModal = () => {
+        setSignin(true);
+        setSignup(false);
+    };
+
+    const openSignupModal = () => {
+        setSignup(true);
+        setSignin(false);
+    };
+
+    const closeModals = () => {
+        setSignin(false);
+        setSignup(false);
+    };
+
     return (
         <div className="min-h-screen bg-white">
             <NavBar />
-            <HeroSection />
+            <HeroSection 
+                signin={signin}
+                signup={signup}
+                openSigninModal={openSigninModal}
+                openSignupModal={openSignupModal}
+                closeModals={closeModals}
+            />
             <Features/>
-            <About/>
+            <About openSigninModal={openSigninModal} />
             
             {/* Stories Section */}
             <section id="stories" className="bg-neutral-50 py-20 lg:py-24">
@@ -113,7 +138,7 @@ export default function LandingPage() {
                     </div>
 
                     <div className="text-center mt-12">
-                        <button className="px-8 py-4 bg-black text-white font-semibold rounded-lg hover:bg-neutral-800 transition-all duration-200 cursor-pointer">
+                        <button onClick={()=>{setSignin(true)}} className="px-8 py-4 bg-black text-white font-semibold rounded-lg hover:bg-neutral-800 transition-all duration-200 cursor-pointer">
                             Explore All Stories
                         </button>
                     </div>
@@ -238,10 +263,10 @@ export default function LandingPage() {
                         Join thousands of writers who are already sharing their voices with the world.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-neutral-100 transition-all duration-200 cursor-pointer">
+                        <button onClick={()=>{setSignup(true)}} className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-neutral-100 transition-all duration-200 cursor-pointer">
                             Get Started Free
                         </button>
-                        <button className="px-8 py-4 bg-transparent text-white font-semibold border-2 border-white rounded-lg hover:bg-white hover:text-black transition-all duration-200 cursor-pointer">
+                        <button onClick={()=>{setSignin(true)}} className="px-8 py-4 bg-transparent text-white font-semibold border-2 border-white rounded-lg hover:bg-white hover:text-black transition-all duration-200 cursor-pointer">
                             Learn More
                         </button>
                     </div>
