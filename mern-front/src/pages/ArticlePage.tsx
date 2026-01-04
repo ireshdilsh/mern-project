@@ -30,6 +30,16 @@ export default function ArticlePage() {
   }, []);
 
 
+  const generateAiDescription = async() => {
+    try {
+      const prompt = `Generate a detailed article description about ${title}`
+      const resp = await axios.post('http://localhost:5000/api/v1/ai/generate', { prompt })
+      setContent(resp.data.response.content)
+    } catch (error) {
+      console.error('Error generating AI description:', error);
+    }
+  }
+
   const postNewArticle = async (e: FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -110,6 +120,7 @@ export default function ArticlePage() {
           </button>
           <input type="file" id="file-input" accept="image/*" onChange={handleImageChange} style={{ display: 'none' }} />
           <textarea onChange={handleContentChange} value={content} name="" id="" className='write-content text-2xl w-212 h-90 outline-none' placeholder='Tell your story ....'></textarea>
+          <button className='cursor-pointer' onClick={generateAiDescription}>Generate content</button>
         </div>
         <button
           onClick={postNewArticle}
