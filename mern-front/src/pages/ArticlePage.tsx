@@ -31,6 +31,7 @@ export default function ArticlePage() {
 
 
   const generateAiDescription = async() => {
+    alert('Generating AI description may take a few seconds. Please wait until the content is populated.')
     try {
       const prompt = `Generate a detailed article description about ${title}`
       const resp = await axios.post('http://localhost:5000/api/v1/ai/generate', { prompt })
