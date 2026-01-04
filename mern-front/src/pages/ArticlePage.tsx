@@ -30,7 +30,7 @@ export default function ArticlePage() {
   }, []);
 
 
-  const generateAiDescription = async() => {
+  const generateAiDescription = async () => {
     alert('Generating AI description may take a few seconds. Please wait until the content is populated.')
     try {
       const prompt = `Generate a detailed article description about ${title}`
